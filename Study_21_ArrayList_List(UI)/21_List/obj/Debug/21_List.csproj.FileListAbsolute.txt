@@ -1,0 +1,20 @@
+c:\users\사용자\source\repos\21_List\21_List\bin\Debug\21_List.exe.config
+c:\users\사용자\source\repos\21_List\21_List\bin\Debug\21_List.exe
+c:\users\사용자\source\repos\21_List\21_List\bin\Debug\21_List.pdb
+c:\users\사용자\source\repos\21_List\21_List\obj\Debug\21_List.csprojResolveAssemblyReference.cache
+c:\users\사용자\source\repos\21_List\21_List\obj\Debug\_21_List.Form1.resources
+c:\users\사용자\source\repos\21_List\21_List\obj\Debug\_21_List.Properties.Resources.resources
+c:\users\사용자\source\repos\21_List\21_List\obj\Debug\21_List.csproj.GenerateResource.Cache
+c:\users\사용자\source\repos\21_List\21_List\obj\Debug\21_List.csproj.CoreCompileInputs.cache
+c:\users\사용자\source\repos\21_List\21_List\obj\Debug\21_List.exe
+c:\users\사용자\source\repos\21_List\21_List\obj\Debug\21_List.pdb
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\bin\Debug\21_List.exe.config
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\bin\Debug\21_List.exe
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\bin\Debug\21_List.pdb
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.csprojResolveAssemblyReference.cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\_21_List.Form1.resources
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\_21_List.Properties.Resources.resources
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.csproj.GenerateResource.Cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.csproj.CoreCompileInputs.cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.exe
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.pdb
