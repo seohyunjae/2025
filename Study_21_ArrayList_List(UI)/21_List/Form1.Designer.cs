@@ -30,24 +30,24 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPick4 = new System.Windows.Forms.Label();
+            this.lblPick3 = new System.Windows.Forms.Label();
+            this.lblPick2 = new System.Windows.Forms.Label();
+            this.pbox4 = new System.Windows.Forms.PictureBox();
+            this.pbox3 = new System.Windows.Forms.PictureBox();
+            this.pbox2 = new System.Windows.Forms.PictureBox();
+            this.pbox1 = new System.Windows.Forms.PictureBox();
+            this.lblPick1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgViewList = new System.Windows.Forms.DataGridView();
-            this.pbox1 = new System.Windows.Forms.PictureBox();
-            this.pbox2 = new System.Windows.Forms.PictureBox();
-            this.pbox3 = new System.Windows.Forms.PictureBox();
-            this.pbox4 = new System.Windows.Forms.PictureBox();
-            this.lblPick1 = new System.Windows.Forms.Label();
-            this.lblPick2 = new System.Windows.Forms.Label();
-            this.lblPick3 = new System.Windows.Forms.Label();
-            this.lblPick4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewList)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,6 +81,106 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(434, 156);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // lblPick4
+            // 
+            this.lblPick4.AutoSize = true;
+            this.lblPick4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblPick4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPick4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPick4.Location = new System.Drawing.Point(327, 131);
+            this.lblPick4.Name = "lblPick4";
+            this.lblPick4.Size = new System.Drawing.Size(104, 25);
+            this.lblPick4.TabIndex = 7;
+            this.lblPick4.Text = "0";
+            this.lblPick4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPick3
+            // 
+            this.lblPick3.AutoSize = true;
+            this.lblPick3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblPick3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPick3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPick3.Location = new System.Drawing.Point(219, 131);
+            this.lblPick3.Name = "lblPick3";
+            this.lblPick3.Size = new System.Drawing.Size(102, 25);
+            this.lblPick3.TabIndex = 6;
+            this.lblPick3.Text = "0";
+            this.lblPick3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPick2
+            // 
+            this.lblPick2.AutoSize = true;
+            this.lblPick2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblPick2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPick2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPick2.Location = new System.Drawing.Point(111, 131);
+            this.lblPick2.Name = "lblPick2";
+            this.lblPick2.Size = new System.Drawing.Size(102, 25);
+            this.lblPick2.TabIndex = 5;
+            this.lblPick2.Text = "0";
+            this.lblPick2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbox4
+            // 
+            this.pbox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbox4.Image = global::_21_List.Properties.Resources._4;
+            this.pbox4.Location = new System.Drawing.Point(327, 3);
+            this.pbox4.Name = "pbox4";
+            this.pbox4.Size = new System.Drawing.Size(104, 125);
+            this.pbox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox4.TabIndex = 3;
+            this.pbox4.TabStop = false;
+            this.pbox4.Click += new System.EventHandler(this.pbox_Click);
+            // 
+            // pbox3
+            // 
+            this.pbox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbox3.Image = global::_21_List.Properties.Resources._3;
+            this.pbox3.Location = new System.Drawing.Point(219, 3);
+            this.pbox3.Name = "pbox3";
+            this.pbox3.Size = new System.Drawing.Size(102, 125);
+            this.pbox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox3.TabIndex = 2;
+            this.pbox3.TabStop = false;
+            this.pbox3.Click += new System.EventHandler(this.pbox_Click);
+            // 
+            // pbox2
+            // 
+            this.pbox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbox2.Image = global::_21_List.Properties.Resources._2;
+            this.pbox2.Location = new System.Drawing.Point(111, 3);
+            this.pbox2.Name = "pbox2";
+            this.pbox2.Size = new System.Drawing.Size(102, 125);
+            this.pbox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox2.TabIndex = 1;
+            this.pbox2.TabStop = false;
+            this.pbox2.Click += new System.EventHandler(this.pbox_Click);
+            // 
+            // pbox1
+            // 
+            this.pbox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbox1.Image = global::_21_List.Properties.Resources._1;
+            this.pbox1.Location = new System.Drawing.Point(3, 3);
+            this.pbox1.Name = "pbox1";
+            this.pbox1.Size = new System.Drawing.Size(102, 125);
+            this.pbox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox1.TabIndex = 0;
+            this.pbox1.TabStop = false;
+            this.pbox1.Click += new System.EventHandler(this.pbox_Click);
+            // 
+            // lblPick1
+            // 
+            this.lblPick1.AutoSize = true;
+            this.lblPick1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblPick1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPick1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPick1.Location = new System.Drawing.Point(3, 131);
+            this.lblPick1.Name = "lblPick1";
+            this.lblPick1.Size = new System.Drawing.Size(102, 25);
+            this.lblPick1.TabIndex = 4;
+            this.lblPick1.Text = "0";
+            this.lblPick1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -118,102 +218,6 @@
             this.dgViewList.Size = new System.Drawing.Size(225, 198);
             this.dgViewList.TabIndex = 5;
             // 
-            // pbox1
-            // 
-            this.pbox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbox1.Image = global::_21_List.Properties.Resources._1;
-            this.pbox1.Location = new System.Drawing.Point(3, 3);
-            this.pbox1.Name = "pbox1";
-            this.pbox1.Size = new System.Drawing.Size(102, 125);
-            this.pbox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbox1.TabIndex = 0;
-            this.pbox1.TabStop = false;
-            // 
-            // pbox2
-            // 
-            this.pbox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbox2.Image = global::_21_List.Properties.Resources._2;
-            this.pbox2.Location = new System.Drawing.Point(111, 3);
-            this.pbox2.Name = "pbox2";
-            this.pbox2.Size = new System.Drawing.Size(102, 125);
-            this.pbox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbox2.TabIndex = 1;
-            this.pbox2.TabStop = false;
-            // 
-            // pbox3
-            // 
-            this.pbox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbox3.Image = global::_21_List.Properties.Resources._3;
-            this.pbox3.Location = new System.Drawing.Point(219, 3);
-            this.pbox3.Name = "pbox3";
-            this.pbox3.Size = new System.Drawing.Size(102, 125);
-            this.pbox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbox3.TabIndex = 2;
-            this.pbox3.TabStop = false;
-            // 
-            // pbox4
-            // 
-            this.pbox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbox4.Image = global::_21_List.Properties.Resources._4;
-            this.pbox4.Location = new System.Drawing.Point(327, 3);
-            this.pbox4.Name = "pbox4";
-            this.pbox4.Size = new System.Drawing.Size(104, 125);
-            this.pbox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbox4.TabIndex = 3;
-            this.pbox4.TabStop = false;
-            // 
-            // lblPick1
-            // 
-            this.lblPick1.AutoSize = true;
-            this.lblPick1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblPick1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPick1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPick1.Location = new System.Drawing.Point(3, 131);
-            this.lblPick1.Name = "lblPick1";
-            this.lblPick1.Size = new System.Drawing.Size(102, 25);
-            this.lblPick1.TabIndex = 4;
-            this.lblPick1.Text = "0";
-            this.lblPick1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPick2
-            // 
-            this.lblPick2.AutoSize = true;
-            this.lblPick2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblPick2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPick2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPick2.Location = new System.Drawing.Point(111, 131);
-            this.lblPick2.Name = "lblPick2";
-            this.lblPick2.Size = new System.Drawing.Size(102, 25);
-            this.lblPick2.TabIndex = 5;
-            this.lblPick2.Text = "0";
-            this.lblPick2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPick3
-            // 
-            this.lblPick3.AutoSize = true;
-            this.lblPick3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblPick3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPick3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPick3.Location = new System.Drawing.Point(219, 131);
-            this.lblPick3.Name = "lblPick3";
-            this.lblPick3.Size = new System.Drawing.Size(102, 25);
-            this.lblPick3.TabIndex = 6;
-            this.lblPick3.Text = "0";
-            this.lblPick3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPick4
-            // 
-            this.lblPick4.AutoSize = true;
-            this.lblPick4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblPick4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPick4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPick4.Location = new System.Drawing.Point(327, 131);
-            this.lblPick4.Name = "lblPick4";
-            this.lblPick4.Size = new System.Drawing.Size(104, 25);
-            this.lblPick4.TabIndex = 7;
-            this.lblPick4.Text = "0";
-            this.lblPick4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -229,11 +233,11 @@
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgViewList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

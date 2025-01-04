@@ -18,3 +18,13 @@ C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(
 C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.csproj.CoreCompileInputs.cache
 C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.exe
 C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.pdb
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\bin\Debug\21_List.exe.config
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\bin\Debug\21_List.exe
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\bin\Debug\21_List.pdb
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\obj\Debug\_21_List.Form1.resources
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\obj\Debug\_21_List.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.exe
+C:\Users\서현재\Desktop\2025\Study_21_ArrayList_List(UI)\21_List\obj\Debug\21_List.pdb
