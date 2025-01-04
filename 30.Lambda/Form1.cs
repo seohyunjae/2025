@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _30.Lambda
@@ -17,9 +11,14 @@ namespace _30.Lambda
         {
             InitializeComponent();
         }
+        Action<string> _aStepCheck = null;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            _aStepCheck = (test) => lblStepCheck.Text = string.Format(" - 다음 Step은 {0}.{1}", iNowStep,
+                ((enumLambdaCase)iNowStep).ToString());
+            _aStepCheck("test");
+
             ButtonColorChange();
         }
         private void ButtonColorChange()
@@ -53,6 +52,7 @@ namespace _30.Lambda
         {
             Lambda(iNowStep);
             iNowStep++;
+            _aStepCheck("test");
         }
 
         private void Lambda(int iCase)
@@ -78,10 +78,13 @@ namespace _30.Lambda
                         return string.Format("Lambda Sample 문형식");
                     };
                     string strSeqment = dstrSeqment();
+                    lboxResult.Items.Add(strSeqment.ToString());
+
 
                     break;
                 case (int)enumLambdaCase.제네릭_형태의_무명메서드_Func:
                     // 제네릭 형태의 무명 메서드
+                    // return을 해야함
 
                     // Func : 반환 값이 있는 형태
                     Func<int, int, int>  fint = (a, b) => a * b;
@@ -91,8 +94,25 @@ namespace _30.Lambda
                     break;
 
                 case (int)enumLambdaCase.제네릭_형태의_무명메서드_Action:
+                    // return을 하지 않아도 됨
+                    Action<string, string> aString = (a, b) =>
+                    {
+                        string strText = String.Format("인자 값 {0}와 {1}을 받았습니다.", a, b);
+                        lboxResult.Items.Add(strText.ToString());
+                    };
+                    aString("시간", "금");
+
                     break;
                 case (int)enumLambdaCase.제네릭_형태의인자_반환_예제:
+
+                    int[] iGroup = { 1, 3, 5, 7, 9 };
+                    int iNumSum = iGroup.Sum(x => x);
+                    lboxResult.Items.Add(iNumSum.ToString());
+
+                    string[] strGroup = { "XXX", "TTTT", "YYY" };
+                    int ilengthSum = strGroup.Sum(x => x.Length);
+                    lboxResult.Items.Add(ilengthSum.ToString());
+
                     break;
             }
         }
