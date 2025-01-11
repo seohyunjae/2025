@@ -1,0 +1,10 @@
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\bin\Debug\31.링큐(Linq).exe.config
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\bin\Debug\31.링큐(Linq).exe
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\bin\Debug\31.링큐(Linq).pdb
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\obj\Debug\31.링큐(Linq).csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\obj\Debug\_31.링큐_Linq_.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\obj\Debug\31.링큐(Linq).csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\obj\Debug\31.링큐(Linq).csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\obj\Debug\31.링큐(Linq).exe
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\obj\Debug\31.링큐(Linq).pdb
+C:\Users\서현재\Desktop\2025\31.링큐(Linq)\obj\Debug\_31.링큐_Linq_.Form1.resources
