@@ -1,0 +1,10 @@
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\bin\Debug\32.제목표시줄 사용하기.exe.config
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\bin\Debug\32.제목표시줄 사용하기.exe
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\bin\Debug\32.제목표시줄 사용하기.pdb
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\obj\Debug\32.제목표시줄 사용하기.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\obj\Debug\_32.제목표시줄_사용하기.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\obj\Debug\32.제목표시줄 사용하기.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\obj\Debug\32.제목표시줄 사용하기.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\obj\Debug\32.제목표시줄 사용하기.exe
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\obj\Debug\32.제목표시줄 사용하기.pdb
+C:\Users\서현재\Desktop\2025\32.제목표시줄 사용하기\obj\Debug\_32.제목표시줄_사용하기.Form1.resources
