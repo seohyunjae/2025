@@ -1,0 +1,11 @@
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\bin\Debug\33.동적 Layout 만들기.exe.config
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\bin\Debug\33.동적 Layout 만들기.exe
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\bin\Debug\33.동적 Layout 만들기.pdb
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\33.동적 Layout 만들기.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\_33.동적_Layout_만들기.Form1.resources
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\_33.동적_Layout_만들기.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\_33.동적_Layout_만들기.ucPanel.resources
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\33.동적 Layout 만들기.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\33.동적 Layout 만들기.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\33.동적 Layout 만들기.exe
+C:\Users\서현재\Desktop\2025\33.동적 Layout 만들기\obj\Debug\33.동적 Layout 만들기.pdb
