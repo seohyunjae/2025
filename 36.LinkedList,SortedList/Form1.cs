@@ -13,6 +13,8 @@ namespace _36.LinkedList_SortedList
     public partial class Form1 : Form
     {
         SortedList<DateTime, string> slScheduler = new SortedList<DateTime, string>();
+        Dictionary<DateTime, string> dScheduler = new Dictionary<DateTime, string>();
+
         public  Form1()
         {
             InitializeComponent();
@@ -34,8 +36,24 @@ namespace _36.LinkedList_SortedList
 
             // Sorted List
 
+            DateTime dSetDate = mcScheduler.SelectionStart;
 
+            if (!slScheduler.ContainsKey(dSetDate))
+            {
+                slScheduler.Add(dSetDate, txboxScheduler.Text);
 
+                mcScheduler.AddBoldedDate(dSetDate);
+                mcScheduler.UpdateBoldedDates();
+
+                //lboxScheduler.Items.Add(string.Format("{0} : {1}", dSetDate.ToString(), txboxScheduler.Text));
+            }
+
+            lboxScheduler.Items.Clear();
+
+            foreach (KeyValuePair<DateTime, string> oitem in slScheduler)
+            {
+                lboxScheduler.Items.Add(string.Format("{0} : {1}", oitem.Key.ToString("yyyy-MM-dd"), oitem.Value));
+            }
         }
     }
 }
