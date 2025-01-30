@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.mcScheduler = new System.Windows.Forms.MonthCalendar();
-            this.txboxScheduler = new System.Windows.Forms.TextBox();
+            this.tboxScheduler = new System.Windows.Forms.TextBox();
             this.btnScheduler = new System.Windows.Forms.Button();
             this.lboxScheduler = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -39,14 +39,15 @@
             this.mcScheduler.Location = new System.Drawing.Point(18, 18);
             this.mcScheduler.Name = "mcScheduler";
             this.mcScheduler.TabIndex = 0;
+            this.mcScheduler.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mcScheduler_DateChanged);
             // 
-            // txboxScheduler
+            // tboxScheduler
             // 
-            this.txboxScheduler.Location = new System.Drawing.Point(18, 192);
-            this.txboxScheduler.Multiline = true;
-            this.txboxScheduler.Name = "txboxScheduler";
-            this.txboxScheduler.Size = new System.Drawing.Size(220, 133);
-            this.txboxScheduler.TabIndex = 1;
+            this.tboxScheduler.Location = new System.Drawing.Point(18, 192);
+            this.tboxScheduler.Multiline = true;
+            this.tboxScheduler.Name = "tboxScheduler";
+            this.tboxScheduler.Size = new System.Drawing.Size(220, 133);
+            this.tboxScheduler.TabIndex = 1;
             // 
             // btnScheduler
             // 
@@ -74,7 +75,7 @@
             this.ClientSize = new System.Drawing.Size(543, 397);
             this.Controls.Add(this.lboxScheduler);
             this.Controls.Add(this.btnScheduler);
-            this.Controls.Add(this.txboxScheduler);
+            this.Controls.Add(this.tboxScheduler);
             this.Controls.Add(this.mcScheduler);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -86,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.MonthCalendar mcScheduler;
-        private System.Windows.Forms.TextBox txboxScheduler;
+        private System.Windows.Forms.TextBox tboxScheduler;
         private System.Windows.Forms.Button btnScheduler;
         private System.Windows.Forms.ListBox lboxScheduler;
     }

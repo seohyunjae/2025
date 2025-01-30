@@ -12,7 +12,7 @@ namespace _36.LinkedList_SortedList
 {
     public partial class Form1 : Form
     {
-        SortedList<DateTime, string> slScheduler = new SortedList<DateTime, string>();
+        SortedList<DateTime, string> slScheduler = new SortedList<DateTime, string>(); // 키값 기준으로 정렬 검색편안
         Dictionary<DateTime, string> dScheduler = new Dictionary<DateTime, string>();
 
         public  Form1()
@@ -40,7 +40,7 @@ namespace _36.LinkedList_SortedList
 
             if (!slScheduler.ContainsKey(dSetDate))
             {
-                slScheduler.Add(dSetDate, txboxScheduler.Text);
+                slScheduler.Add(dSetDate, tboxScheduler.Text);
 
                 mcScheduler.AddBoldedDate(dSetDate);
                 mcScheduler.UpdateBoldedDates();
@@ -53,6 +53,20 @@ namespace _36.LinkedList_SortedList
             foreach (KeyValuePair<DateTime, string> oitem in slScheduler)
             {
                 lboxScheduler.Items.Add(string.Format("{0} : {1}", oitem.Key.ToString("yyyy-MM-dd"), oitem.Value));
+            }
+        }
+
+        private void mcScheduler_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime dSetDate = mcScheduler.SelectionStart;
+
+            if (slScheduler.ContainsKey(dSetDate))
+            {
+                tboxScheduler.Text = slScheduler[dSetDate];
+            }
+            else
+            {
+                tboxScheduler.Text = string.Empty;
             }
         }
     }
