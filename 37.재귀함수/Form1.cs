@@ -22,6 +22,7 @@ namespace _37.재귀함수
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void btnExE_Click(object sender, EventArgs e)
@@ -32,21 +33,55 @@ namespace _37.재귀함수
             enControlType enControlType = enControlType.Unknown;
             if (rdoLabel.Checked) enControlType = enControlType.Label;
             else if(rdoTextbox.Checked) enControlType = enControlType.Textbox;
-            else if(rdoButton.Checked) enControlType = enControlType.Button;      
-                
-           
-            
-            ControlSearch(gboxCheckList, 2, enControlType.Label, "");
+            else if(rdoButton.Checked) enControlType = enControlType.Button;
+
+            string strChangeText = tboxChangeText.Text;
+
+            ControlSearch(gboxCheckList, iLevel, enControlType, strChangeText);
         }
 
         private void ControlSearch(GroupBox CheckList, int iLevel, enControlType eType, string strChangeText)
         {
-            foreach (var item in this.Controls)
+            foreach (var item in CheckList.Controls)
             {
+                if (CheckList.Text.Equals("Level " + iLevel.ToString()))
+                { 
+                     switch (eType)
+                     {
+                         case enControlType.Label:
+                            if (item is Label)
+                            {
+                                ((Label)item).Text = strChangeText;
+                                lboxResult.Items.Add(string.Format("현재 GROUPBOX : {0}, Label Text : {1}로 변경", CheckList.Text, strChangeText));
+                            }
+                             break;
+                         case enControlType.Textbox:
+                            if (item is TextBox)
+                            {
+                                ((TextBox)item).Text = strChangeText;
+                                lboxResult.Items.Add(string.Format("현재 GROUPBOX : {0}, Label Text : {1}로 변경", CheckList.Text, strChangeText));
+                            }
+                            break;
+                         case enControlType.Button:
+                            if (item is Button) 
+                            { 
+                                ((Button)item).Text = strChangeText;
+                                lboxResult.Items.Add(string.Format("현재 GROUPBOX : {0}, Label Text : {1}로 변경", CheckList.Text, strChangeText));
+                            }
+                            break;
+                     }
+                }
+                if (item is GroupBox)
+                {
+                    lboxResult.Items.Add(string.Format("현재 GROUPBOX : {0}, Label Text : {1}로 변경", CheckList.Text, strChangeText));
+                    ControlSearch((GroupBox)item, iLevel, eType, strChangeText);
+                }
+            }
 
+            if (CheckList == gboxCheckList)
+            {
+                lboxResult.Items.Add(string.Format("END"));
             }
         }
-
-
     }
 }

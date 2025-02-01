@@ -33,7 +33,7 @@
             this.rdoButton = new System.Windows.Forms.RadioButton();
             this.rdoTextbox = new System.Windows.Forms.RadioButton();
             this.rdoLabel = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tboxChangeText = new System.Windows.Forms.TextBox();
             this.numLevel = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@
             this.groupBox1.Controls.Add(this.rdoButton);
             this.groupBox1.Controls.Add(this.rdoTextbox);
             this.groupBox1.Controls.Add(this.rdoLabel);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tboxChangeText);
             this.groupBox1.Controls.Add(this.numLevel);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -136,12 +136,12 @@
             this.rdoLabel.Text = "Label";
             this.rdoLabel.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tboxChangeText
             // 
-            this.textBox1.Location = new System.Drawing.Point(249, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 21);
-            this.textBox1.TabIndex = 4;
+            this.tboxChangeText.Location = new System.Drawing.Point(249, 28);
+            this.tboxChangeText.Name = "tboxChangeText";
+            this.tboxChangeText.Size = new System.Drawing.Size(129, 21);
+            this.tboxChangeText.TabIndex = 4;
             // 
             // numLevel
             // 
@@ -480,7 +480,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdoLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tboxChangeText;
         private System.Windows.Forms.NumericUpDown numLevel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
