@@ -1,0 +1,10 @@
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\bin\Debug\37.재귀함수.exe.config
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\bin\Debug\37.재귀함수.exe
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\bin\Debug\37.재귀함수.pdb
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\obj\Debug\37.재귀함수.csproj.AssemblyReference.cache
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\obj\Debug\_37.재귀함수.Form1.resources
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\obj\Debug\_37.재귀함수.Properties.Resources.resources
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\obj\Debug\37.재귀함수.csproj.GenerateResource.cache
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\obj\Debug\37.재귀함수.csproj.CoreCompileInputs.cache
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\obj\Debug\37.재귀함수.exe
+C:\Users\서강재\OneDrive\바탕 화면\2025\37.재귀함수\obj\Debug\37.재귀함수.pdb
