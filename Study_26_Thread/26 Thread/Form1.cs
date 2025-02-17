@@ -27,7 +27,7 @@ namespace _26_Thread
         public Form1()
         {
             InitializeComponent();
-
+                    
             _locationX = this.Location.X;
             _locationY = this.Location.Y;
         }
@@ -42,6 +42,7 @@ namespace _26_Thread
                 Play pl = new Play(((enumPlayer)i).ToString());
                 pl.Location = new Point(_locationX, _locationY + pl.Height * i);
                 pl.eventdelMessage += Pl_eventdelMessage;
+
 
                 pl.Show();
 
