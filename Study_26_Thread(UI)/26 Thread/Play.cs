@@ -29,22 +29,31 @@ namespace _26_Thread
 
         public void fThreadStart()
         {
-            _thread = new Thread(new ThreadStart(Run)); // ThreadStart 델리게이트 객체를 생성후 함수를 넘김
+            //_thread = new Thread(new ThreadStart(Run)); // ThreadStart 델리게이트 타입 객체를 생성후 함수를 넘김
+
+            _thread = new Thread(Run); // 컴파일러 델리게이트 객체를 추론해서 생성 후 함수를 넘김 (new ThreadStart 생략)
+
+            //_thread = new Thread(delegate () { Run(); }); // 익명세서드를 사용하여 생성 후 함수를 넘김
+
+            _thread.Start();
         }
 
         private void Run()
         {
-
-        }
-
-        public void test()
-        {
+            // UI Control이 자신이 만들어진 Thread가 아닌 다른 Thread에서 접근할 경우 Cross Thread가 발생
+            //CheckForIllegalCrossThreadCalls = false; // Thread 충돌에 대한 예외 처리를 무시 (Cross Thread 무시)
+                                
             int ivar = 0;
 
             Random rd = new Random();
 
             while (pbarPlayer.Value < 100)
             {
+                this.Invoke(new Action(delegate ()
+                {   
+                    //함수값 
+                }));
+
                 ivar = rd.Next(1, 11);
                 if (pbarPlayer.Value + ivar > 100)
                 {

@@ -43,7 +43,7 @@ namespace _26_Thread
                 p1.Location = new Point(_locationX, _locationY + p1.Height * i);
                 p1.Show();
 
-                p1.test();
+                p1.fThreadStart();
             }
         }
     }

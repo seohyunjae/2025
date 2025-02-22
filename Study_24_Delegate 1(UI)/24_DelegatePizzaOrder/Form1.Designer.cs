@@ -102,7 +102,6 @@
             this.rdoEdge2.TabStop = true;
             this.rdoEdge2.Text = "치즈크러스터 (2000원)";
             this.rdoEdge2.UseVisualStyleBackColor = true;
-            this.rdoEdge2.CheckedChanged += new System.EventHandler(this.rdoEdge2_CheckedChanged);
             // 
             // rdoEdge1
             // 
