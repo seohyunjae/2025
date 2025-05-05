@@ -15,7 +15,17 @@ namespace WordSearch
 
         private void btnDBLoad_Click(object sender, EventArgs e)
         {
+            string strFilePath = string.Empty;
 
+            OFDialog.InitialDirectory = Application.StartupPath;
+            OFDialog.FileName = "*.mdb";
+            OFDialog.Filter = "db files (*.mdb)|*.mdb|All files (*.*)|*.*";
+
+            if (OFDialog.ShowDialog() == DialogResult.OK)
+            {
+                tboxPath.Text = OFDialog.FileName;
+                DBConnect(OFDialog.FileName);
+            }
         }
 
         #region DB Connection
@@ -28,6 +38,7 @@ namespace WordSearch
             string Query = $@"Select + 
                               From Voca";
 
+            QueryExeCute(Query);
         }
 
         private void QueryExeCute(string Query)

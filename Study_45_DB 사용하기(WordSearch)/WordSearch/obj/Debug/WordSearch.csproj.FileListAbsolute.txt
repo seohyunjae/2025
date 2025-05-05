@@ -1,0 +1,21 @@
+C:\Users\사용자\source\repos\WordSearch\WordSearch\bin\Debug\WordSearch.exe.config
+C:\Users\사용자\source\repos\WordSearch\WordSearch\bin\Debug\WordSearch.exe
+C:\Users\사용자\source\repos\WordSearch\WordSearch\bin\Debug\WordSearch.pdb
+C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\Debug\WordSearch.csprojAssemblyReference.cache
+C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\Debug\WordSearch.Form1.resources
+C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\Debug\WordSearch.Properties.Resources.resources
+C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\Debug\WordSearch.csproj.GenerateResource.cache
+C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\Debug\WordSearch.exe
+C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\Debug\WordSearch.pdb
+C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\Debug\WordSearch.csproj.ResolveComReference.cache
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\bin\Debug\WordSearch.exe.config
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\bin\Debug\WordSearch.exe
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\bin\Debug\WordSearch.pdb
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.csprojResolveAssemblyReference.cache
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.csproj.ResolveComReference.cache
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.Form1.resources
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.Properties.Resources.resources
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.csproj.GenerateResource.Cache
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.csproj.CoreCompileInputs.cache
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.exe
+C:\Users\사용자\source\repos\WordSearch - 복사본\WordSearch\obj\Debug\WordSearch.pdb

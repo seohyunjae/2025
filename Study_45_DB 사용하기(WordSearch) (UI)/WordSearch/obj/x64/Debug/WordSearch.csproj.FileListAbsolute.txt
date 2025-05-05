@@ -8,3 +8,14 @@ C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\x64\Debug\WordSearch.P
 C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\x64\Debug\WordSearch.csproj.GenerateResource.cache
 C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\x64\Debug\WordSearch.exe
 C:\Users\사용자\source\repos\WordSearch\WordSearch\obj\x64\Debug\WordSearch.pdb
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\bin\x64\Debug\WordSearch.exe.config
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\bin\x64\Debug\WordSearch.exe
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\bin\x64\Debug\WordSearch.pdb
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.csproj.ResolveComReference.cache
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.Form1.resources
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.exe
+C:\Users\서현재\Desktop\2025\Study_45_DB 사용하기(WordSearch) (UI)\WordSearch\obj\x64\Debug\WordSearch.pdb

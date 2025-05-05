@@ -52,6 +52,8 @@ namespace _26_Thread
                 this.Invoke(new Action(delegate ()
                 {   
                     //함수값 
+
+
                 }));
 
                 ivar = rd.Next(1, 11);
