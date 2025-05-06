@@ -1,0 +1,10 @@
+C:\Users\사용자\source\repos\DataTable\DataTable\bin\Debug\DataTable.exe.config
+C:\Users\사용자\source\repos\DataTable\DataTable\bin\Debug\DataTable.exe
+C:\Users\사용자\source\repos\DataTable\DataTable\bin\Debug\DataTable.pdb
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTable.csprojResolveAssemblyReference.cache
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTable.Form1.resources
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTable.Properties.Resources.resources
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTable.csproj.GenerateResource.Cache
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTable.csproj.CoreCompileInputs.cache
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTable.exe
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTable.pdb

@@ -1,0 +1,10 @@
+C:\Users\서현재\Desktop\2025\23.DataTable\bin\Debug\23.DataTable.exe.config
+C:\Users\서현재\Desktop\2025\23.DataTable\bin\Debug\23.DataTable.exe
+C:\Users\서현재\Desktop\2025\23.DataTable\bin\Debug\23.DataTable.pdb
+C:\Users\서현재\Desktop\2025\23.DataTable\obj\Debug\23.DataTable.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\23.DataTable\obj\Debug\_23.DataTable.Form1.resources
+C:\Users\서현재\Desktop\2025\23.DataTable\obj\Debug\_23.DataTable.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\23.DataTable\obj\Debug\23.DataTable.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\23.DataTable\obj\Debug\23.DataTable.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\23.DataTable\obj\Debug\23.DataTable.exe
+C:\Users\서현재\Desktop\2025\23.DataTable\obj\Debug\23.DataTable.pdb

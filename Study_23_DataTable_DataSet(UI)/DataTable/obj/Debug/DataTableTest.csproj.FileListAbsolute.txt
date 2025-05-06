@@ -1,0 +1,20 @@
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTableTest.Form1.resources
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTableTest.Properties.Resources.resources
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTableTest.csproj.GenerateResource.Cache
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTableTest.csproj.CoreCompileInputs.cache
+C:\Users\사용자\source\repos\DataTable\DataTable\bin\Debug\DataTableTest.exe.config
+C:\Users\사용자\source\repos\DataTable\DataTable\bin\Debug\DataTableTest.exe
+C:\Users\사용자\source\repos\DataTable\DataTable\bin\Debug\DataTableTest.pdb
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTableTest.exe
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTableTest.pdb
+C:\Users\사용자\source\repos\DataTable\DataTable\obj\Debug\DataTableTest.csprojResolveAssemblyReference.cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\obj\Debug\DataTableTest.csprojResolveAssemblyReference.cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\obj\Debug\DataTableTest.Form1.resources
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\obj\Debug\DataTableTest.Properties.Resources.resources
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\obj\Debug\DataTableTest.csproj.GenerateResource.Cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\obj\Debug\DataTableTest.csproj.CoreCompileInputs.cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\obj\Debug\DataTableTest.exe
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\obj\Debug\DataTableTest.pdb
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\bin\Debug\DataTableTest.exe.config
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\bin\Debug\DataTableTest.exe
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_23_DataTable_DataSet(UI)\DataTable\bin\Debug\DataTableTest.pdb
