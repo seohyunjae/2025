@@ -1,0 +1,10 @@
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\bin\Release\DataTableTest.exe.config
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\bin\Release\DataTableTest.exe
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\bin\Release\DataTableTest.pdb
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\obj\Release\DataTableTest.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\obj\Release\DataTableTest.Form1.resources
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\obj\Release\DataTableTest.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\obj\Release\DataTableTest.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\obj\Release\DataTableTest.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\obj\Release\DataTableTest.exe
+C:\Users\서현재\Desktop\2025\Study_23_DataTable_DataSet(UI)\DataTable\obj\Release\DataTableTest.pdb

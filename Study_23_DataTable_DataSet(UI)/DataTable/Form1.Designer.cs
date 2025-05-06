@@ -42,9 +42,9 @@
             this.rdoRegSexFemale = new System.Windows.Forms.RadioButton();
             this.rdoRegSexMale = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnViewDataDel = new System.Windows.Forms.Button();
             this.dgViewInfo = new System.Windows.Forms.DataGridView();
             this.cboxViewClass = new System.Windows.Forms.ComboBox();
-            this.btnViewDataDel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -60,6 +60,7 @@
             this.btnReg.TabIndex = 0;
             this.btnReg.Text = "등록";
             this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // cboxRegClass
             // 
@@ -105,7 +106,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(274, 115);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -211,6 +211,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "내용 확인";
             // 
+            // btnViewDataDel
+            // 
+            this.btnViewDataDel.Location = new System.Drawing.Point(490, 18);
+            this.btnViewDataDel.Name = "btnViewDataDel";
+            this.btnViewDataDel.Size = new System.Drawing.Size(75, 23);
+            this.btnViewDataDel.TabIndex = 1;
+            this.btnViewDataDel.Text = "삭제";
+            this.btnViewDataDel.UseVisualStyleBackColor = true;
+            this.btnViewDataDel.Click += new System.EventHandler(this.btnViewDataDel_Click);
+            // 
             // dgViewInfo
             // 
             this.dgViewInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -231,15 +241,7 @@
             this.cboxViewClass.Name = "cboxViewClass";
             this.cboxViewClass.Size = new System.Drawing.Size(86, 20);
             this.cboxViewClass.TabIndex = 2;
-            // 
-            // btnViewDataDel
-            // 
-            this.btnViewDataDel.Location = new System.Drawing.Point(490, 18);
-            this.btnViewDataDel.Name = "btnViewDataDel";
-            this.btnViewDataDel.Size = new System.Drawing.Size(75, 23);
-            this.btnViewDataDel.TabIndex = 1;
-            this.btnViewDataDel.Text = "삭제";
-            this.btnViewDataDel.UseVisualStyleBackColor = true;
+            this.cboxViewClass.SelectedIndexChanged += new System.EventHandler(this.cboxViewClass_SelectedIndexChanged);
             // 
             // Form1
             // 
