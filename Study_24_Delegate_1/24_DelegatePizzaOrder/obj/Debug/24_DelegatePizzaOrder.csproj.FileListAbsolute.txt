@@ -1,0 +1,9 @@
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Form1.resources
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Properties.Resources.resources
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.GenerateResource.Cache
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.CoreCompileInputs.cache
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe.config
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.pdb
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.exe
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.pdb

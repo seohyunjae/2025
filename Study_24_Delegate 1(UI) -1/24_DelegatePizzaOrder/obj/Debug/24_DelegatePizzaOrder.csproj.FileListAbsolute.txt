@@ -1,0 +1,29 @@
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Form1.resources
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Properties.Resources.resources
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.GenerateResource.Cache
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.CoreCompileInputs.cache
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe.config
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.pdb
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.exe
+c:\users\사용자\source\repos\24_DelegatePizzaOrder\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.pdb
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csprojResolveAssemblyReference.cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Form1.resources
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Properties.Resources.resources
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.GenerateResource.Cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.CoreCompileInputs.cache
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.exe
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.pdb
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe.config
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe
+C:\Users\사용자\source\repos\01. C#강의\01. Source\Study_24_Delegate 1(UI)\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.pdb
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe.config
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.exe
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\bin\Debug\24_DelegatePizzaOrder.pdb
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Form1.resources
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\obj\Debug\_24_DelegatePizzaOrder.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.exe
+C:\Users\서현재\Desktop\2025\Study_24_Delegate 1(UI) -1\24_DelegatePizzaOrder\obj\Debug\24_DelegatePizzaOrder.pdb
