@@ -48,3 +48,13 @@ C:\Users\사용자\Desktop\async await UI\Sync_Ansync\obj\Debug\Sync_Ansync.pdb
 C:\Users\사용자\Desktop\async await UI\Sync_Ansync\bin\Debug\Sync_Ansync.exe.config
 C:\Users\사용자\Desktop\async await UI\Sync_Ansync\bin\Debug\Sync_Ansync.exe
 C:\Users\사용자\Desktop\async await UI\Sync_Ansync\bin\Debug\Sync_Ansync.pdb
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\bin\Debug\Sync_Ansync.exe.config
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\bin\Debug\Sync_Ansync.exe
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\bin\Debug\Sync_Ansync.pdb
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\obj\Debug\Sync_Ansync.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\obj\Debug\Sync_Ansync.Form1.resources
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\obj\Debug\Sync_Ansync.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\obj\Debug\Sync_Ansync.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\obj\Debug\Sync_Ansync.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\obj\Debug\Sync_Ansync.exe
+C:\Users\서현재\Desktop\2025\48.비동기 제어\Sync_Ansync\obj\Debug\Sync_Ansync.pdb
