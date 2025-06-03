@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.numPlayerCount = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.lboxResult = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
@@ -47,15 +47,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Player 수 : ";
             // 
             // numPlayerCount
             // 
@@ -78,6 +69,16 @@
             0,
             0,
             0});
+
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Player 수 : ";
             // 
             // btnStart
             // 
@@ -87,6 +88,7 @@
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "시작";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lboxResult
             // 
