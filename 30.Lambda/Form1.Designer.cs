@@ -53,6 +53,7 @@
             this.btnColorChange_2.TabIndex = 1;
             this.btnColorChange_2.Text = "무명 메서드 사용";
             this.btnColorChange_2.UseVisualStyleBackColor = true;
+            this.btnColorChange_2.Click += new System.EventHandler(this.btnColorChange_2_Click);
             // 
             // btnColorChange_3
             // 
@@ -67,15 +68,15 @@
             // 
             this.lboxResult.FormattingEnabled = true;
             this.lboxResult.ItemHeight = 12;
-            this.lboxResult.Location = new System.Drawing.Point(170, 318);
+            this.lboxResult.Location = new System.Drawing.Point(146, 294);
             this.lboxResult.Name = "lboxResult";
-            this.lboxResult.Size = new System.Drawing.Size(478, 100);
+            this.lboxResult.Size = new System.Drawing.Size(502, 124);
             this.lboxResult.TabIndex = 3;
             // 
             // lblStepCheck
             // 
             this.lblStepCheck.AutoSize = true;
-            this.lblStepCheck.Location = new System.Drawing.Point(291, 267);
+            this.lblStepCheck.Location = new System.Drawing.Point(355, 62);
             this.lblStepCheck.Name = "lblStepCheck";
             this.lblStepCheck.Size = new System.Drawing.Size(11, 12);
             this.lblStepCheck.TabIndex = 4;
@@ -83,9 +84,9 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(556, 255);
+            this.btnNext.Location = new System.Drawing.Point(477, 171);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(92, 37);
+            this.btnNext.Size = new System.Drawing.Size(98, 49);
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = "다음";
             this.btnNext.UseVisualStyleBackColor = true;

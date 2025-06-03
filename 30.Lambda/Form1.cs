@@ -11,14 +11,13 @@ namespace _30.Lambda
         {
             InitializeComponent();
         }
-        Action<string> _aStepCheck = null;
+        Action<string> _aStepCheck;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _aStepCheck = (test) => lblStepCheck.Text = string.Format(" - 다음 Step은 {0}.{1}", iNowStep,
-                ((enumLambdaCase)iNowStep).ToString());
-            _aStepCheck("test");
-
+            _aStepCheck = (t) => lblStepCheck.Text = 
+            string.Format(" - 다음 Step은 {0}.{1}", iNowStep,((enumLambdaCase)iNowStep).ToString());
+           
             ButtonColorChange();
         }
         private void ButtonColorChange()
@@ -27,15 +26,16 @@ namespace _30.Lambda
             btnColorChange_1.Click += BtnColorChange_1_Click;
 
             // 무명 메서드 
-            btnColorChange_2.Click += delegate (object sender, EventArgs e)
+            btnColorChange_2.Click += delegate(object sender, EventArgs e)
             {
                 btnColorChange_2.BackColor = Color.Brown;
             };
 
             // 람다식
-            //btnColorChange_3.Click += (sender, e) => btnColorChange_3.BackColor = Color.Coral;
-            btnColorChange_3.Click += (a, b) => btnColorChange_3.BackColor = Color.Coral;
+            btnColorChange_3.Click += (sender, e) => btnColorChange_3.BackColor = Color.Coral;
+            //btnColorChange_3.Click += (a, b) => btnColorChange_3.BackColor = Color.Coral;
 
+            //btnColorChange_3.Click += (a, b) => btnColorChange_3.BackColor = Color.Coral;
         }
 
         private void BtnColorChange_1_Click(object sender, EventArgs e)
@@ -45,6 +45,7 @@ namespace _30.Lambda
 
 
         int iNowStep = 0;
+
         delegate int delIntFunc(int a, int b);
         delegate string delStringFunc(); 
 
@@ -71,7 +72,7 @@ namespace _30.Lambda
 
 
                     break;
-                case (int)enumLambdaCase.문형식_람다식:
+                case (int)enumLambdaCase.문형식_람다식: //문장형식, 문형식으로 명시적으로 반환
                     // 문형식 람다식
                     delStringFunc dstrSeqment = () =>
                     {
@@ -95,12 +96,12 @@ namespace _30.Lambda
 
                 case (int)enumLambdaCase.제네릭_형태의_무명메서드_Action:
                     // return을 하지 않아도 됨
-                    Action<string, string> aString = (a, b) =>
+                    Action<string, string> Astring = (a, b) =>
                     {
-                        string strText = String.Format("인자 값 {0}와 {1}을 받았습니다.", a, b);
+                        string strText = String.Format("인자 값 {0}와 {1}을 받았습니다.", a,  b);
                         lboxResult.Items.Add(strText.ToString());
                     };
-                    aString("시간", "금");
+                    Astring("시간", "금");
 
                     break;
                 case (int)enumLambdaCase.제네릭_형태의인자_반환_예제:
@@ -124,6 +125,11 @@ namespace _30.Lambda
             제네릭_형태의_무명메서드_Func = 2,
             제네릭_형태의_무명메서드_Action = 3,
             제네릭_형태의인자_반환_예제 = 4
+        }
+
+        private void btnColorChange_2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
