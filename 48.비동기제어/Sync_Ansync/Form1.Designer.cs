@@ -101,7 +101,6 @@
             this.btnRobotRotate.TabIndex = 2;
             this.btnRobotRotate.Text = "Robot Rotate";
             this.btnRobotRotate.UseVisualStyleBackColor = true;
-            this.btnRobotRotate.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnRobotR
             // 
@@ -112,7 +111,6 @@
             this.btnRobotR.TabIndex = 3;
             this.btnRobotR.Text = "Robot Arm Retract";
             this.btnRobotR.UseVisualStyleBackColor = true;
-            this.btnRobotR.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnRobotE
             // 
@@ -123,7 +121,6 @@
             this.btnRobotE.TabIndex = 4;
             this.btnRobotE.Text = "Robot Arm Extend";
             this.btnRobotE.UseVisualStyleBackColor = true;
-            this.btnRobotE.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnD1Open
             // 
@@ -134,7 +131,6 @@
             this.btnD1Open.TabIndex = 5;
             this.btnD1Open.Text = "Door1 Open";
             this.btnD1Open.UseVisualStyleBackColor = true;
-            this.btnD1Open.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnD1Close
             // 
@@ -145,7 +141,6 @@
             this.btnD1Close.TabIndex = 6;
             this.btnD1Close.Text = "Door1 Close";
             this.btnD1Close.UseVisualStyleBackColor = true;
-            this.btnD1Close.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnD2Close
             // 
@@ -156,7 +151,6 @@
             this.btnD2Close.TabIndex = 8;
             this.btnD2Close.Text = "Door2 Close";
             this.btnD2Close.UseVisualStyleBackColor = true;
-            this.btnD2Close.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnD2Open
             // 
@@ -167,7 +161,6 @@
             this.btnD2Open.TabIndex = 7;
             this.btnD2Open.Text = "Door2 Open";
             this.btnD2Open.UseVisualStyleBackColor = true;
-            this.btnD2Open.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnSimulation
             // 
@@ -178,7 +171,6 @@
             this.btnSimulation.TabIndex = 9;
             this.btnSimulation.Text = "동기 동작 진행";
             this.btnSimulation.UseVisualStyleBackColor = true;
-            this.btnSimulation.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnSimulationAsync
             // 
@@ -189,7 +181,6 @@
             this.btnSimulationAsync.TabIndex = 9;
             this.btnSimulationAsync.Text = "비동기 동작 진행";
             this.btnSimulationAsync.UseVisualStyleBackColor = true;
-            this.btnSimulationAsync.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnInit
             // 
@@ -200,7 +191,6 @@
             this.btnInit.TabIndex = 10;
             this.btnInit.Text = "초기 화면 표시";
             this.btnInit.UseVisualStyleBackColor = true;
-            this.btnInit.Click += new System.EventHandler(this.btn_Click);
             // 
             // groupBox1
             // 
@@ -295,7 +285,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "자동화 Simulation";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

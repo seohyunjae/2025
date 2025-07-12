@@ -49,7 +49,7 @@
             this.dgEnemyTable.Location = new System.Drawing.Point(12, 12);
             this.dgEnemyTable.Name = "dgEnemyTable";
             this.dgEnemyTable.RowTemplate.Height = 23;
-            this.dgEnemyTable.Size = new System.Drawing.Size(369, 491);
+            this.dgEnemyTable.Size = new System.Drawing.Size(369, 437);
             this.dgEnemyTable.TabIndex = 0;
             // 
             // btnLevel

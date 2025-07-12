@@ -48,22 +48,3 @@ C:\Users\사용자\Desktop\async await UI\Sync_Ansync\obj\Debug\Sync_Ansync.pdb
 C:\Users\사용자\Desktop\async await UI\Sync_Ansync\bin\Debug\Sync_Ansync.exe.config
 C:\Users\사용자\Desktop\async await UI\Sync_Ansync\bin\Debug\Sync_Ansync.exe
 C:\Users\사용자\Desktop\async await UI\Sync_Ansync\bin\Debug\Sync_Ansync.pdb
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\bin\Debug\Sync_Ansync.exe.config
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\bin\Debug\Sync_Ansync.exe
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\bin\Debug\Sync_Ansync.pdb
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\obj\Debug\Sync_Ansync.csprojAssemblyReference.cache
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\obj\Debug\Sync_Ansync.Form1.resources
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\obj\Debug\Sync_Ansync.Properties.Resources.resources
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\obj\Debug\Sync_Ansync.csproj.GenerateResource.cache
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\obj\Debug\Sync_Ansync.exe
-C:\Users\사용자\Desktop\async await 개발\Sync_Ansync\obj\Debug\Sync_Ansync.pdb
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\bin\Debug\Sync_Ansync.exe.config
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\bin\Debug\Sync_Ansync.exe
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\bin\Debug\Sync_Ansync.pdb
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\obj\Debug\Sync_Ansync.csprojResolveAssemblyReference.cache
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\obj\Debug\Sync_Ansync.Form1.resources
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\obj\Debug\Sync_Ansync.Properties.Resources.resources
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\obj\Debug\Sync_Ansync.csproj.GenerateResource.Cache
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\obj\Debug\Sync_Ansync.csproj.CoreCompileInputs.cache
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\obj\Debug\Sync_Ansync.exe
-C:\Users\사용자\Desktop\async await 개발 1\Sync_Ansync\obj\Debug\Sync_Ansync.pdb

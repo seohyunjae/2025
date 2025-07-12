@@ -76,8 +76,7 @@ namespace _31.링큐_Linq_
 
             dt.Columns.Add(colLevel);
             dt.Columns.Add(colName);
-            dt.Columns.Add(colAttribute);
-
+            dt.Columns.Add(colAttribute); 
         }
 
         private void EnemyCreate()
