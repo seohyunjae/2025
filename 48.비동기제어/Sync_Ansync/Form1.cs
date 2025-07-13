@@ -35,15 +35,72 @@ namespace Sync_Ansync
 
             switch (btn.Name)
             {
-                case "btninit":
+                case "btnInit":
+                    //fRobotDraw(_iRobot_Rotate, 0, false);
+                    //fDoor1Draw(0);
+                    //fDoor2Draw(0);
+                    //initDraw();
                     break;
                 case "btnD1Open":
+                    //Door1Open();
                     break;
                 case "btnD1Close":
+                    //Door1Close();
+                    break;
+                case "btnD2Open":
+                    //Door2Open();
+                    break;
+                case "btnD2Close":
+                    //Door2Close();
+                    break;
+                case "btnRobotE":
+                    //RobotArmExtend();
+                    break;
+                case "btnRobotR":
+                    //RobotArmRetract();
+                    break;
+                case "btnRobotRotate":
+                    //RobotRotate();
+                    break;
+                case "btnSimulation":
+                    //Start_Move();
+                    break;
+                case "btnSimulationAsync":
+                    //Start_Move_Async();
                     break;
                 default:
                     break;
             }
         }
+
+        private void Log(enLoglevel eLevel, string LogDesc)
+        {
+            this.Invoke(new Action(delegate ()
+            {
+                DateTime dTime = DateTime.Now;
+                string LogInfo = $"{dTime:yyyy-MM-dd hh:mm:ss.fff} [{eLevel.ToString()}] {LogDesc}";
+                lboxLog.Items.Insert(0, LogInfo);
+            }));
+        }
+
+        private void Log(DateTime dTime, enLoglevel eLevel, string LogDesc)
+        {
+            this.Invoke(new Action(delegate ()
+            {
+                string LogInfo = $"{dTime:yyyy-MM-dd hh:mm:ss.fff} [{eLevel.ToString()}] {LogDesc}";
+                lboxLog.Items.Insert(0, LogInfo);
+            }));
+        }
+
+        #region LogView
+        enum enLoglevel
+        {
+            lnfo_L1,
+            lnfo_L2,
+            lnfo_L3,
+            Warning,
+            Error,
+        }
+        #endregion
     }
 }
