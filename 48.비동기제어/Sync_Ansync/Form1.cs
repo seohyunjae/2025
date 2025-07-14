@@ -15,8 +15,12 @@ namespace Sync_Ansync
 {
     public partial class Form1 : Form
     {
+        //속성값
         CRobot _cRobot;
         CDoor _cDoor1, _cDoor2;
+        int _iRobot_Rotate = 0;
+        int _iSpeed = 100;
+        bool _bObjectExist =false;
 
         public Form1()
         {
@@ -71,6 +75,15 @@ namespace Sync_Ansync
                 default:
                     break;
             }
+            Log(enLoglevel.lnfo_L1, $"BtnTest : {btn.Text}");
+        }
+
+        private void initDraw()
+        {
+            _cRobot = null;
+            _cDoor1 = null;
+            _cDoor2 = null;
+            _iRobot_Rotate = 0;
         }
 
         private void Log(enLoglevel eLevel, string LogDesc)
