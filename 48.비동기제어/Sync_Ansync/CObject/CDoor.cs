@@ -9,7 +9,7 @@ namespace Sync_Ansync
 {
     class CDoor : CBase
     {
-        public Rectangle _rtDoorSile; //테두리
+        public Rectangle _rtDoorSide; //테두리
         public Rectangle _rtDoor;
         public CDoor(string sName)
         {
@@ -17,7 +17,7 @@ namespace Sync_Ansync
             _Pen = new Pen(Color.WhiteSmoke, 3);
             _Brush = new SolidBrush(Color.WhiteSmoke);   
 
-            _rtDoorSile = new Rectangle(10, 70, 20, 60);
+            _rtDoorSide = new Rectangle(10, 70, 20, 60);
             _rtDoor = new Rectangle(10, 70, 20, 60);
         }
         public Pen fPenInfo()

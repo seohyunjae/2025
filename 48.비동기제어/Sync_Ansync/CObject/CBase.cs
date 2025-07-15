@@ -17,6 +17,5 @@ namespace Sync_Ansync
         {
             _Pen = new Pen(Color.Aqua);
         }
-
     }
 }

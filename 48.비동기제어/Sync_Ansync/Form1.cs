@@ -43,7 +43,7 @@ namespace Sync_Ansync
                     //fRobotDraw(_iRobot_Rotate, 0, false);
                     //fDoor1Draw(0);
                     //fDoor2Draw(0);
-                    //initDraw();
+                    initDraw();
                     break;
                 case "btnD1Open":
                     //Door1Open();
@@ -84,7 +84,27 @@ namespace Sync_Ansync
             _cDoor1 = null;
             _cDoor2 = null;
             _iRobot_Rotate = 0;
+            _bObjectExist = false;
+
+            _cRobot = new CRobot("Robot");
+            _cDoor1 = new CDoor("DoorLeft");
+            _cDoor2 = new CDoor("DoorRight");
+
+            fDoorDraw(0);
         }
+
+        private void fDoorDraw(int Move)
+        {
+            pDoor1.Refresh();
+
+            _cDoor1.fMove(Move);
+
+            Graphics g =pDoor1.CreateGraphics();
+
+            g.FillRectangle(_cDoor1.fBrushInfo(), _cDoor1._rtDoor);
+            g.DrawRectangle(_cDoor1.fPenInfo(), _cDoor1._rtDoorSide);
+        }
+
 
         private void Log(enLoglevel eLevel, string LogDesc)
         {
