@@ -90,10 +90,16 @@ namespace Sync_Ansync
             _cDoor1 = new CDoor("DoorLeft");
             _cDoor2 = new CDoor("DoorRight");
 
-            fDoorDraw(0);
+            fDoor1Draw(0);
+            fDoor2Draw(0);
         }
 
-        private void fDoorDraw(int Move)
+        private void fRoboDraw(int iRotate, int iRobot_Arm_move, bool isObject)
+        {
+
+        }
+
+        private void fDoor1Draw(int Move)
         {
             pDoor1.Refresh();
 
@@ -103,6 +109,18 @@ namespace Sync_Ansync
 
             g.FillRectangle(_cDoor1.fBrushInfo(), _cDoor1._rtDoor);
             g.DrawRectangle(_cDoor1.fPenInfo(), _cDoor1._rtDoorSide);
+        }
+
+        private void fDoor2Draw(int Move)
+        {
+            pDoor2.Refresh();
+
+            _cDoor2.fMove(Move);
+
+            Graphics g = pDoor1.CreateGraphics();
+
+            g.FillRectangle(_cDoor2.fBrushInfo(), _cDoor2._rtDoor);
+            g.DrawRectangle(_cDoor2.fPenInfo(), _cDoor2._rtDoorSide);
         }
 
 
