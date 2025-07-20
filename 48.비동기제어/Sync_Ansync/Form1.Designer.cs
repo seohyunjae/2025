@@ -45,7 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tboxSpeed = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -217,7 +217,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tboxSpeed);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnInit);
             this.groupBox2.Controls.Add(this.btnSimulation);
@@ -238,14 +238,15 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "m/s";
             // 
-            // textBox1
+            // tboxSpeed
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(43, 21);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "100";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tboxSpeed.Location = new System.Drawing.Point(87, 66);
+            this.tboxSpeed.Name = "tboxSpeed";
+            this.tboxSpeed.Size = new System.Drawing.Size(43, 21);
+            this.tboxSpeed.TabIndex = 12;
+            this.tboxSpeed.Text = "100";
+            this.tboxSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tboxSpeed.TextChanged += new System.EventHandler(this.tboxSpeed_TextChanged);
             // 
             // label1
             // 
@@ -325,7 +326,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tboxSpeed;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sync_Ansync
@@ -12,7 +13,7 @@ namespace Sync_Ansync
         CRobot _cRobot;
         CDoor _cDoor1, _cDoor2;
         int _iRobot_Rotate = 0;
-        int _iSpeed = 1000;
+        int _iSpeed = 100;
         bool _bObjectExist = false;
 
         public Form1()
@@ -33,34 +34,31 @@ namespace Sync_Ansync
             switch (btn.Name)
             {
                 case "btnInit":
-                    //fRobotDraw(_iRobot_Rotate, 0, false);
-                    //fDoor1Draw(0);
-                    //fDoor2Draw(0);
                     initDraw();
                     break;
                 case "btnD1Open":
                     Door1Open();
                     break;
                 case "btnD1Close":
-                    //Door1Close();
+                    Door1Close();
                     break;
                 case "btnD2Open":
-                    //Door2Open();
+                    Door2Open();
                     break;
                 case "btnD2Close":
-                    //Door2Close();
+                    Door2Close();
                     break;
                 case "btnRobotE":
-                    //RobotArmExtend();
+                    RobotArmExtend();
                     break;
                 case "btnRobotR":
-                    //RobotArmRetract();
+                    RobotArmRetract();
                     break;
                 case "btnRobotRotate":
-                    //RobotRotate();
+                    RobotRotate();
                     break;
                 case "btnSimulation":
-                    //Start_Move();
+                    Start_Move();
                     break;
                 case "btnSimulationAsync":
                     //Start_Move_Async();
@@ -71,16 +69,50 @@ namespace Sync_Ansync
             Log(enLoglevel.lnfo_L1, $"BtnTest : {btn.Text}");
         }
 
+        private void tboxSpeed_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(tboxSpeed.Text, out int iRet))
+            {
+                _iSpeed = iRet;
+            }
+            _iSpeed = int.Parse(tboxSpeed.Text);
+        }
+        #region Simulation
+        private void Start_Move()
+        {
+            Task.Run(() =>
+            {
+                Log(enLoglevel.lnfo_L2, "Move Sequence Start");
+
+                Door1Open();
+
+                RobotArmExtend();
+                _bObjectExist = true;
+                RobotArmRetract();
+
+                Door1Close();
+                RobotRotate();
+                Door2Open();
+                RobotArmExtend();
+                _bObjectExist = false;
+                RobotArmRetract();
+                Door2Close();
+                RobotRotate();
+
+                Log(enLoglevel.lnfo_L2, "Move Sequence Complete");
+            });
+        }
+        #endregion
 
         #region 단위동작
-        
+
         private int Door1Open()
         {
             Log(enLoglevel.lnfo_L1, "Door1 Open Start");
 
             for (int i = 0; i < 10; i++)
             {
-                //Thread.Sleep(_iSpeed);
+                Thread.Sleep(_iSpeed);
                 fDoor1Draw(-5);
             }
 
@@ -88,6 +120,104 @@ namespace Sync_Ansync
 
             return 0;
         }
+
+
+        private int Door1Close()
+        {
+            Log(enLoglevel.lnfo_L1, "Door1 Close Start");
+
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(_iSpeed);
+                fDoor1Draw(5);
+            }
+
+            Log(enLoglevel.lnfo_L1, "Door1 Close Complete");
+
+            return 0;
+        }
+
+        private int Door2Open()
+        {
+            Log(enLoglevel.lnfo_L1, "Door2 Open Start");
+
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(_iSpeed);
+                fDoor2Draw(-5);
+            }
+
+            Log(enLoglevel.lnfo_L1, "Door2 Open Complete");
+
+            return 0;
+        }
+
+
+        private int Door2Close()
+        {
+            Log(enLoglevel.lnfo_L1, "Door2 Close Start");
+
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(_iSpeed);
+                fDoor2Draw(5);
+            }
+
+            Log(enLoglevel.lnfo_L1, "Door2 Close Complete");
+
+            return 0;
+        }
+
+        private int RobotArmExtend()
+        {
+            Log(enLoglevel.lnfo_L1, "Robot Arm Extend Start");
+
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(_iSpeed);
+                fRobotDraw(_iRobot_Rotate, -5, _bObjectExist);
+            }
+
+            Log(enLoglevel.lnfo_L1, "Robot Arm Extend Complete");
+
+            return 0;
+        }
+
+
+        private int RobotArmRetract()
+        {
+            Log(enLoglevel.lnfo_L1, "Robot Arm Retract Start");
+
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(_iSpeed);
+                fRobotDraw(_iRobot_Rotate, 5, _bObjectExist);
+            }
+
+            Log(enLoglevel.lnfo_L1, "Robot Arm Retract Complete");
+
+            return 0;
+        }
+
+        private int RobotRotate()
+        {
+            Log(enLoglevel.lnfo_L1, "Robot Rotate Start");
+
+            // 각도 15도 기준으로 12 : 180도 만큼 돌아야 하니까
+            for (int i = 0; i < 12; i++)
+            {
+                Thread.Sleep(_iSpeed);
+                _iRobot_Rotate = _iRobot_Rotate + 15;
+                fRobotDraw(_iRobot_Rotate, 0, _bObjectExist);
+            }
+
+            if (_iRobot_Rotate > 360) _iRobot_Rotate -= 360;
+
+            Log(enLoglevel.lnfo_L1, "Robot Rotate Start");
+
+            return 0;
+        }
+
 
         #endregion
 
@@ -104,12 +234,12 @@ namespace Sync_Ansync
             _cDoor1 = new CDoor("DoorLeft");
             _cDoor2 = new CDoor("DoorRight");
 
-            fRoboDraw(_iRobot_Rotate, 0, _bObjectExist);
+            fRobotDraw(_iRobot_Rotate, 0, _bObjectExist);
             fDoor1Draw(0);
             fDoor2Draw(0);
         }
 
-        private void fRoboDraw(int iRotate, int iRobot_Arm_move, bool isObject)
+        private void fRobotDraw(int iRotate, int iRobot_Arm_move, bool isObject)
         {
             pRobot.Refresh();
 
@@ -184,6 +314,7 @@ namespace Sync_Ansync
                 lboxLog.Items.Insert(0, LogInfo);
             }));
         }
+
 
 
         #region LogView
