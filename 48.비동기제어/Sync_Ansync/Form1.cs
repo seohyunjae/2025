@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sync_Ansync
@@ -19,8 +12,8 @@ namespace Sync_Ansync
         CRobot _cRobot;
         CDoor _cDoor1, _cDoor2;
         int _iRobot_Rotate = 0;
-        int _iSpeed = 100;
-        bool _bObjectExist =false;
+        int _iSpeed = 1000;
+        bool _bObjectExist = false;
 
         public Form1()
         {
@@ -46,7 +39,7 @@ namespace Sync_Ansync
                     initDraw();
                     break;
                 case "btnD1Open":
-                    //Door1Open();
+                    Door1Open();
                     break;
                 case "btnD1Close":
                     //Door1Close();
@@ -78,6 +71,27 @@ namespace Sync_Ansync
             Log(enLoglevel.lnfo_L1, $"BtnTest : {btn.Text}");
         }
 
+
+        #region 단위동작
+        
+        private int Door1Open()
+        {
+            Log(enLoglevel.lnfo_L1, "Door1 Open Start");
+
+            for (int i = 0; i < 10; i++)
+            {
+                //Thread.Sleep(_iSpeed);
+                fDoor1Draw(-5);
+            }
+
+            Log(enLoglevel.lnfo_L1, "Door1 Open Complete");
+
+            return 0;
+        }
+
+        #endregion
+
+        #region function
         private void initDraw()
         {
             _cRobot = null;
@@ -90,14 +104,42 @@ namespace Sync_Ansync
             _cDoor1 = new CDoor("DoorLeft");
             _cDoor2 = new CDoor("DoorRight");
 
+            fRoboDraw(_iRobot_Rotate, 0, _bObjectExist);
             fDoor1Draw(0);
             fDoor2Draw(0);
         }
 
         private void fRoboDraw(int iRotate, int iRobot_Arm_move, bool isObject)
         {
+            pRobot.Refresh();
 
+            Graphics g = pRobot.CreateGraphics();
+
+            g.FillEllipse(_cRobot.fBrushInfo(), _cRobot._rtCircle_Robot);
+
+            _cRobot.fMove(iRobot_Arm_move);
+
+            Point center = new Point(100, 100);
+            g.Transform = GetMatrix(center, iRotate);
+
+            g.DrawRectangle(_cRobot.fPenInfo(), _cRobot._rtSquare_Arm);
+
+            if (isObject)
+            {
+                g.FillRectangle(_cRobot.fBrushInfo(), _cRobot._rtSquare_Object);
+            }
         }
+
+
+        private Matrix GetMatrix(Point centerPoint, float rotateAngie)
+        {
+            Matrix matrix = new Matrix();
+
+            matrix.RotateAt(rotateAngie, centerPoint);
+            
+            return matrix;  
+        }
+
 
         private void fDoor1Draw(int Move)
         {
@@ -105,7 +147,7 @@ namespace Sync_Ansync
 
             _cDoor1.fMove(Move);
 
-            Graphics g =pDoor1.CreateGraphics();
+            Graphics g = pDoor1.CreateGraphics();
 
             g.FillRectangle(_cDoor1.fBrushInfo(), _cDoor1._rtDoor);
             g.DrawRectangle(_cDoor1.fPenInfo(), _cDoor1._rtDoorSide);
@@ -117,12 +159,12 @@ namespace Sync_Ansync
 
             _cDoor2.fMove(Move);
 
-            Graphics g = pDoor1.CreateGraphics();
+            Graphics g = pDoor2.CreateGraphics();
 
             g.FillRectangle(_cDoor2.fBrushInfo(), _cDoor2._rtDoor);
             g.DrawRectangle(_cDoor2.fPenInfo(), _cDoor2._rtDoorSide);
         }
-
+        #endregion
 
         private void Log(enLoglevel eLevel, string LogDesc)
         {
@@ -142,6 +184,7 @@ namespace Sync_Ansync
                 lboxLog.Items.Insert(0, LogInfo);
             }));
         }
+
 
         #region LogView
         enum enLoglevel

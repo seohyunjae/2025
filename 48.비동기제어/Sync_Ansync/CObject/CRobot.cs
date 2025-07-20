@@ -45,11 +45,7 @@ namespace Sync_Ansync
         {
             return _Brush;
         }
-
-
         #region Robot 몸통은 회전, 팔을 회전 이동 필요
-
-
         /// <summary>
         /// 외부에서 그림의 위치를 이동시키는 함수를 호출
         /// </summary>
@@ -58,7 +54,6 @@ namespace Sync_Ansync
         {
             fSquare1Move(iMove);
         }
-
 
         /// <summary>
         /// 몸통1의 위치를 가져와서 X 위치값을 이동 시키고 다시 바퀴1에 위치 정보를 넣어줌
@@ -76,8 +71,6 @@ namespace Sync_Ansync
             oPoint.X = oPoint.X + iMove;
             _rtSquare_Object.Location = oPoint;
         }
-
-
         #endregion
     }
 }
