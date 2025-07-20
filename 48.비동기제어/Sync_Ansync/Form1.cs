@@ -16,6 +16,8 @@ namespace Sync_Ansync
         int _iSpeed = 100;
         bool _bObjectExist = false;
 
+        bool companyout = true;
+
         public Form1()
         {
             InitializeComponent();
