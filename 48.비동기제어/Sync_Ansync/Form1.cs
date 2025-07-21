@@ -16,8 +16,6 @@ namespace Sync_Ansync
         int _iSpeed = 100;
         bool _bObjectExist = false;
 
-        bool companyout = true;
-
         public Form1()
         {
             InitializeComponent();
@@ -63,7 +61,7 @@ namespace Sync_Ansync
                     Start_Move();
                     break;
                 case "btnSimulationAsync":
-                    //Start_Move_Async();
+                    Start_Move_async();
                     break;
                 default:
                     break;
@@ -103,6 +101,30 @@ namespace Sync_Ansync
 
                 Log(enLoglevel.lnfo_L2, "Move Sequence Complete");
             });
+        }
+
+        private void Start_Move_async()
+        {
+            Log(enLoglevel.lnfo_L2, "Move Async Sequence Start");
+
+            Task vTask;
+
+            Task.Run(() => Door1Open());
+            Task.Run(() => RobotArmExtend());
+
+            //_bObjectExist = true;
+            //RobotArmRetract();
+
+            //Door1Close();
+            //RobotRotate();
+            //Door2Open();
+            //RobotArmExtend();
+            //_bObjectExist = false;
+            //RobotArmRetract();
+            //Door2Close();
+            //RobotRotate();
+
+            Log(enLoglevel.lnfo_L2, "Move Sequence Complete");
         }
         #endregion
 
@@ -243,23 +265,26 @@ namespace Sync_Ansync
 
         private void fRobotDraw(int iRotate, int iRobot_Arm_move, bool isObject)
         {
-            pRobot.Refresh();
+            this.Invoke(new Action(delegate ()
+            { 
+                pRobot.Refresh();
 
-            Graphics g = pRobot.CreateGraphics();
+                Graphics g = pRobot.CreateGraphics();
 
-            g.FillEllipse(_cRobot.fBrushInfo(), _cRobot._rtCircle_Robot);
+                g.FillEllipse(_cRobot.fBrushInfo(), _cRobot._rtCircle_Robot);
 
-            _cRobot.fMove(iRobot_Arm_move);
+                _cRobot.fMove(iRobot_Arm_move);
 
-            Point center = new Point(100, 100);
-            g.Transform = GetMatrix(center, iRotate);
+                Point center = new Point(100, 100);
+                g.Transform = GetMatrix(center, iRotate);
 
-            g.DrawRectangle(_cRobot.fPenInfo(), _cRobot._rtSquare_Arm);
+                g.DrawRectangle(_cRobot.fPenInfo(), _cRobot._rtSquare_Arm);
 
-            if (isObject)
-            {
-                g.FillRectangle(_cRobot.fBrushInfo(), _cRobot._rtSquare_Object);
-            }
+                if (isObject)
+                {
+                    g.FillRectangle(_cRobot.fBrushInfo(), _cRobot._rtSquare_Object);
+                }
+            }));
         }
 
 
@@ -275,26 +300,34 @@ namespace Sync_Ansync
 
         private void fDoor1Draw(int Move)
         {
-            pDoor1.Refresh();
+            this.Invoke(new Action(delegate ()
+            { 
 
-            _cDoor1.fMove(Move);
+                pDoor1.Refresh();
 
-            Graphics g = pDoor1.CreateGraphics();
+                _cDoor1.fMove(Move);
 
-            g.FillRectangle(_cDoor1.fBrushInfo(), _cDoor1._rtDoor);
-            g.DrawRectangle(_cDoor1.fPenInfo(), _cDoor1._rtDoorSide);
+                Graphics g = pDoor1.CreateGraphics();
+
+                g.FillRectangle(_cDoor1.fBrushInfo(), _cDoor1._rtDoor);
+                g.DrawRectangle(_cDoor1.fPenInfo(), _cDoor1._rtDoorSide);
+            
+            }));
         }
 
         private void fDoor2Draw(int Move)
         {
-            pDoor2.Refresh();
+            this.Invoke(new Action(delegate ()
+            { 
+                pDoor2.Refresh();
 
-            _cDoor2.fMove(Move);
+                _cDoor2.fMove(Move);
 
-            Graphics g = pDoor2.CreateGraphics();
+                Graphics g = pDoor2.CreateGraphics();
 
-            g.FillRectangle(_cDoor2.fBrushInfo(), _cDoor2._rtDoor);
-            g.DrawRectangle(_cDoor2.fPenInfo(), _cDoor2._rtDoorSide);
+                g.FillRectangle(_cDoor2.fBrushInfo(), _cDoor2._rtDoor);
+                g.DrawRectangle(_cDoor2.fPenInfo(), _cDoor2._rtDoorSide);
+            }));
         }
         #endregion
 
@@ -311,8 +344,8 @@ namespace Sync_Ansync
         private void Log(DateTime dTime, enLoglevel eLevel, string LogDesc)
         {
             this.Invoke(new Action(delegate ()
-            {
-                string LogInfo = $"{dTime:yyyy-MM-dd hh:mm:ss.fff} [{eLevel.ToString()}] {LogDesc}";
+            { 
+            string LogInfo = $"{dTime:yyyy-MM-dd hh:mm:ss.fff} [{eLevel.ToString()}] {LogDesc}";
                 lboxLog.Items.Insert(0, LogInfo);
             }));
         }
