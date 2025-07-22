@@ -103,17 +103,20 @@ namespace Sync_Ansync
             });
         }
 
-        private void Start_Move_async()
+        private async void Start_Move_async()
         {
             Log(enLoglevel.lnfo_L2, "Move Async Sequence Start");
 
-            Task vTask;
+            //Task vTask;
+
+            //task.run(() => door1open());
+            //await task.run(() => robotarmextend());
+
 
             Task.Run(() => Door1Open());
             Task.Run(() => RobotArmExtend());
-
-            //_bObjectExist = true;
-            //RobotArmRetract();
+            _bObjectExist = true;
+            RobotArmRetract();
 
             //Door1Close();
             //RobotRotate();
