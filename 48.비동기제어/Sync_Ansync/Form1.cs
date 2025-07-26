@@ -107,25 +107,28 @@ namespace Sync_Ansync
         {
             Log(enLoglevel.lnfo_L2, "Move Async Sequence Start");
 
-            //Task vTask;
 
             //task.run(() => door1open());
             //await task.run(() => robotarmextend());
+            Task vTask;
 
+            vTask = Task.Run(() => Door1Open());
+            await Task.Run(() => RobotArmExtend());
 
-            Task.Run(() => Door1Open());
-            Task.Run(() => RobotArmExtend());
             _bObjectExist = true;
-            RobotArmRetract();
+            await Task.Run(() => RobotArmRetract());
 
-            //Door1Close();
-            //RobotRotate();
-            //Door2Open();
-            //RobotArmExtend();
-            //_bObjectExist = false;
-            //RobotArmRetract();
-            //Door2Close();
-            //RobotRotate();
+            vTask = Task.Run(() => Door1Close());
+            await Task.Run(() => RobotRotate());
+
+            vTask = Task.Run(() => Door2Open());
+            await Task.Run(() => RobotArmExtend());
+
+            _bObjectExist = false;
+            await Task.Run(() => RobotArmRetract());
+
+            vTask = Task.Run(() => Door2Close());
+            await Task.Run(() => RobotRotate());
 
             Log(enLoglevel.lnfo_L2, "Move Sequence Complete");
         }
