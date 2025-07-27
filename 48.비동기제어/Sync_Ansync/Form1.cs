@@ -106,8 +106,6 @@ namespace Sync_Ansync
         private async void Start_Move_async()
         {
             Log(enLoglevel.lnfo_L2, "Move Async Sequence Start");
-
-
             //task.run(() => door1open());
             //await task.run(() => robotarmextend());
             Task vTask;
@@ -129,7 +127,7 @@ namespace Sync_Ansync
 
             vTask = Task.Run(() => Door2Close());
             await Task.Run(() => RobotRotate());
-
+ 
             Log(enLoglevel.lnfo_L2, "Move Sequence Complete");
         }
         #endregion
