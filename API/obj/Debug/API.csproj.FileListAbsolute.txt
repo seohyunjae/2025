@@ -1,0 +1,5 @@
+C:\Users\서현재\Desktop\2025\API\obj\Debug\API.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\API\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\서현재\Desktop\2025\API\obj\Debug\API.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\API\obj\Debug\API.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\API\obj\Debug\API.csproj.CoreCompileInputs.cache
