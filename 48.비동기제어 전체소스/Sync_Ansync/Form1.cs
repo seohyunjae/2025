@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +8,7 @@ using System.Windows.Forms;
 namespace Sync_Ansync
 {
     public partial class Form1 : Form
-    {
+    {   
 
         #region 전역
 
@@ -26,12 +20,10 @@ namespace Sync_Ansync
 
         #endregion
 
-
         public Form1()
         {
             InitializeComponent();
         }
-
 
         #region Event
 
@@ -42,7 +34,7 @@ namespace Sync_Ansync
             _cDoor1 = new CDoor("DoorLeft");
             _cDoor2 = new CDoor("DoorRight");
         }
-
+        
         private void btn_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -50,9 +42,6 @@ namespace Sync_Ansync
             switch (btn.Name)
             {
                 case "btnInit":
-                    //fRobotDraw(_iRobot_Rotate, 0, false);
-                    //fDoor1Draw(0);
-                    //fDoor2Draw(0);
                     initDraw();
                     break;
                 case "btnD1Open":
@@ -222,14 +211,14 @@ namespace Sync_Ansync
 
                 Door1Open();
                 RobotArmExtend();
-                Thread.Sleep(500);
+                //Thread.Sleep(500);
                 _bObjectExist = true;  // 팔을 뻗고 물건을 가지고 나오고
                 RobotArmRetract();
                 Door1Close();
                 RobotRotate();
                 Door2Open();
                 RobotArmExtend();
-                Thread.Sleep(500);
+                //Thread.Sleep(500);
                 _bObjectExist = false;  // 팔을 뻗고 물건을 놔두고 나옴
                 RobotArmRetract();
                 Door2Close();
@@ -271,29 +260,6 @@ namespace Sync_Ansync
             await Task.Run(() => Call_RobotRotate());
 
             Log(enLogLevel.Info_L2, "Move Async Sequence Complete");
-
-
-            /*
-            //Call_RobotArmExtend();
-            //await Call_Door1Open();
-
-            Thread.Sleep(500);
-            _bObjectExist = true;  // 팔을 뻗고 물건을 가지고 나오고
-            await Call_RobotArmRetract();
-
-            Call_Door1Close();
-            await Call_RobotRotate();
-
-            Call_RobotArmExtend();
-            await Call_Door2Open();
-
-            Thread.Sleep(500);
-            _bObjectExist = false;  // 팔을 뻗고 물건을 놔두고 나옴
-            await Call_RobotArmRetract();
-
-            Call_Door2Close();
-            await Call_RobotRotate();
-            */
         }
         #endregion
 

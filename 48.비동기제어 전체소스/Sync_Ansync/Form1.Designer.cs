@@ -112,7 +112,7 @@
             this.btnRobotR.TabIndex = 3;
             this.btnRobotR.Text = "Robot Arm Retract";
             this.btnRobotR.UseVisualStyleBackColor = true;
-            this.btnRobotR.Click += new System.EventHandler(this.btn_Click);
+            
             // 
             // btnRobotE
             // 
@@ -142,7 +142,7 @@
             this.btnD1Close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnD1Close.Name = "btnD1Close";
             this.btnD1Close.Size = new System.Drawing.Size(121, 40);
-            this.btnD1Close.TabIndex = 6;
+            this.btnD1Close.TabIndex = 6;   
             this.btnD1Close.Text = "Door1 Close";
             this.btnD1Close.UseVisualStyleBackColor = true;
             this.btnD1Close.Click += new System.EventHandler(this.btn_Click);

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace Sync_Ansync
 {
@@ -51,7 +45,7 @@ namespace Sync_Ansync
         #region Robot 몸통은 회전, 팔을 회전 이동 필요
 
 
-        /// <summary>
+        /// <summary>   
         /// 외부에서 그림의 위치를 이동시키는 함수를 호출
         /// </summary>
         /// <param name="iMove"></param>
@@ -63,8 +57,8 @@ namespace Sync_Ansync
 
         /// <summary>
         /// 몸통1의 위치를 가져와서 X 위치값을 이동 시키고 다시 바퀴1에 위치 정보를 넣어줌
-        /// </summary>
-        /// <param name="iMove"></param>
+            /// </summary>
+            /// <param name="iMove"></param>
         protected void fSquare1Move(int iMove)
         {
             // Robot Arm을 움직임

@@ -8,3 +8,13 @@ C:\Users\서현재\Desktop\2025\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.cspr
 C:\Users\서현재\Desktop\2025\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\서현재\Desktop\2025\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\서현재\Desktop\2025\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\서현재\Desktop\2025\DataBase\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\서현재\Desktop\2025\DataBase\bin\Debug\WindowsFormsApp1.exe
+C:\Users\서현재\Desktop\2025\DataBase\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\서현재\Desktop\2025\DataBase\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\DataBase\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\서현재\Desktop\2025\DataBase\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\DataBase\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\DataBase\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\DataBase\obj\Debug\WindowsFormsApp1.exe
+C:\Users\서현재\Desktop\2025\DataBase\obj\Debug\WindowsFormsApp1.pdb

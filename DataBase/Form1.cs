@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         {
             // SQL Server 연결 문자열
             string connectionString = @"Server=.\SQLEXPRESS;Database=school;Trusted_Connection=True;";
-            string query = "SELECT * FROM tblStudent";
+            string query = "SELECT * FROM tblStudent a where a.age > 40";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
                     // 결과를 DataGridView에 바인딩
                     dataGridView1.DataSource = dt;
-                }
+                }           
                 catch (Exception ex)
                 {
                     MessageBox.Show("❌ 오류: " + ex.Message);
