@@ -1,0 +1,28 @@
+C:\Users\서현재\Desktop\2025\DBC#\bin\Debug\DBC#.exe.config
+C:\Users\서현재\Desktop\2025\DBC#\bin\Debug\DBC#.exe
+C:\Users\서현재\Desktop\2025\DBC#\bin\Debug\DBC#.pdb
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC#.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC_.Form1.resources
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC_.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC#.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC#.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC#.exe
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC#.pdb
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC#.exe.config
+C:\Users\서현재\Desktop\2025\DBC#\bin\Debug\Newtonsoft.Json.dll
+C:\Users\서현재\Desktop\2025\DBC#\bin\Debug\Newtonsoft.Json.xml
+C:\Users\서현재\Desktop\2025\DBC#\obj\Debug\DBC#.csproj.Up2Date
+C:\Users\서현재\Desktop\2025\DBC# - api\bin\Debug\DBC#.exe.config
+C:\Users\서현재\Desktop\2025\DBC# - api\bin\Debug\DBC#.exe
+C:\Users\서현재\Desktop\2025\DBC# - api\bin\Debug\DBC#.pdb
+C:\Users\서현재\Desktop\2025\DBC# - api\bin\Debug\Newtonsoft.Json.dll
+C:\Users\서현재\Desktop\2025\DBC# - api\bin\Debug\Newtonsoft.Json.xml
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC#.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC#.exe.config
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC_.Form1.resources
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC_.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC#.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC#.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC#.csproj.Up2Date
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC#.exe
+C:\Users\서현재\Desktop\2025\DBC# - api\obj\Debug\DBC#.pdb

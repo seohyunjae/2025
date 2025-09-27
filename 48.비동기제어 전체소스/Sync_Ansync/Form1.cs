@@ -9,7 +9,6 @@ namespace Sync_Ansync
 {
     public partial class Form1 : Form
     {   
-
         #region 전역
 
         CRobot _cRobot;  // Robot Class
@@ -196,8 +195,6 @@ namespace Sync_Ansync
 
         #endregion
 
-
-
         #region Task
 
         /// <summary>
@@ -240,7 +237,7 @@ namespace Sync_Ansync
             Task vTask;
 
             vTask = Task.Run(() => RobotArmExtend());
-            await Task.Run(() => Door1Open());
+            //await Task.Run(() => Door1Open());
 
             Thread.Sleep(500);
             _bObjectExist = true;  // 팔을 뻗고 물건을 가지고 나오고
