@@ -5,124 +5,143 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DBC_
+namespace NexonAPIApp
 {
     public partial class Form1 : Form
     {
         private static readonly HttpClient httpClient = new HttpClient();
 
+        // 🔑 API Key (네가 발급받은 키 넣기)
+        private string apiKey = "test_9f5c10c4c5205ff65667dca9456c446bb87db359e4422f7fcdee194c562850c2efe8d04e6d233bd35cf2fabdeb93fb0d";
         public Form1()
         {
             InitializeComponent();
             this.Load += MainForm_Load;
-            this.button1.Click += button_Click;
-            this.textBox1.KeyDown += textBox1_KeyDown;
+            this.button1.Click += button1_Click; // 버튼 이벤트 등록
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            await LoadCrimeDataFromApiAsync();
+            // ✅ 테스트할 캐릭터명과 월드명
+            await LoadCharacterBasicAsync("3사단", "스카니아");
         }
 
-        private async void button_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 캐릭터 기본 정보를 불러와서 DataGridView에 출력
+        /// </summary>
+        private async Task LoadCharacterBasicAsync(string characterName, string worldName)
         {
-            await LoadCrimeDataFromApiAsync();
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                button_Click(button1, EventArgs.Empty);
-                e.SuppressKeyPress = true;
-            }
-        }
-
-        private async Task LoadCrimeDataFromApiAsync()
-        {
-            string serviceKey = "COchHsnuB3QA6dTgGCwe6eWCIefie6K7gwYUpKeacI0p4KORU20CubNPbadp5ytOwGT8XMngG0TbdCEfWHLS%2Fg%3D%3D";
-            string url = $"https://api.odcloud.kr/api/3074462/v1/uddi:efafd73f-3310-48f8-9f56-bddc1c51f3ba_201910221541"
-                + $"?page=1&perPage=100&serviceKey={serviceKey}";
-
             try
             {
-                HttpResponseMessage response = await httpClient.GetAsync(url);
-                string raw = await response.Content.ReadAsStringAsync();
-
-                if (!response.IsSuccessStatusCode)
+                // 1️⃣ OCID 조회
+                string ocid = await GetOcidAsync(characterName, worldName);
+                if (string.IsNullOrEmpty(ocid))
                 {
-                    MessageBox.Show($"요청 실패: {response.StatusCode}\n내용: {raw}");
+                    MessageBox.Show("OCID를 가져올 수 없습니다.");
                     return;
                 }
 
-                // 디버깅용: JSON 구조 확인
-                MessageBox.Show(raw);
+                // 2️⃣ 캐릭터 기본 정보 조회
+                string basicUrl = $"https://open.api.nexon.com/maplestorym/v1/character/basic?ocid={ocid}";
 
-                var root = JsonConvert.DeserializeObject<CrimeApiResponse>(raw);
+                httpClient.DefaultRequestHeaders.Clear();
+                httpClient.DefaultRequestHeaders.Add("x-nxopen-api-key", apiKey);
 
-                if (root != null && root.data != null && root.data.Count > 0)
+                HttpResponseMessage response = await httpClient.GetAsync(basicUrl);
+                string json = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
                 {
-                    dataGridView1.DataSource = root.data;
+                    MessageBox.Show($"기본 정보 조회 실패: {response.StatusCode}\n{json}");
+                    return;
+                }
+
+                var basicInfo = JsonConvert.DeserializeObject<CharacterBasic>(json);
+
+                if (basicInfo != null)
+                {
+                    // ✅ DataGridView에 표시 (리스트 형태로 바인딩)
+                    dataGridView1.DataSource = new List<CharacterBasic> { basicInfo };
                 }
                 else
                 {
-                    MessageBox.Show("데이터가 없거나 구조가 맞지 않습니다.");
+                    MessageBox.Show("기본 정보를 불러오지 못했습니다.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("API 호출 또는 파싱 중 오류: " + ex.Message);
+                MessageBox.Show("API 호출 오류: " + ex.Message);
             }
+        }
+
+        /// <summary>
+        /// OCID를 조회하는 메서드
+        /// </summary>
+        private async Task<string> GetOcidAsync(string characterName, string worldName)
+        {
+            httpClient.DefaultRequestHeaders.Clear();
+            httpClient.DefaultRequestHeaders.Add("x-nxopen-api-key", apiKey);
+
+            string encodedName = Uri.EscapeDataString(characterName);
+            string encodedWorld = Uri.EscapeDataString(worldName);
+
+            string ocidUrl = $"https://open.api.nexon.com/maplestorym/v1/id?character_name={encodedName}&world_name={encodedWorld}";
+
+            HttpResponseMessage response = await httpClient.GetAsync(ocidUrl);
+            string json = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                MessageBox.Show($"OCID 조회 실패: {response.StatusCode}\n{json}");
+                return null;
+            }
+
+            var ocidResponse = JsonConvert.DeserializeObject<OcidResponse>(json);
+            return ocidResponse?.ocid;
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            string characterName = textBoxCharacter.Text.Trim();
+            string worldName = textBoxWorld.Text.Trim();
+
+            if (string.IsNullOrEmpty(characterName) || string.IsNullOrEmpty(worldName))
+            {
+                MessageBox.Show("캐릭터명과 월드명을 모두 입력하세요.");
+                return;
+            }
+
+            await LoadCharacterBasicAsync(characterName, worldName);
         }
     }
 
-    public class CrimeApiResponse
+    // ✅ 모델 클래스들
+    public class OcidResponse
     {
-        [JsonProperty("currentCount")]
-        public int CurrentCount { get; set; }
-
-        [JsonProperty("totalCount")]
-        public int TotalCount { get; set; }
-
-        [JsonProperty("matchCount")]
-        public int MatchCount { get; set; }
-
-        [JsonProperty("data")]
-        public List<CrimeRecord> data { get; set; }
+        public string ocid { get; set; }
     }
 
-    public class CrimeRecord
+    public class CharacterBasic
     {
-        [JsonProperty("경찰청")]
-        public string 경찰청 { get; set; }
+        [JsonProperty("character_name")]
+        public string CharacterName { get; set; }
 
-        [JsonProperty("거주지")]
-        public string 거주지 { get; set; }
+        [JsonProperty("world_name")]
+        public string WorldName { get; set; }
 
-        [JsonProperty("강간")]
-        public string 강간 { get; set; }
+        [JsonProperty("character_gender")]
+        public string CharacterGender { get; set; }
 
-        [JsonProperty("강제추행")]
-        public string 강제추행 { get; set; }
+        [JsonProperty("character_class")]
+        public string CharacterClass { get; set; }
 
-        [JsonProperty("살인")]
-        public string 살인 { get; set; }
+        [JsonProperty("character_level")]
+        public string CharacterLevel { get; set; }
 
-        [JsonProperty("절도")]
-        public string 절도 { get; set; }
+        [JsonProperty("character_exp")]
+        public string CharacterExp { get; set; }
 
-        [JsonProperty("폭력")]
-        public string 폭력 { get; set; }
-
-        [JsonProperty("특별법범")]
-        public string 특별법범 { get; set; }
-
-        [JsonProperty("기타형법범")]
-        public string 기타형법범 { get; set; }
-
-        // 필요하면 다른 필드도 계속 string으로 선언
+        [JsonProperty("character_guild_name")]
+        public string CharacterGuildName { get; set; }
     }
-
-
-
 }
