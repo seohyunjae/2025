@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Newtonsoft.Json; // JSON 직렬화/역직렬화 라이브러리 (Newtonsoft)
+using System;           // 기본 시스템 네임스페이스
+using System.Collections.Generic; // 제네릭 컬렉션 사용 (List 등)
+using System.Net.Http;  // HTTP 요청 처리용
+using System.Threading.Tasks; // 비동기 처리
+using System.Windows.Forms;   // WinForms UI 사용
+
 
 namespace NexonAPIApp
 {
@@ -16,15 +17,15 @@ namespace NexonAPIApp
         public Form1()
         {
             InitializeComponent();
-            this.Load += MainForm_Load;
+            //this.Load += MainForm_Load;
             this.button1.Click += button1_Click; // 버튼 이벤트 등록
         }
 
-        private async void MainForm_Load(object sender, EventArgs e)
-        {
-            // ✅ 테스트할 캐릭터명과 월드명
-            await LoadCharacterBasicAsync("3사단", "스카니아");
-        }
+        //private async void MainForm_Load(object sender, EventArgs e) //기다림
+        //{
+        //    // ✅ 테스트할 캐릭터명과 월드명
+        //    await LoadCharacterBasicAsync("3사단", "스카니아");
+        //}
 
         /// <summary>
         /// 캐릭터 기본 정보를 불러와서 DataGridView에 출력
@@ -32,7 +33,7 @@ namespace NexonAPIApp
         private async Task LoadCharacterBasicAsync(string characterName, string worldName)
         {
             try
-            {
+            {   
                 // 1️⃣ OCID 조회
                 string ocid = await GetOcidAsync(characterName, worldName);
                 if (string.IsNullOrEmpty(ocid))
@@ -41,7 +42,7 @@ namespace NexonAPIApp
                     return;
                 }
 
-                // 2️⃣ 캐릭터 기본 정보 조회
+                // 2캐릭터 기본 정보 조회
                 string basicUrl = $"https://open.api.nexon.com/maplestorym/v1/character/basic?ocid={ocid}";
 
                 httpClient.DefaultRequestHeaders.Clear();
