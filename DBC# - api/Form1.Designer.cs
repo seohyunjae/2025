@@ -56,16 +56,16 @@
             // 
             // textBoxCharacter
             // 
-            this.textBoxCharacter.Location = new System.Drawing.Point(51, 505);
+            this.textBoxCharacter.Location = new System.Drawing.Point(71, 505);
             this.textBoxCharacter.Name = "textBoxCharacter";
-            this.textBoxCharacter.Size = new System.Drawing.Size(100, 21);
+            this.textBoxCharacter.Size = new System.Drawing.Size(179, 21);
             this.textBoxCharacter.TabIndex = 2;
             // 
             // textBoxWorld
             // 
-            this.textBoxWorld.Location = new System.Drawing.Point(212, 505);
+            this.textBoxWorld.Location = new System.Drawing.Point(330, 505);
             this.textBoxWorld.Name = "textBoxWorld";
-            this.textBoxWorld.Size = new System.Drawing.Size(100, 21);
+            this.textBoxWorld.Size = new System.Drawing.Size(187, 21);
             this.textBoxWorld.TabIndex = 3;
             // 
             // Form1

@@ -98,7 +98,7 @@ namespace NexonAPIApp
             }
 
             var ocidResponse = JsonConvert.DeserializeObject<OcidResponse>(json);
-            return ocidResponse?.ocid;
+            return ocidResponse?.ocid;  
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -106,9 +106,15 @@ namespace NexonAPIApp
             string characterName = textBoxCharacter.Text.Trim();
             string worldName = textBoxWorld.Text.Trim();
 
-            if (string.IsNullOrEmpty(characterName) || string.IsNullOrEmpty(worldName))
+            if (string.IsNullOrEmpty(characterName))
             {
-                MessageBox.Show("캐릭터명과 월드명을 모두 입력하세요.");
+                MessageBox.Show("캐릭터명을 입력하세요.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(worldName))
+            {
+                MessageBox.Show("월드명을 입력하세요.");
                 return;
             }
 
