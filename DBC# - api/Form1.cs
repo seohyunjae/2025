@@ -10,6 +10,7 @@ namespace NexonAPIApp
 {
     public partial class Form1 : Form
     {
+        public string bomb;
         private static readonly HttpClient httpClient = new HttpClient();
 
         // 🔑 API Key (네가 발급받은 키 넣기)
