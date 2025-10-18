@@ -42,14 +42,14 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(607, 302);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+          
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 342);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(492, 43);
+            this.textBox1.Size = new System.Drawing.Size(514, 43);
             this.textBox1.TabIndex = 1;
             // 
             // button1
