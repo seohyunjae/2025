@@ -11,3 +11,4 @@ C:\Users\서현재\Desktop\2025\DataBaseproject\obj\Debug\DataBaseproject.pdb
 C:\Users\서현재\Desktop\2025\DataBaseproject\bin\Debug\Newtonsoft.Json.dll
 C:\Users\서현재\Desktop\2025\DataBaseproject\bin\Debug\Newtonsoft.Json.xml
 C:\Users\서현재\Desktop\2025\DataBaseproject\obj\Debug\DataBase.C58EBD1E.Up2Date
+C:\Users\서현재\Desktop\2025\DataBaseproject\obj\Debug\DataBaseproject.exe.config

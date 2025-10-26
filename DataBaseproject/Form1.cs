@@ -13,8 +13,6 @@ namespace DataBaseproject
             InitializeComponent();
             this.button1.Click += new System.EventHandler(button1_Click);
         }
-
-
         private async void button1_Click(object sender, EventArgs e)
         {
             string apiKey = "여기에_발급받은_API_KEY";
