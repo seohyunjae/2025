@@ -1,0 +1,34 @@
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\BUSAN API PROJECT.exe.config
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\BUSAN API PROJECT.exe
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\BUSAN API PROJECT.pdb
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\Newtonsoft.Json.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Buffers.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.IO.Pipelines.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Memory.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Text.Json.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.ValueTuple.dll
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\Newtonsoft.Json.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Buffers.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.IO.Pipelines.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Memory.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Text.Json.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\bin\Debug\System.ValueTuple.xml
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN API PROJECT.csproj.AssemblyReference.cache
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN_API_PROJECT.Form1.resources
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN_API_PROJECT.Properties.Resources.resources
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN API PROJECT.csproj.GenerateResource.cache
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN API PROJECT.csproj.CoreCompileInputs.cache
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN AP.1AEF94BF.Up2Date
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN API PROJECT.exe
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN API PROJECT.pdb
+C:\Users\서현재\Desktop\2025\BUSAN API PROJECT\obj\Debug\BUSAN API PROJECT.exe.config
