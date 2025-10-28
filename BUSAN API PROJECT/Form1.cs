@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -60,6 +61,18 @@ namespace BUSAN_API_PROJECT
                 {
                     if (dataGridView1.Columns[kv.Key] != null)
                         dataGridView1.Columns[kv.Key].HeaderText = kv.Value;
+                }
+
+                var jsonItems = await FetchAttractionsJsonAsync(serviceKey, pageSize, desiredTotal);
+
+                dataGridView2.AutoGenerateColumns = true;
+                dataGridView2.DataSource = jsonItems;
+
+                // [NEW] 컬럼 헤더 한글화 (dataGridView2)
+                foreach (var kv in headers)
+                {
+                    if (dataGridView2.Columns[kv.Key] != null)
+                        dataGridView2.Columns[kv.Key].HeaderText = kv.Value;
                 }
             }
             catch (Exception ex)
@@ -174,6 +187,147 @@ namespace BUSAN_API_PROJECT
             if (int.TryParse(s, out int v)) return v;
             return 0;
         }
+        private async Task<List<AttractionItem>> FetchAttractionsJsonAsync(string serviceKey, int pageSize, int desiredTotal)
+        {
+            var result = new List<AttractionItem>();
+            int page = 1;
+            int totalCount = -1;
+
+            using (var http = new HttpClient())
+            {
+                while (true)
+                {
+                    // 참고: 어떤 API는 resultType=json 대신 _type=json을 씁니다.
+                    string url =
+                        "http://apis.data.go.kr/6260000/AttractionService/getAttractionKr" +
+                        $"?ServiceKey={serviceKey}&pageNo={page}&numOfRows={pageSize}&resultType=json";
+
+                    var resp = await http.GetAsync(url);
+                    resp.EnsureSuccessStatusCode();
+                    string json = await resp.Content.ReadAsStringAsync();
+
+                    List<AttractionItem> pageItems;
+                    using (var doc = JsonDocument.Parse(json))
+                    {
+                        if (totalCount < 0)
+                            totalCount = TryFindInt(doc.RootElement, "totalCount") ?? 0;
+
+                        pageItems = ParseItemsFromJson(doc.RootElement);
+                    }
+
+                    result.AddRange(pageItems);
+
+                    if (result.Count >= desiredTotal)
+                    {
+                        if (result.Count > desiredTotal)
+                            result.RemoveRange(desiredTotal, result.Count - desiredTotal);
+                        break;
+                    }
+
+                    int fetchedSoFar = page * pageSize;
+                    if (fetchedSoFar >= totalCount || pageItems.Count == 0)
+                        break;
+
+                    page++;
+                    await Task.Delay(100);
+                }
+            }
+
+            return result;
+        }
+        private List<AttractionItem> ParseItemsFromJson(JsonElement root)
+        {
+            var list = new List<AttractionItem>();
+            Recurse(root, list);
+            return list;
+
+            void Recurse(JsonElement node, List<AttractionItem> acc)
+            {
+                switch (node.ValueKind)
+                {
+                    case JsonValueKind.Object:
+                        bool isItem =
+                            node.TryGetProperty("UC_SEQ", out _) ||
+                            node.TryGetProperty("MAIN_TITLE", out _) ||
+                            node.TryGetProperty("GUGUN_NM", out _);
+
+                        if (isItem)
+                        {
+                            var it = new AttractionItem
+                            {
+                                UC_SEQ = TryFindInt(node, "UC_SEQ") ?? 0,
+                                MAIN_TITLE = TryFindString(node, "MAIN_TITLE") ?? "",
+                                GUGUN_NM = TryFindString(node, "GUGUN_NM") ?? "",
+                                ADDR1 = TryFindString(node, "ADDR1") ?? "",
+                                LAT = TryFindString(node, "LAT") ?? "",
+                                LNG = TryFindString(node, "LNG") ?? "",
+                                CNTCT_TEL = TryFindString(node, "CNTCT_TEL") ?? "",
+                                USAGE_AMOUNT = TryFindString(node, "USAGE_AMOUNT") ?? "",
+                                SUBTITLE = TryFindString(node, "SUBTITLE") ?? "",
+                                TITLE = TryFindString(node, "TITLE") ?? "",
+                                PLACE = TryFindString(node, "PLACE") ?? "",
+                                HOMEPAGE_URL = TryFindString(node, "HOMEPAGE_URL") ?? "",
+                                TRFC_INFO = TryFindString(node, "TRFC_INFO") ?? "",
+                                HLDY_INFO = TryFindString(node, "HLDY_INFO") ?? "",
+                                USAGE_DAY = TryFindString(node, "USAGE_DAY") ?? "",
+                                USAGE_DAY_WEEK_AND_TIME = TryFindString(node, "USAGE_DAY_WEEK_AND_TIME") ?? "",
+                                MIDDLE_SIZE_RM1 = TryFindString(node, "MIDDLE_SIZE_RM1") ?? "",
+                                MAIN_IMG_NORMAL = TryFindString(node, "MAIN_IMG_NORMAL") ?? "",
+                                MAIN_IMG_THUMB = TryFindString(node, "MAIN_IMG_THUMB") ?? "",
+                                ITEMCNTNTS = TryFindString(node, "ITEMCNTNTS") ?? ""
+                            };
+
+                            if (it.UC_SEQ != 0 || !string.IsNullOrEmpty(it.MAIN_TITLE))
+                                acc.Add(it);
+                        }
+
+                        foreach (var prop in node.EnumerateObject())
+                            Recurse(prop.Value, acc);
+                        break;
+
+                    case JsonValueKind.Array:
+                        foreach (var child in node.EnumerateArray())
+                            Recurse(child, acc);
+                        break;
+                }
+            }
+        }
+
+        // [NEW] JSON helpers
+        private static string TryFindString(JsonElement node, string name)
+        {
+            if (node.ValueKind != JsonValueKind.Object) return null;
+            if (node.TryGetProperty(name, out var v))
+            {
+                switch (v.ValueKind)
+                {
+                    case JsonValueKind.String:
+                        return v.GetString();
+                    case JsonValueKind.Number:
+                        return v.ToString();
+                    case JsonValueKind.True:
+                        return "true";
+                    case JsonValueKind.False:
+                        return "false";
+                    default:
+                        return v.ToString();
+                }
+            }
+            return null;
+        }
+
+        private static int? TryFindInt(JsonElement node, string name)
+        {
+            if (node.ValueKind != JsonValueKind.Object) return null;
+            if (node.TryGetProperty(name, out var v))
+            {
+                if (v.ValueKind == JsonValueKind.Number && v.TryGetInt32(out var i))
+                    return i;
+                if (v.ValueKind == JsonValueKind.String && int.TryParse(v.GetString(), out var j))
+                    return j;
+            }
+            return null;
+        }
 
     }
 
@@ -201,6 +355,7 @@ namespace BUSAN_API_PROJECT
         public string MAIN_IMG_THUMB { get; set; }
         public string ITEMCNTNTS { get; set; }
     }
+
 
 
 }
