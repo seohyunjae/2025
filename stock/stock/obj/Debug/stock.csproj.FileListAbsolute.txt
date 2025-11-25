@@ -1,0 +1,13 @@
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\bin\Debug\stock.exe.config
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\bin\Debug\stock.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\bin\Debug\stock.pdb
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\bin\Debug\Newtonsoft.Json.xml
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.csproj.AssemblyReference.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.Form1.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.Properties.Resources.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.csproj.GenerateResource.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.csproj.CoreCompileInputs.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.csproj.Up2Date
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock\stock\obj\Debug\stock.pdb

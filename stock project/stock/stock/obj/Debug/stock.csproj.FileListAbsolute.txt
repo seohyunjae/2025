@@ -1,0 +1,4 @@
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock project\stock\stock\obj\Debug\stock.csproj.AssemblyReference.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock project\stock\stock\obj\Debug\stock.Properties.Resources.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock project\stock\stock\obj\Debug\stock.csproj.GenerateResource.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stock project\stock\stock\obj\Debug\stock.csproj.CoreCompileInputs.cache
