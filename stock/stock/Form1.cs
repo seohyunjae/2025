@@ -55,7 +55,7 @@ namespace stock
 		}
 
 		/// <summary>
-		/// WebSocket 연결 + LOGIN + REG까지 처리
+		/// WebSocket 연결 + LOGIN + REG까지 처리X
 		/// </summary>
 		private async Task ConnectAndStartAsync()
 		{

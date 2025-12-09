@@ -1,0 +1,13 @@
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stockrank.csproj.AssemblyReference.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stock.Form1.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stockrank.Properties.Resources.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stockrank.csproj.GenerateResource.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stockrank.csproj.CoreCompileInputs.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\bin\Debug\stockrank.exe.config
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\bin\Debug\stockrank.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\bin\Debug\stockrank.pdb
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\bin\Debug\Newtonsoft.Json.xml
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stockrank.csproj.Up2Date
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stockrank.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\stockrank\obj\Debug\stockrank.pdb
