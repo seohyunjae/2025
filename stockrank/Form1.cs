@@ -13,7 +13,7 @@ namespace stock
 	public partial class Form1 : Form
 	{
 		// ★ 실제 발급받은 Access Token 넣기
-		private const string AccessToken = "dyw4_mfgGImQFsNJn8GKXgRgtt5cyO6nyQw8-IHxAmU";
+		private const string AccessToken = "";
 
 		public Form1()
 		{
@@ -51,8 +51,9 @@ namespace stock
 		// 실제로 Kiwoom REST API 부르는 함수
 		private async Task<List<RankItem>> GetRankListAsync()
 		{
-			string host = "https://mockapi.kiwoom.com";       // 모의투자
-															  //string host = "https://api.kiwoom.com";          // 실전투자 쓸 때
+			string host = "https://mockapi.kiwoom.com";       
+			// 모의투자
+			//string host = "https://api.kiwoom.com";          // 실전투자 쓸 때
 			string endpoint = "/api/dostk/rkinfo";
 			string url = host + endpoint;
 
