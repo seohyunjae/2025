@@ -1,0 +1,10 @@
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\bin\Debug\TimeProject.exe.config
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\bin\Debug\TimeProject.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\bin\Debug\TimeProject.pdb
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\obj\Debug\TimeProject.csproj.AssemblyReference.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\obj\Debug\TimeProject.Form1.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\obj\Debug\TimeProject.Properties.Resources.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\obj\Debug\TimeProject.csproj.GenerateResource.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\obj\Debug\TimeProject.csproj.CoreCompileInputs.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\obj\Debug\TimeProject.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeProject\obj\Debug\TimeProject.pdb
