@@ -67,7 +67,7 @@ namespace TimeProject
 			}
 
 			int activityCategoryId = (int)cboactivity.SelectedValue;
-			string txtremark = remark.Text.Trim();
+			string txtremark = remark.Text;
 
 			// 2) INSERT 쿼리 준비 -----------------------------
 
@@ -114,7 +114,7 @@ namespace TimeProject
 			// 2) 해당 날짜의 TimeLog + Activity JOIN해서 가져오는 쿼리
 			string sql = @"
 						SELECT  
-							--T.Id,
+							T.Id,
 							T.Date,
 							T.StartTime,
 							T.EndTime,
@@ -123,7 +123,7 @@ namespace TimeProject
 							T.REMARK
 						FROM TimeLog T
 						INNER JOIN Activity A
-							ON T.ActivityCategoryId = A.Id
+							    ON T.ActivityCategoryId = A.Id
 						WHERE T.Date = @Date
 						ORDER BY T.StartTime;
 					";
@@ -145,7 +145,72 @@ namespace TimeProject
 				// 4) 그리드에 바인딩
 				dataGridView1.DataSource = table;
 				dataGridView1.AutoResizeColumns();
+
+				if (dataGridView1.Columns["Id"] != null)
+				{
+					dataGridView1.Columns["Id"].Visible = false; // 화면에서는 안 보이게
+				}
 			}
 		}
-    }
+
+		private void buttonDelete_Click(object sender, EventArgs e)
+		{
+			// 1) 현재 선택된 행이 있는지 체크
+			if (dataGridView1.CurrentRow == null)
+			{
+				MessageBox.Show("삭제할 행을 먼저 선택해 주세요.");
+				return;
+			}
+				
+			// 2) 선택된 행에서 TimeLog Id 가져오기
+			//    (그리드에 Id 컬럼이 있다고 가정)
+			object idValue = dataGridView1.CurrentRow.Cells["Id"].Value;
+
+			if (idValue == null || idValue == DBNull.Value)
+			{
+				MessageBox.Show("선택한 행에서 Id 값을 찾을 수 없습니다.");
+				return;
+			}
+
+			int timeLogId = Convert.ToInt32(idValue);
+
+			// 3) 진짜 삭제할지 사용자에게 확인
+			DialogResult result = MessageBox.Show(
+				"선택한 스케줄을 삭제하시겠습니까?",
+				"삭제 확인",
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Question);
+
+			if (result != DialogResult.Yes)
+			{
+				return; // 취소
+			}
+
+			// 4) DB에서 삭제
+			string sql = "DELETE FROM TimeLog WHERE Id = @Id;";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.AddWithValue("@Id", timeLogId);
+
+				connection.Open();
+				int rows = command.ExecuteNonQuery();
+
+				if (rows > 0)
+				{
+					MessageBox.Show("스케줄이 삭제되었습니다.");
+				}
+				else
+				{
+					MessageBox.Show("삭제할 데이터가 없습니다.");
+				}
+			}
+
+			// 5) 그리드 새로고침
+			//    (지금은 날짜 조회 버튼의 로직을 재사용하는 게 제일 간단)
+			buttonretrieve_Click(null, EventArgs.Empty);
+		}
+
+	}
 }
