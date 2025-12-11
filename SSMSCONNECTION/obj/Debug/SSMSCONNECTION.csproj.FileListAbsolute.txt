@@ -1,0 +1,10 @@
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\bin\Debug\SSMSCONNECTION.exe.config
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\bin\Debug\SSMSCONNECTION.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\bin\Debug\SSMSCONNECTION.pdb
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\obj\Debug\SSMSCONNECTION.csproj.AssemblyReference.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\obj\Debug\SSMSCONNECTION.Form1.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\obj\Debug\SSMSCONNECTION.Properties.Resources.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\obj\Debug\SSMSCONNECTION.csproj.GenerateResource.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\obj\Debug\SSMSCONNECTION.csproj.CoreCompileInputs.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\obj\Debug\SSMSCONNECTION.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\SSMSCONNECTION\obj\Debug\SSMSCONNECTION.pdb

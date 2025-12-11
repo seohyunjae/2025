@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MemoApiServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c6964bf8fcfe5e98a103e027ffb3d0ff60d68bf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c7385121e671b8f9d23e39a98eeb07bdb000a98")]
 [assembly: System.Reflection.AssemblyProductAttribute("MemoApiServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MemoApiServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
