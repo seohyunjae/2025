@@ -8,6 +8,7 @@ namespace TimeProject
     public partial class Form1 : Form
     {
 		private readonly string connectionString =@"Server=localhost;Database=TimeDB;Integrated Security=True;";
+		private readonly string test = string.Empty;
 		public Form1()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace TimeProject
 		}
 		private void LoadActivityCombo()
 		{
-			string sql = "SELECT Id, CategoryName FROM Activity ORDER BY CategoryName;";
+			string sql = "SELECT Id, CategoryName FROM Activity ORDER BY ActivityType;";
 
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			using (SqlCommand command = new SqlCommand(sql, connection))
