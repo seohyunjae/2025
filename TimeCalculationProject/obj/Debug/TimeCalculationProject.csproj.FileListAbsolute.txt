@@ -1,0 +1,10 @@
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\bin\Debug\TimeCalculationProject.exe.config
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\bin\Debug\TimeCalculationProject.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\bin\Debug\TimeCalculationProject.pdb
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\obj\Debug\TimeCalculationProject.csproj.AssemblyReference.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\obj\Debug\TimeCalculationProject.Form1.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\obj\Debug\TimeCalculationProject.Properties.Resources.resources
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\obj\Debug\TimeCalculationProject.csproj.GenerateResource.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\obj\Debug\TimeCalculationProject.csproj.CoreCompileInputs.cache
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\obj\Debug\TimeCalculationProject.exe
+C:\Users\shj22\OneDrive\Desktop\C#\2025\TimeCalculationProject\obj\Debug\TimeCalculationProject.pdb
