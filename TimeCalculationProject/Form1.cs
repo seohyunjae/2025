@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace TimeCalculationProject
@@ -23,6 +24,8 @@ namespace TimeCalculationProject
 			uiTimer.Start();
 
 			UpdateUi();
+			GetSelectedCategoryId();
+			BindCategoryCombo();
 		}
 
 		private void UiTimer_Tick(object sender, EventArgs e)
@@ -61,7 +64,6 @@ namespace TimeCalculationProject
 		/// </summary>
 		/// 
 
-		
 		private TimeSpan GetPartSpan(TimeSpan span, double hoursPerDay)
 		{
 			bool isNegative = span < TimeSpan.Zero;
@@ -98,7 +100,6 @@ namespace TimeCalculationProject
 				sleepTextBox.Text = $"지남(수면): {FormatSpan(diffSleep.Negate())}";
 			}
 		}
-
 		private string FormatSpan(TimeSpan span)
 		{
 			long totalDays = (long)span.TotalDays;
@@ -112,6 +113,30 @@ namespace TimeCalculationProject
 			uiTimer.Stop();
 			uiTimer.Dispose();
 			base.OnFormClosing(e);
+		}
+		private sealed class CategoryItem
+		{
+			public byte CategoryId { get; set; }
+			public string CategoryName { get; set; } = "";
+		}
+		private void BindCategoryCombo()
+		{
+			var items = new List<CategoryItem>
+			{
+				new CategoryItem { CategoryId = 1, CategoryName = "급한거" },
+				new CategoryItem { CategoryId = 2, CategoryName = "계속꾸준히해야하는거" },
+				new CategoryItem { CategoryId = 3, CategoryName = "마인드" }
+			};
+
+			comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+			comboBox1.DisplayMember = nameof(CategoryItem.CategoryName);
+			comboBox1.ValueMember = nameof(CategoryItem.CategoryId);
+			comboBox1.DataSource = items;
+		}
+		
+		private byte GetSelectedCategoryId()
+		{
+			return comboBox1.SelectedValue is byte v ? v : (byte)0;
 		}
 	}
 }
