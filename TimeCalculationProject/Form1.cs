@@ -11,7 +11,6 @@ namespace TimeCalculationProject
 		// 하루 기준(가정)
 		private const double SleepHoursPerDay = 8.0;
 		private const double AwakeHoursPerDay = 16.0; // 24 - 8
-
 		private readonly Timer uiTimer;
 
 		public Form1()
@@ -36,7 +35,7 @@ namespace TimeCalculationProject
 			DateTime now = DateTime.Now;
 
 			// 1) 태어난 날짜 표시
-			label2.Text = $"태어난 날짜: {BirthDate:yyyy년 M월 d일}";
+			label.Text = $"태어난 날짜: {BirthDate:yyyy년 M월 d일}";
 
 			// 2) 살아온 시간(전체/의식/수면)
 			TimeSpan livedTotal = now - BirthDate;
@@ -44,10 +43,10 @@ namespace TimeCalculationProject
 			TimeSpan livedSleep = GetPartSpan(livedTotal, SleepHoursPerDay);
 
 			// label7 한 줄이면 길어서 줄바꿈으로 표시(라벨 AutoSize면 잘 보임)
-			label7.Text =
-				$"살아온 시간(전체): {FormatSpan(livedTotal)}\r\n" +
-				$"의식 시간(16h/일): {FormatSpan(livedAwake)}\r\n" +
-				$"수면 시간(8h/일): {FormatSpan(livedSleep)}";
+			label1.Text =
+					$"살아온 시간(전체): {FormatSpan(livedTotal)}\r\n" +
+					$"의식 시간(16h/일): {FormatSpan(livedAwake)}\r\n" +
+					$"수면 시간(8h/일): {FormatSpan(livedSleep)}";
 
 			// 3) 목표 나이까지 남은 시간 (전체/의식/수면) -> 텍스트박스 3개씩 사용
 			SetCountdown(textBox1, textBox5, textBox9, BirthDate.AddYears(30), now);
@@ -60,6 +59,9 @@ namespace TimeCalculationProject
 		/// diff(기간)에서 "하루 hoursPerDay 만큼"의 시간만 뽑아서 계산
 		/// 예) hoursPerDay=16 => 의식 시간, 8 => 수면 시간
 		/// </summary>
+		/// 
+
+		
 		private TimeSpan GetPartSpan(TimeSpan span, double hoursPerDay)
 		{
 			bool isNegative = span < TimeSpan.Zero;
@@ -70,7 +72,9 @@ namespace TimeCalculationProject
 
 			// 방어코드
 			if (part < TimeSpan.Zero)
+			{
 				part = TimeSpan.Zero;
+			}
 
 			return isNegative ? part.Negate() : part;
 		}
