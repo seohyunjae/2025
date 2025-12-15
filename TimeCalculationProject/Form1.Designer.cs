@@ -38,8 +38,8 @@
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.Panellive = new System.Windows.Forms.TableLayoutPanel();
+			this.Panelconsciousness = new System.Windows.Forms.TableLayoutPanel();
 			this.textBox8 = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.textBox6 = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@
 			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.textBox5 = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+			this.Panelsleep = new System.Windows.Forms.TableLayoutPanel();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.textBox10 = new System.Windows.Forms.TextBox();
@@ -63,26 +63,37 @@
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.button2 = new System.Windows.Forms.Button();
-			this.textBox13 = new System.Windows.Forms.TextBox();
-			this.label18 = new System.Windows.Forms.Label();
-			this.dataGridView3 = new System.Windows.Forms.DataGridView();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btninsertemergency = new System.Windows.Forms.Button();
+			this.txtemergency = new System.Windows.Forms.TextBox();
+			this.lblemergency = new System.Windows.Forms.Label();
+			this.dgwemergency = new System.Windows.Forms.DataGridView();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.btninsertcontinue = new System.Windows.Forms.Button();
+			this.txtcontinune = new System.Windows.Forms.TextBox();
+			this.label19 = new System.Windows.Forms.Label();
+			this.dgwcontinue = new System.Windows.Forms.DataGridView();
+			this.btninsertmind = new System.Windows.Forms.Button();
+			this.txtMind = new System.Windows.Forms.TextBox();
+			this.label20 = new System.Windows.Forms.Label();
+			this.dgwMind = new System.Windows.Forms.DataGridView();
+			this.btndeletemind = new System.Windows.Forms.Button();
+			this.btndeletemergency = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.tableLayoutPanel1.SuspendLayout();
-			this.tableLayoutPanel2.SuspendLayout();
-			this.tableLayoutPanel3.SuspendLayout();
+			this.btndeletecontinue = new System.Windows.Forms.Button();
+			this.Panellive.SuspendLayout();
+			this.Panelconsciousness.SuspendLayout();
+			this.Panelsleep.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			this.tabPage2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwemergency)).BeginInit();
+			this.tabPage4.SuspendLayout();
+			this.tabPage5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgwcontinue)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label
@@ -175,51 +186,51 @@
 			this.textBox4.Size = new System.Drawing.Size(430, 25);
 			this.textBox4.TabIndex = 8;
 			// 
-			// tableLayoutPanel1
+			// Panellive
 			// 
-			this.tableLayoutPanel1.ColumnCount = 2;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.88475F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.11525F));
-			this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
-			this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-			this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 3);
-			this.tableLayoutPanel1.Controls.Add(this.label6, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-			this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 2);
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 47);
-			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 4;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(494, 145);
-			this.tableLayoutPanel1.TabIndex = 10;
+			this.Panellive.ColumnCount = 2;
+			this.Panellive.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.88475F));
+			this.Panellive.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.11525F));
+			this.Panellive.Controls.Add(this.label4, 0, 0);
+			this.Panellive.Controls.Add(this.label3, 0, 1);
+			this.Panellive.Controls.Add(this.textBox2, 1, 1);
+			this.Panellive.Controls.Add(this.label5, 0, 2);
+			this.Panellive.Controls.Add(this.textBox4, 1, 3);
+			this.Panellive.Controls.Add(this.label6, 0, 3);
+			this.Panellive.Controls.Add(this.textBox1, 1, 0);
+			this.Panellive.Controls.Add(this.textBox3, 1, 2);
+			this.Panellive.Location = new System.Drawing.Point(9, 47);
+			this.Panellive.Name = "Panellive";
+			this.Panellive.RowCount = 4;
+			this.Panellive.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panellive.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panellive.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panellive.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panellive.Size = new System.Drawing.Size(494, 145);
+			this.Panellive.TabIndex = 10;
 			// 
-			// tableLayoutPanel2
+			// Panelconsciousness
 			// 
-			this.tableLayoutPanel2.ColumnCount = 2;
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.88475F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.11525F));
-			this.tableLayoutPanel2.Controls.Add(this.textBox8, 1, 3);
-			this.tableLayoutPanel2.Controls.Add(this.label7, 0, 1);
-			this.tableLayoutPanel2.Controls.Add(this.textBox6, 1, 1);
-			this.tableLayoutPanel2.Controls.Add(this.label8, 0, 2);
-			this.tableLayoutPanel2.Controls.Add(this.label9, 0, 3);
-			this.tableLayoutPanel2.Controls.Add(this.textBox7, 1, 2);
-			this.tableLayoutPanel2.Controls.Add(this.textBox5, 1, 0);
-			this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 244);
-			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-			this.tableLayoutPanel2.RowCount = 4;
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(482, 158);
-			this.tableLayoutPanel2.TabIndex = 11;
+			this.Panelconsciousness.ColumnCount = 2;
+			this.Panelconsciousness.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.88475F));
+			this.Panelconsciousness.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.11525F));
+			this.Panelconsciousness.Controls.Add(this.textBox8, 1, 3);
+			this.Panelconsciousness.Controls.Add(this.label7, 0, 1);
+			this.Panelconsciousness.Controls.Add(this.textBox6, 1, 1);
+			this.Panelconsciousness.Controls.Add(this.label8, 0, 2);
+			this.Panelconsciousness.Controls.Add(this.label9, 0, 3);
+			this.Panelconsciousness.Controls.Add(this.textBox7, 1, 2);
+			this.Panelconsciousness.Controls.Add(this.textBox5, 1, 0);
+			this.Panelconsciousness.Controls.Add(this.label2, 0, 0);
+			this.Panelconsciousness.Location = new System.Drawing.Point(10, 244);
+			this.Panelconsciousness.Name = "Panelconsciousness";
+			this.Panelconsciousness.RowCount = 4;
+			this.Panelconsciousness.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelconsciousness.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelconsciousness.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelconsciousness.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelconsciousness.Size = new System.Drawing.Size(482, 158);
+			this.Panelconsciousness.TabIndex = 11;
 			// 
 			// textBox8
 			// 
@@ -293,28 +304,28 @@
 			this.label2.TabIndex = 3;
 			this.label2.Text = "30살";
 			// 
-			// tableLayoutPanel3
+			// Panelsleep
 			// 
-			this.tableLayoutPanel3.ColumnCount = 2;
-			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.88475F));
-			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.11525F));
-			this.tableLayoutPanel3.Controls.Add(this.label10, 0, 0);
-			this.tableLayoutPanel3.Controls.Add(this.label11, 0, 1);
-			this.tableLayoutPanel3.Controls.Add(this.textBox10, 1, 1);
-			this.tableLayoutPanel3.Controls.Add(this.label12, 0, 2);
-			this.tableLayoutPanel3.Controls.Add(this.textBox12, 1, 3);
-			this.tableLayoutPanel3.Controls.Add(this.label13, 0, 3);
-			this.tableLayoutPanel3.Controls.Add(this.textBox11, 1, 2);
-			this.tableLayoutPanel3.Controls.Add(this.textBox9, 1, 0);
-			this.tableLayoutPanel3.Location = new System.Drawing.Point(10, 460);
-			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-			this.tableLayoutPanel3.RowCount = 4;
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(482, 158);
-			this.tableLayoutPanel3.TabIndex = 12;
+			this.Panelsleep.ColumnCount = 2;
+			this.Panelsleep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.88475F));
+			this.Panelsleep.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.11525F));
+			this.Panelsleep.Controls.Add(this.label10, 0, 0);
+			this.Panelsleep.Controls.Add(this.label11, 0, 1);
+			this.Panelsleep.Controls.Add(this.textBox10, 1, 1);
+			this.Panelsleep.Controls.Add(this.label12, 0, 2);
+			this.Panelsleep.Controls.Add(this.textBox12, 1, 3);
+			this.Panelsleep.Controls.Add(this.label13, 0, 3);
+			this.Panelsleep.Controls.Add(this.textBox11, 1, 2);
+			this.Panelsleep.Controls.Add(this.textBox9, 1, 0);
+			this.Panelsleep.Location = new System.Drawing.Point(10, 460);
+			this.Panelsleep.Name = "Panelsleep";
+			this.Panelsleep.RowCount = 4;
+			this.Panelsleep.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelsleep.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelsleep.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelsleep.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+			this.Panelsleep.Size = new System.Drawing.Size(482, 158);
+			this.Panelsleep.TabIndex = 12;
 			// 
 			// label10
 			// 
@@ -411,11 +422,13 @@
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Controls.Add(this.tabPage3);
+			this.tabControl1.Controls.Add(this.tabPage4);
+			this.tabControl1.Controls.Add(this.tabPage5);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1194, 661);
+			this.tabControl1.Size = new System.Drawing.Size(1194, 824);
 			this.tabControl1.TabIndex = 15;
 			// 
 			// tabPage1
@@ -423,167 +436,244 @@
 			this.tabPage1.Controls.Add(this.label);
 			this.tabPage1.Controls.Add(this.label1);
 			this.tabPage1.Controls.Add(this.label15);
-			this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+			this.tabPage1.Controls.Add(this.Panellive);
 			this.tabPage1.Controls.Add(this.label14);
-			this.tabPage1.Controls.Add(this.tableLayoutPanel2);
-			this.tabPage1.Controls.Add(this.tableLayoutPanel3);
+			this.tabPage1.Controls.Add(this.Panelconsciousness);
+			this.tabPage1.Controls.Add(this.Panelsleep);
 			this.tabPage1.Location = new System.Drawing.Point(4, 25);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1186, 632);
+			this.tabPage1.Size = new System.Drawing.Size(1186, 795);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "시간";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.dataGridView2);
 			this.tabPage2.Location = new System.Drawing.Point(4, 25);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1186, 632);
+			this.tabPage2.Size = new System.Drawing.Size(1186, 495);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "운동";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Controls.Add(this.comboBox1);
-			this.tabPage3.Controls.Add(this.button2);
-			this.tabPage3.Controls.Add(this.textBox13);
-			this.tabPage3.Controls.Add(this.label18);
-			this.tabPage3.Controls.Add(this.dataGridView3);
-			this.tabPage3.Controls.Add(this.label17);
-			this.tabPage3.Controls.Add(this.label16);
-			this.tabPage3.Controls.Add(this.button1);
-			this.tabPage3.Controls.Add(this.dataGridView2);
-			this.tabPage3.Controls.Add(this.dataGridView1);
-			this.tabPage3.Controls.Add(this.monthCalendar1);
+			this.tabPage3.Controls.Add(this.btndeletemergency);
+			this.tabPage3.Controls.Add(this.btninsertemergency);
+			this.tabPage3.Controls.Add(this.txtemergency);
+			this.tabPage3.Controls.Add(this.lblemergency);
+			this.tabPage3.Controls.Add(this.dgwemergency);
 			this.tabPage3.Location = new System.Drawing.Point(4, 25);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(1186, 632);
+			this.tabPage3.Size = new System.Drawing.Size(1186, 795);
 			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "스케줄";
+			this.tabPage3.Text = "급한거";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// btninsertemergency
 			// 
-			this.button2.Location = new System.Drawing.Point(956, 256);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(201, 59);
-			this.button2.TabIndex = 8;
-			this.button2.Text = "등록";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btninsertemergency.Location = new System.Drawing.Point(936, 221);
+			this.btninsertemergency.Name = "btninsertemergency";
+			this.btninsertemergency.Size = new System.Drawing.Size(201, 59);
+			this.btninsertemergency.TabIndex = 8;
+			this.btninsertemergency.Text = "등록";
+			this.btninsertemergency.UseVisualStyleBackColor = true;
 			// 
-			// textBox13
+			// txtemergency
 			// 
-			this.textBox13.Location = new System.Drawing.Point(956, 29);
-			this.textBox13.Multiline = true;
-			this.textBox13.Name = "textBox13";
-			this.textBox13.Size = new System.Drawing.Size(201, 132);
-			this.textBox13.TabIndex = 7;
+			this.txtemergency.Location = new System.Drawing.Point(936, 37);
+			this.txtemergency.Multiline = true;
+			this.txtemergency.Name = "txtemergency";
+			this.txtemergency.Size = new System.Drawing.Size(242, 132);
+			this.txtemergency.TabIndex = 7;
 			// 
-			// label18
+			// lblemergency
 			// 
-			this.label18.AutoSize = true;
-			this.label18.Location = new System.Drawing.Point(337, 409);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(52, 15);
-			this.label18.TabIndex = 6;
-			this.label18.Text = "마인드";
+			this.lblemergency.AutoSize = true;
+			this.lblemergency.Location = new System.Drawing.Point(16, 19);
+			this.lblemergency.Name = "lblemergency";
+			this.lblemergency.Size = new System.Drawing.Size(52, 15);
+			this.lblemergency.TabIndex = 3;
+			this.lblemergency.Text = "급한거";
 			// 
-			// dataGridView3
+			// dgwemergency
 			// 
-			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView3.Location = new System.Drawing.Point(340, 440);
-			this.dataGridView3.Name = "dataGridView3";
-			this.dataGridView3.RowHeadersWidth = 51;
-			this.dataGridView3.RowTemplate.Height = 27;
-			this.dataGridView3.Size = new System.Drawing.Size(593, 170);
-			this.dataGridView3.TabIndex = 5;
+			this.dgwemergency.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwemergency.Location = new System.Drawing.Point(19, 37);
+			this.dgwemergency.Name = "dgwemergency";
+			this.dgwemergency.RowHeadersWidth = 51;
+			this.dgwemergency.RowTemplate.Height = 27;
+			this.dgwemergency.Size = new System.Drawing.Size(894, 807);
+			this.dgwemergency.TabIndex = 1;
 			// 
-			// label17
+			// tabPage4
 			// 
-			this.label17.AutoSize = true;
-			this.label17.Location = new System.Drawing.Point(337, 176);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(157, 15);
-			this.label17.TabIndex = 4;
-			this.label17.Text = "계속꾸준히해야하는거";
+			this.tabPage4.Controls.Add(this.btndeletecontinue);
+			this.tabPage4.Controls.Add(this.btninsertcontinue);
+			this.tabPage4.Controls.Add(this.txtcontinune);
+			this.tabPage4.Controls.Add(this.label19);
+			this.tabPage4.Controls.Add(this.dgwcontinue);
+			this.tabPage4.Location = new System.Drawing.Point(4, 25);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Size = new System.Drawing.Size(1186, 795);
+			this.tabPage4.TabIndex = 3;
+			this.tabPage4.Text = "계속꾸준히";
+			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
-			// label16
+			// tabPage5
 			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(337, 11);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(52, 15);
-			this.label16.TabIndex = 3;
-			this.label16.Text = "급한거";
+			this.tabPage5.Controls.Add(this.btndeletemind);
+			this.tabPage5.Controls.Add(this.btninsertmind);
+			this.tabPage5.Controls.Add(this.txtMind);
+			this.tabPage5.Controls.Add(this.label20);
+			this.tabPage5.Controls.Add(this.dgwMind);
+			this.tabPage5.Location = new System.Drawing.Point(4, 25);
+			this.tabPage5.Name = "tabPage5";
+			this.tabPage5.Size = new System.Drawing.Size(1186, 795);
+			this.tabPage5.TabIndex = 4;
+			this.tabPage5.Text = "마인드";
+			this.tabPage5.UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// btninsertcontinue
 			// 
-			this.button1.Location = new System.Drawing.Point(90, 297);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(105, 36);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btninsertcontinue.Location = new System.Drawing.Point(953, 223);
+			this.btninsertcontinue.Name = "btninsertcontinue";
+			this.btninsertcontinue.Size = new System.Drawing.Size(201, 59);
+			this.btninsertcontinue.TabIndex = 13;
+			this.btninsertcontinue.Text = "등록";
+			this.btninsertcontinue.UseVisualStyleBackColor = true;
+			// 
+			// txtcontinune
+			// 
+			this.txtcontinune.Location = new System.Drawing.Point(953, 56);
+			this.txtcontinune.Multiline = true;
+			this.txtcontinune.Name = "txtcontinune";
+			this.txtcontinune.Size = new System.Drawing.Size(201, 132);
+			this.txtcontinune.TabIndex = 12;
+			// 
+			// label19
+			// 
+			this.label19.AutoSize = true;
+			this.label19.Location = new System.Drawing.Point(24, 27);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(157, 15);
+			this.label19.TabIndex = 11;
+			this.label19.Text = "계속꾸준히해야하는거";
+			// 
+			// dgwcontinue
+			// 
+			this.dgwcontinue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwcontinue.Location = new System.Drawing.Point(27, 56);
+			this.dgwcontinue.Name = "dgwcontinue";
+			this.dgwcontinue.RowHeadersWidth = 51;
+			this.dgwcontinue.RowTemplate.Height = 27;
+			this.dgwcontinue.Size = new System.Drawing.Size(894, 807);
+			this.dgwcontinue.TabIndex = 10;
+			// 
+			// btninsertmind
+			// 
+			this.btninsertmind.Location = new System.Drawing.Point(945, 231);
+			this.btninsertmind.Name = "btninsertmind";
+			this.btninsertmind.Size = new System.Drawing.Size(201, 59);
+			this.btninsertmind.TabIndex = 13;
+			this.btninsertmind.Text = "등록";
+			this.btninsertmind.UseVisualStyleBackColor = true;
+			// 
+			// txtMind
+			// 
+			this.txtMind.Location = new System.Drawing.Point(945, 61);
+			this.txtMind.Multiline = true;
+			this.txtMind.Name = "txtMind";
+			this.txtMind.Size = new System.Drawing.Size(201, 132);
+			this.txtMind.TabIndex = 12;
+			// 
+			// label20
+			// 
+			this.label20.AutoSize = true;
+			this.label20.Location = new System.Drawing.Point(22, 26);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(52, 15);
+			this.label20.TabIndex = 11;
+			this.label20.Text = "마인드";
+			// 
+			// dgwMind
+			// 
+			this.dgwMind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwMind.Location = new System.Drawing.Point(25, 44);
+			this.dgwMind.Name = "dgwMind";
+			this.dgwMind.RowHeadersWidth = 51;
+			this.dgwMind.RowTemplate.Height = 27;
+			this.dgwMind.Size = new System.Drawing.Size(894, 807);
+			this.dgwMind.TabIndex = 10;
+			// 
+			// btndeletemind
+			// 
+			this.btndeletemind.Location = new System.Drawing.Point(945, 308);
+			this.btndeletemind.Name = "btndeletemind";
+			this.btndeletemind.Size = new System.Drawing.Size(201, 59);
+			this.btndeletemind.TabIndex = 15;
+			this.btndeletemind.Text = "삭제";
+			this.btndeletemind.UseVisualStyleBackColor = true;
+			// 
+			// btndeletemergency
+			// 
+			this.btndeletemergency.Location = new System.Drawing.Point(936, 306);
+			this.btndeletemergency.Name = "btndeletemergency";
+			this.btndeletemergency.Size = new System.Drawing.Size(201, 59);
+			this.btndeletemergency.TabIndex = 10;
+			this.btndeletemergency.Text = "삭제";
+			this.btndeletemergency.UseVisualStyleBackColor = true;
 			// 
 			// dataGridView2
 			// 
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(340, 206);
+			this.dataGridView2.Location = new System.Drawing.Point(50, 46);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.RowHeadersWidth = 51;
 			this.dataGridView2.RowTemplate.Height = 27;
-			this.dataGridView2.Size = new System.Drawing.Size(593, 192);
-			this.dataGridView2.TabIndex = 1;
+			this.dataGridView2.Size = new System.Drawing.Size(679, 396);
+			this.dataGridView2.TabIndex = 0;
 			// 
-			// dataGridView1
+			// btndeletecontinue
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(340, 29);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.RowTemplate.Height = 27;
-			this.dataGridView1.Size = new System.Drawing.Size(593, 132);
-			this.dataGridView1.TabIndex = 1;
-			// 
-			// monthCalendar1
-			// 
-			this.monthCalendar1.Location = new System.Drawing.Point(25, 45);
-			this.monthCalendar1.Name = "monthCalendar1";
-			this.monthCalendar1.TabIndex = 0;
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(956, 206);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(157, 23);
-			this.comboBox1.TabIndex = 9;
+			this.btndeletecontinue.Location = new System.Drawing.Point(953, 299);
+			this.btndeletecontinue.Name = "btndeletecontinue";
+			this.btndeletecontinue.Size = new System.Drawing.Size(201, 59);
+			this.btndeletecontinue.TabIndex = 14;
+			this.btndeletecontinue.Text = "삭제";
+			this.btndeletecontinue.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1194, 661);
+			this.ClientSize = new System.Drawing.Size(1194, 824);
 			this.Controls.Add(this.tabControl1);
 			this.Name = "Form1";
 			this.Text = "Form1";
-			this.tableLayoutPanel1.ResumeLayout(false);
-			this.tableLayoutPanel1.PerformLayout();
-			this.tableLayoutPanel2.ResumeLayout(false);
-			this.tableLayoutPanel2.PerformLayout();
-			this.tableLayoutPanel3.ResumeLayout(false);
-			this.tableLayoutPanel3.PerformLayout();
+			this.Panellive.ResumeLayout(false);
+			this.Panellive.PerformLayout();
+			this.Panelconsciousness.ResumeLayout(false);
+			this.Panelconsciousness.PerformLayout();
+			this.Panelsleep.ResumeLayout(false);
+			this.Panelsleep.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			this.tabPage2.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwemergency)).EndInit();
+			this.tabPage4.ResumeLayout(false);
+			this.tabPage4.PerformLayout();
+			this.tabPage5.ResumeLayout(false);
+			this.tabPage5.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgwcontinue)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -599,8 +689,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel Panellive;
+        private System.Windows.Forms.TableLayoutPanel Panelconsciousness;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
@@ -608,7 +698,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel Panelsleep;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox10;
@@ -624,17 +714,24 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.DataGridView dgwemergency;
+        private System.Windows.Forms.Label lblemergency;
+        private System.Windows.Forms.Button btninsertemergency;
+        private System.Windows.Forms.TextBox txtemergency;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btninsertcontinue;
+        private System.Windows.Forms.TextBox txtcontinune;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridView dgwcontinue;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btninsertmind;
+        private System.Windows.Forms.TextBox txtMind;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView dgwMind;
+        private System.Windows.Forms.Button btndeletemergency;
+        private System.Windows.Forms.Button btndeletemind;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btndeletecontinue;
     }
 }
 
