@@ -59,41 +59,45 @@
 			this.textBox9 = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.dgwexercise = new System.Windows.Forms.DataGridView();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.btndeletemergency = new System.Windows.Forms.Button();
 			this.btninsertemergency = new System.Windows.Forms.Button();
 			this.txtemergency = new System.Windows.Forms.TextBox();
 			this.lblemergency = new System.Windows.Forms.Label();
 			this.dgwemergency = new System.Windows.Forms.DataGridView();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.btndeletecontinue = new System.Windows.Forms.Button();
 			this.btninsertcontinue = new System.Windows.Forms.Button();
 			this.txtcontinune = new System.Windows.Forms.TextBox();
 			this.label19 = new System.Windows.Forms.Label();
 			this.dgwcontinue = new System.Windows.Forms.DataGridView();
+			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.btndeletemind = new System.Windows.Forms.Button();
 			this.btninsertmind = new System.Windows.Forms.Button();
 			this.txtMind = new System.Windows.Forms.TextBox();
 			this.label20 = new System.Windows.Forms.Label();
 			this.dgwMind = new System.Windows.Forms.DataGridView();
-			this.btndeletemind = new System.Windows.Forms.Button();
-			this.btndeletemergency = new System.Windows.Forms.Button();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.btndeletecontinue = new System.Windows.Forms.Button();
+			this.Dateexercise = new System.Windows.Forms.DateTimePicker();
+			this.timeexercise = new System.Windows.Forms.NumericUpDown();
+			this.btninsertexercise = new System.Windows.Forms.Button();
 			this.Panellive.SuspendLayout();
 			this.Panelconsciousness.SuspendLayout();
 			this.Panelsleep.SuspendLayout();
-			this.tabControl1.SuspendLayout();
+			this.tabControl.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgwexercise)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwemergency)).BeginInit();
 			this.tabPage4.SuspendLayout();
-			this.tabPage5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwcontinue)).BeginInit();
+			this.tabPage5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.timeexercise)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label
@@ -417,19 +421,19 @@
 			this.label15.TabIndex = 14;
 			this.label15.Text = "<잠>";
 			// 
-			// tabControl1
+			// tabControl
 			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Controls.Add(this.tabPage3);
-			this.tabControl1.Controls.Add(this.tabPage4);
-			this.tabControl1.Controls.Add(this.tabPage5);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1194, 824);
-			this.tabControl1.TabIndex = 15;
+			this.tabControl.Controls.Add(this.tabPage1);
+			this.tabControl.Controls.Add(this.tabPage2);
+			this.tabControl.Controls.Add(this.tabPage3);
+			this.tabControl.Controls.Add(this.tabPage4);
+			this.tabControl.Controls.Add(this.tabPage5);
+			this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControl.Location = new System.Drawing.Point(0, 0);
+			this.tabControl.Name = "tabControl";
+			this.tabControl.SelectedIndex = 0;
+			this.tabControl.Size = new System.Drawing.Size(1194, 824);
+			this.tabControl.TabIndex = 15;
 			// 
 			// tabPage1
 			// 
@@ -450,14 +454,27 @@
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.dataGridView2);
+			this.tabPage2.Controls.Add(this.btninsertexercise);
+			this.tabPage2.Controls.Add(this.timeexercise);
+			this.tabPage2.Controls.Add(this.Dateexercise);
+			this.tabPage2.Controls.Add(this.dgwexercise);
 			this.tabPage2.Location = new System.Drawing.Point(4, 25);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1186, 495);
+			this.tabPage2.Size = new System.Drawing.Size(1186, 795);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "운동";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// dgwexercise
+			// 
+			this.dgwexercise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwexercise.Location = new System.Drawing.Point(18, 17);
+			this.dgwexercise.Name = "dgwexercise";
+			this.dgwexercise.RowHeadersWidth = 51;
+			this.dgwexercise.RowTemplate.Height = 27;
+			this.dgwexercise.Size = new System.Drawing.Size(679, 396);
+			this.dgwexercise.TabIndex = 0;
 			// 
 			// tabPage3
 			// 
@@ -472,6 +489,15 @@
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "급한거";
 			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// btndeletemergency
+			// 
+			this.btndeletemergency.Location = new System.Drawing.Point(936, 306);
+			this.btndeletemergency.Name = "btndeletemergency";
+			this.btndeletemergency.Size = new System.Drawing.Size(201, 59);
+			this.btndeletemergency.TabIndex = 10;
+			this.btndeletemergency.Text = "삭제";
+			this.btndeletemergency.UseVisualStyleBackColor = true;
 			// 
 			// btninsertemergency
 			// 
@@ -523,19 +549,14 @@
 			this.tabPage4.Text = "계속꾸준히";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
-			// tabPage5
+			// btndeletecontinue
 			// 
-			this.tabPage5.Controls.Add(this.btndeletemind);
-			this.tabPage5.Controls.Add(this.btninsertmind);
-			this.tabPage5.Controls.Add(this.txtMind);
-			this.tabPage5.Controls.Add(this.label20);
-			this.tabPage5.Controls.Add(this.dgwMind);
-			this.tabPage5.Location = new System.Drawing.Point(4, 25);
-			this.tabPage5.Name = "tabPage5";
-			this.tabPage5.Size = new System.Drawing.Size(1186, 795);
-			this.tabPage5.TabIndex = 4;
-			this.tabPage5.Text = "마인드";
-			this.tabPage5.UseVisualStyleBackColor = true;
+			this.btndeletecontinue.Location = new System.Drawing.Point(953, 299);
+			this.btndeletecontinue.Name = "btndeletecontinue";
+			this.btndeletecontinue.Size = new System.Drawing.Size(201, 59);
+			this.btndeletecontinue.TabIndex = 14;
+			this.btndeletecontinue.Text = "삭제";
+			this.btndeletecontinue.UseVisualStyleBackColor = true;
 			// 
 			// btninsertcontinue
 			// 
@@ -573,6 +594,29 @@
 			this.dgwcontinue.Size = new System.Drawing.Size(894, 807);
 			this.dgwcontinue.TabIndex = 10;
 			// 
+			// tabPage5
+			// 
+			this.tabPage5.Controls.Add(this.btndeletemind);
+			this.tabPage5.Controls.Add(this.btninsertmind);
+			this.tabPage5.Controls.Add(this.txtMind);
+			this.tabPage5.Controls.Add(this.label20);
+			this.tabPage5.Controls.Add(this.dgwMind);
+			this.tabPage5.Location = new System.Drawing.Point(4, 25);
+			this.tabPage5.Name = "tabPage5";
+			this.tabPage5.Size = new System.Drawing.Size(1186, 795);
+			this.tabPage5.TabIndex = 4;
+			this.tabPage5.Text = "마인드";
+			this.tabPage5.UseVisualStyleBackColor = true;
+			// 
+			// btndeletemind
+			// 
+			this.btndeletemind.Location = new System.Drawing.Point(945, 308);
+			this.btndeletemind.Name = "btndeletemind";
+			this.btndeletemind.Size = new System.Drawing.Size(201, 59);
+			this.btndeletemind.TabIndex = 15;
+			this.btndeletemind.Text = "삭제";
+			this.btndeletemind.UseVisualStyleBackColor = true;
+			// 
 			// btninsertmind
 			// 
 			this.btninsertmind.Location = new System.Drawing.Point(945, 231);
@@ -609,49 +653,36 @@
 			this.dgwMind.Size = new System.Drawing.Size(894, 807);
 			this.dgwMind.TabIndex = 10;
 			// 
-			// btndeletemind
+			// Dateexercise
 			// 
-			this.btndeletemind.Location = new System.Drawing.Point(945, 308);
-			this.btndeletemind.Name = "btndeletemind";
-			this.btndeletemind.Size = new System.Drawing.Size(201, 59);
-			this.btndeletemind.TabIndex = 15;
-			this.btndeletemind.Text = "삭제";
-			this.btndeletemind.UseVisualStyleBackColor = true;
+			this.Dateexercise.Location = new System.Drawing.Point(752, 42);
+			this.Dateexercise.Name = "Dateexercise";
+			this.Dateexercise.Size = new System.Drawing.Size(200, 25);
+			this.Dateexercise.TabIndex = 1;
 			// 
-			// btndeletemergency
+			// timeexercise
 			// 
-			this.btndeletemergency.Location = new System.Drawing.Point(936, 306);
-			this.btndeletemergency.Name = "btndeletemergency";
-			this.btndeletemergency.Size = new System.Drawing.Size(201, 59);
-			this.btndeletemergency.TabIndex = 10;
-			this.btndeletemergency.Text = "삭제";
-			this.btndeletemergency.UseVisualStyleBackColor = true;
+			this.timeexercise.Location = new System.Drawing.Point(977, 42);
+			this.timeexercise.Name = "timeexercise";
+			this.timeexercise.Size = new System.Drawing.Size(120, 25);
+			this.timeexercise.TabIndex = 2;
 			// 
-			// dataGridView2
+			// btninsertexercise
 			// 
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(50, 46);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.RowHeadersWidth = 51;
-			this.dataGridView2.RowTemplate.Height = 27;
-			this.dataGridView2.Size = new System.Drawing.Size(679, 396);
-			this.dataGridView2.TabIndex = 0;
-			// 
-			// btndeletecontinue
-			// 
-			this.btndeletecontinue.Location = new System.Drawing.Point(953, 299);
-			this.btndeletecontinue.Name = "btndeletecontinue";
-			this.btndeletecontinue.Size = new System.Drawing.Size(201, 59);
-			this.btndeletecontinue.TabIndex = 14;
-			this.btndeletecontinue.Text = "삭제";
-			this.btndeletecontinue.UseVisualStyleBackColor = true;
+			this.btninsertexercise.Location = new System.Drawing.Point(752, 113);
+			this.btninsertexercise.Name = "btninsertexercise";
+			this.btninsertexercise.Size = new System.Drawing.Size(200, 73);
+			this.btninsertexercise.TabIndex = 3;
+			this.btninsertexercise.Text = "등록";
+			this.btninsertexercise.UseVisualStyleBackColor = true;
+			this.btninsertexercise.Click += new System.EventHandler(this.btninsertexercise_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1194, 824);
-			this.Controls.Add(this.tabControl1);
+			this.Controls.Add(this.tabControl);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.Panellive.ResumeLayout(false);
@@ -660,20 +691,21 @@
 			this.Panelconsciousness.PerformLayout();
 			this.Panelsleep.ResumeLayout(false);
 			this.Panelsleep.PerformLayout();
-			this.tabControl1.ResumeLayout(false);
+			this.tabControl.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgwexercise)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwemergency)).EndInit();
 			this.tabPage4.ResumeLayout(false);
 			this.tabPage4.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgwcontinue)).EndInit();
 			this.tabPage5.ResumeLayout(false);
 			this.tabPage5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgwcontinue)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.timeexercise)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -710,7 +742,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -730,8 +762,11 @@
         private System.Windows.Forms.DataGridView dgwMind;
         private System.Windows.Forms.Button btndeletemergency;
         private System.Windows.Forms.Button btndeletemind;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgwexercise;
         private System.Windows.Forms.Button btndeletecontinue;
+        private System.Windows.Forms.Button btninsertexercise;
+        private System.Windows.Forms.NumericUpDown timeexercise;
+        private System.Windows.Forms.DateTimePicker Dateexercise;
     }
 }
 

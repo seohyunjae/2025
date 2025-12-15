@@ -31,14 +31,88 @@ namespace TimeCalculationProject
 			UpdateUi();
 			BindCategoryCombo();
 			
-			tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
-			btninsertemergency.Click += btninsert_Click; // ★ 버튼 이름이 button1일 때
-			btndeletemergency.Click += Button5_Click; // ✅ 삭제 버튼
+			tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
+
+			// insert
+			btninsertemergency.Click += BtnInsertEmergency_Click;
+			btninsertcontinue.Click += BtnInsertContinue_Click;
+			btninsertmind.Click += BtnInsertMind_Click;
+
+			// delete
+			btndeletemergency.Click += BtnDeleteEmergency_Click;
+			btndeletecontinue.Click += BtnDeleteContinue_Click;
+			btndeletemind.Click += BtnDeleteMind_Click;
 		}
+
+		private void BtnInsertEmergency_Click(object sender, EventArgs e)
+		{
+			InsertTask(1, txtemergency, dgwemergency);
+		}
+
+		private void BtnInsertContinue_Click(object sender, EventArgs e)
+		{
+			InsertTask(2, txtcontinune, dgwcontinue);
+		}
+
+		private void BtnInsertMind_Click(object sender, EventArgs e)
+		{
+			InsertTask(3, txtMind, dgwMind);
+		}
+
+		private void BtnDeleteEmergency_Click(object sender, EventArgs e)
+		{
+			DeleteTask(1, dgwemergency);
+		}
+
+		private void BtnDeleteContinue_Click(object sender, EventArgs e)
+		{
+			DeleteTask(2, dgwcontinue);
+		}
+
+		private void BtnDeleteMind_Click(object sender, EventArgs e)
+		{
+			DeleteTask(3, dgwMind);
+		}
+
+
+		private void InsertTask(byte taskType, TextBox inputTextBox, DataGridView targetGrid)
+		{
+			string content = inputTextBox.Text.Trim();
+			if (string.IsNullOrWhiteSpace(content))
+			{
+				MessageBox.Show("내용을 입력해 주세요.");
+				inputTextBox.Focus();
+				return;
+			}
+
+			DateTime insertTime = DateTime.Now;
+
+			const string sql = @"
+									INSERT INTO dbo.TaskItem (TaskType, Content, InsertTime)
+									VALUES (@TaskType, @Content, @InsertTime);
+								";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.Add("@TaskType", SqlDbType.TinyInt).Value = taskType;
+				command.Parameters.Add("@Content", SqlDbType.NVarChar, 200).Value = content;
+				command.Parameters.Add("@InsertTime", SqlDbType.DateTime2).Value = insertTime;
+
+				connection.Open();
+				command.ExecuteNonQuery();
+			}
+
+			// 등록 즉시 현재 탭 그리드 갱신
+			LoadTaskGrid(taskType, targetGrid);
+
+			inputTextBox.Clear();
+			inputTextBox.Focus();
+		}
+
 
 		private void btninsert_Click(object sender, EventArgs e)
 		{
-			// 1) Content: textbox13
 			string content = txtemergency.Text.Trim();
 			if (string.IsNullOrWhiteSpace(content))
 			{
@@ -73,28 +147,31 @@ namespace TimeCalculationProject
 				int rows = command.ExecuteNonQuery();
 				MessageBox.Show($"{rows}건 저장되었습니다.");
 			}
-				LoadTaskGrid(taskType, targetGrid);
-				txtemergency.Clear();
-				txtemergency.Focus();
+			LoadTaskGrid(taskType, targetGrid);
+			txtemergency.Clear();
+			txtemergency.Focus();	
 		}
-		private void TabPage_Enter(object sender, EventArgs e)
-		{
-			LoadTaskGrids();
-		}
+		
 
 		private void UiTimer_Tick(object sender, EventArgs e)
 		{
 			UpdateUi();
 		}
-		private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+		private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			LoadTaskGridBySelectedTab();
 		}
 		private void LoadTaskGridBySelectedTab()
 		{
-			TabPage selectedTab = tabControl1.SelectedTab;
+			TabPage selectedTab = tabControl.SelectedTab;
 			if (selectedTab == null)
 				return;
+
+			if (selectedTab == tabPage2)
+			{
+				LoadExerciseGrid();
+				return;
+			}
 
 			if (selectedTab == tabPage3)
 			{
@@ -107,6 +184,35 @@ namespace TimeCalculationProject
 			else if (selectedTab == tabPage5)
 			{
 				LoadTaskGrid(3, dgwMind); // TaskType=3
+			}
+		}
+
+
+		private void LoadExerciseGrid()
+		{
+			const string sql = @"
+									SELECT
+										ExerciseDate,
+										ExerciseMinutes,
+										InsertTime,
+										CASE WHEN ExerciseMinutes > 0 THEN N'Y' ELSE N'N' END AS IsExercised
+									FROM dbo.Exercise
+									ORDER BY ExerciseDate DESC;
+								";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				DataTable table = new DataTable();
+				connection.Open();
+
+				using (SqlDataReader reader = command.ExecuteReader())
+				{
+					table.Load(reader);
+				}
+
+				dgwexercise.DataSource = table;
+				dgwexercise.AutoResizeColumns();
 			}
 		}
 
@@ -179,30 +285,23 @@ namespace TimeCalculationProject
 		}
 		private (byte TaskType, DataGridView Grid) GetCurrentTaskGridInfo()
 		{
-			if (tabControl1.SelectedTab == tabPage3)
+			if (tabControl.SelectedTab == tabPage3)
 				return (1,dgwemergency);
 
-			if (tabControl1.SelectedTab == tabPage4)
+			if (tabControl.SelectedTab == tabPage4)
 				return (2, dgwcontinue);
 
-			if (tabControl1.SelectedTab == tabPage5)
+			if (tabControl.SelectedTab == tabPage5)
 				return (3, dgwMind);
 
 			return (0, null);
 		}
-
-
-		private void Button5_Click(object sender, EventArgs e)
+		private void DeleteTask(byte taskType, DataGridView targetGrid)
 		{
-			// 1) 현재 탭에 맞는 그리드/TaskType 선택
-			(byte taskType, DataGridView targetGrid) = GetCurrentTaskGridInfo();
 			if (targetGrid == null)
-			{
-				MessageBox.Show("삭제할 탭/그리드를 찾을 수 없습니다.");
 				return;
-			}
 
-			// 2) 포커스(선택)된 행 확인
+			// 1) 선택/포커스 행 가져오기
 			DataGridViewRow row = targetGrid.SelectedRows.Count > 0
 				? targetGrid.SelectedRows[0]
 				: targetGrid.CurrentRow;
@@ -213,7 +312,7 @@ namespace TimeCalculationProject
 				return;
 			}
 
-			// 3) TaskId 가져오기
+			// 2) TaskId 가져오기
 			object idValue = row.Cells["TaskId"]?.Value;
 			if (idValue == null || idValue == DBNull.Value)
 			{
@@ -223,7 +322,7 @@ namespace TimeCalculationProject
 
 			int taskId = Convert.ToInt32(idValue);
 
-			// 4) 삭제 확인
+			// 3) 삭제 확인
 			DialogResult result = MessageBox.Show(
 				"선택한 데이터를 삭제하시겠습니까?",
 				"삭제 확인",
@@ -233,7 +332,7 @@ namespace TimeCalculationProject
 			if (result != DialogResult.Yes)
 				return;
 
-			// 5) DB 삭제
+			// 4) DB 삭제
 			const string sql = "DELETE FROM dbo.TaskItem WHERE TaskId = @TaskId;";
 
 			using (SqlConnection connection = new SqlConnection(connectionString))
@@ -251,7 +350,7 @@ namespace TimeCalculationProject
 				}
 			}
 
-			// 6) 현재 탭 그리드만 새로고침
+			// 5) 삭제 후 해당 탭 그리드 즉시 갱신
 			LoadTaskGrid(taskType, targetGrid);
 
 			MessageBox.Show("삭제되었습니다.");
@@ -284,18 +383,8 @@ namespace TimeCalculationProject
 				new CategoryItem { CategoryId = 2, CategoryName = "계속꾸준히해야하는거" },
 				new CategoryItem { CategoryId = 3, CategoryName = "마인드" }
 			};
-
-			//comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-			//comboBox1.DisplayMember = nameof(CategoryItem.CategoryName);
-			//comboBox1.ValueMember = nameof(CategoryItem.CategoryId);
-			//comboBox1.DataSource = items;
 		}
 		
-		//private byte GetSelectedCategoryId()
-		//{
-		//	return comboBox1.SelectedValue is byte v ? v : (byte)0;
-		//}
-
 		private void LoadTaskGrids()
 		{
 			LoadTaskGrid(1, dgwemergency); // 급한거
@@ -306,9 +395,17 @@ namespace TimeCalculationProject
 		private void LoadTaskGrid(byte taskType, DataGridView targetGrid)
 		{
 			const string sql = @"
-									SELECT TaskId, TaskType, Content, InsertTime
-									FROM dbo.TaskItem
-									WHERE TaskType = @TaskType;
+									;WITH Cte AS
+									(
+										SELECT
+											ROW_NUMBER() OVER (ORDER BY InsertTime DESC, TaskId DESC) AS [순서],
+											TaskId, TaskType, Content, InsertTime
+										FROM dbo.TaskItem
+										WHERE TaskType = @TaskType
+									)
+									SELECT [순서], TaskId, TaskType, Content, InsertTime
+									FROM Cte
+									ORDER BY [순서];
 								";
 
 			using (SqlConnection connection = new SqlConnection(connectionString))
@@ -328,15 +425,65 @@ namespace TimeCalculationProject
 				targetGrid.AutoResizeColumns();
 
 				if (targetGrid.Columns["TaskId"] != null)
-				{
 					targetGrid.Columns["TaskId"].Visible = false;
-				}
 
 				if (targetGrid.Columns["TaskType"] != null)
-				{
 					targetGrid.Columns["TaskType"].Visible = false;
+
+				// (선택) 순서 컬럼 폭/정렬 잠금
+				if (targetGrid.Columns["순서"] != null)
+				{
+					targetGrid.Columns["순서"].Width = 60;
+					targetGrid.Columns["순서"].SortMode = DataGridViewColumnSortMode.NotSortable;
 				}
 			}
 		}
-    }
+
+		private void btninsertexercise_Click(object sender, EventArgs e)
+		{
+			// 1) 날짜 (yyyyMMdd로 보여도 DB에는 Date 타입으로 들어가면 됨)
+			DateTime exerciseDate = Dateexercise.Value.Date;
+
+			// 2) 분(ExerciseMinutes)
+			string minutesText = timeexercise.Text.Trim();
+			if (!int.TryParse(minutesText, out int exerciseMinutes) || exerciseMinutes < 0 || exerciseMinutes > 1440)
+			{
+				MessageBox.Show("운동 시간(분)을 0~1440 사이 숫자로 입력해 주세요.");
+				timeexercise.Focus();
+				return;
+			}
+
+			// 3) 현재시간(InsertTime)
+			DateTime insertTime = DateTime.Now;
+
+			// 4) 같은 날짜가 있으면 UPDATE, 없으면 INSERT
+			const string sql = @"
+					IF EXISTS (SELECT 1 FROM dbo.Exercise WHERE ExerciseDate = @ExerciseDate)
+					BEGIN
+						UPDATE dbo.Exercise
+						SET ExerciseMinutes = @ExerciseMinutes,
+							UpdateTime = SYSDATETIME()
+						WHERE ExerciseDate = @ExerciseDate;
+					END
+					ELSE
+					BEGIN
+						INSERT INTO dbo.Exercise (ExerciseDate, ExerciseMinutes, InsertTime)
+						VALUES (@ExerciseDate, @ExerciseMinutes, @InsertTime);
+					END
+					";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.Add("@ExerciseDate", SqlDbType.Date).Value = exerciseDate;
+				command.Parameters.Add("@ExerciseMinutes", SqlDbType.Int).Value = exerciseMinutes;
+				command.Parameters.Add("@InsertTime", SqlDbType.DateTime2).Value = insertTime;
+
+				connection.Open();
+				command.ExecuteNonQuery();
+			}
+
+			MessageBox.Show("운동 기록이 저장(또는 수정)되었습니다.");
+		}
+	}
 }
