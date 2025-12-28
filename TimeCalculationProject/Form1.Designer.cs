@@ -62,6 +62,9 @@
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.btninsertexercise = new System.Windows.Forms.Button();
+			this.timeexercise = new System.Windows.Forms.NumericUpDown();
+			this.Dateexercise = new System.Windows.Forms.DateTimePicker();
 			this.dgwexercise = new System.Windows.Forms.DataGridView();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.btndeletemergency = new System.Windows.Forms.Button();
@@ -81,15 +84,21 @@
 			this.txtMind = new System.Windows.Forms.TextBox();
 			this.label20 = new System.Windows.Forms.Label();
 			this.dgwMind = new System.Windows.Forms.DataGridView();
-			this.Dateexercise = new System.Windows.Forms.DateTimePicker();
-			this.timeexercise = new System.Windows.Forms.NumericUpDown();
-			this.btninsertexercise = new System.Windows.Forms.Button();
+			this.tabPage6 = new System.Windows.Forms.TabPage();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.textBox13 = new System.Windows.Forms.TextBox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.btn11 = new System.Windows.Forms.Button();
+			this.btn1110 = new System.Windows.Forms.Button();
+			this.btn1120 = new System.Windows.Forms.Button();
+			this.btn1130 = new System.Windows.Forms.Button();
 			this.Panellive.SuspendLayout();
 			this.Panelconsciousness.SuspendLayout();
 			this.Panelsleep.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.timeexercise)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgwexercise)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwemergency)).BeginInit();
@@ -97,7 +106,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgwcontinue)).BeginInit();
 			this.tabPage5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.timeexercise)).BeginInit();
+			this.tabPage6.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label
@@ -428,6 +437,7 @@
 			this.tabControl.Controls.Add(this.tabPage3);
 			this.tabControl.Controls.Add(this.tabPage4);
 			this.tabControl.Controls.Add(this.tabPage5);
+			this.tabControl.Controls.Add(this.tabPage6);
 			this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl.Location = new System.Drawing.Point(0, 0);
 			this.tabControl.Name = "tabControl";
@@ -465,6 +475,30 @@
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "운동";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// btninsertexercise
+			// 
+			this.btninsertexercise.Location = new System.Drawing.Point(752, 113);
+			this.btninsertexercise.Name = "btninsertexercise";
+			this.btninsertexercise.Size = new System.Drawing.Size(200, 73);
+			this.btninsertexercise.TabIndex = 3;
+			this.btninsertexercise.Text = "등록";
+			this.btninsertexercise.UseVisualStyleBackColor = true;
+			this.btninsertexercise.Click += new System.EventHandler(this.btninsertexercise_Click);
+			// 
+			// timeexercise
+			// 
+			this.timeexercise.Location = new System.Drawing.Point(977, 42);
+			this.timeexercise.Name = "timeexercise";
+			this.timeexercise.Size = new System.Drawing.Size(120, 25);
+			this.timeexercise.TabIndex = 2;
+			// 
+			// Dateexercise
+			// 
+			this.Dateexercise.Location = new System.Drawing.Point(752, 42);
+			this.Dateexercise.Name = "Dateexercise";
+			this.Dateexercise.Size = new System.Drawing.Size(200, 25);
+			this.Dateexercise.TabIndex = 1;
 			// 
 			// dgwexercise
 			// 
@@ -653,29 +687,82 @@
 			this.dgwMind.Size = new System.Drawing.Size(894, 807);
 			this.dgwMind.TabIndex = 10;
 			// 
-			// Dateexercise
+			// tabPage6
 			// 
-			this.Dateexercise.Location = new System.Drawing.Point(752, 42);
-			this.Dateexercise.Name = "Dateexercise";
-			this.Dateexercise.Size = new System.Drawing.Size(200, 25);
-			this.Dateexercise.TabIndex = 1;
+			this.tabPage6.Controls.Add(this.btn1130);
+			this.tabPage6.Controls.Add(this.btn1120);
+			this.tabPage6.Controls.Add(this.btn1110);
+			this.tabPage6.Controls.Add(this.btn11);
+			this.tabPage6.Controls.Add(this.label16);
+			this.tabPage6.Controls.Add(this.textBox13);
+			this.tabPage6.Controls.Add(this.dateTimePicker1);
+			this.tabPage6.Location = new System.Drawing.Point(4, 25);
+			this.tabPage6.Name = "tabPage6";
+			this.tabPage6.Size = new System.Drawing.Size(1186, 795);
+			this.tabPage6.TabIndex = 5;
+			this.tabPage6.Text = "자야하는시간설정";
+			this.tabPage6.UseVisualStyleBackColor = true;
 			// 
-			// timeexercise
+			// dateTimePicker1
 			// 
-			this.timeexercise.Location = new System.Drawing.Point(977, 42);
-			this.timeexercise.Name = "timeexercise";
-			this.timeexercise.Size = new System.Drawing.Size(120, 25);
-			this.timeexercise.TabIndex = 2;
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+			this.dateTimePicker1.Location = new System.Drawing.Point(168, 46);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(232, 25);
+			this.dateTimePicker1.TabIndex = 0;
 			// 
-			// btninsertexercise
+			// textBox13
 			// 
-			this.btninsertexercise.Location = new System.Drawing.Point(752, 113);
-			this.btninsertexercise.Name = "btninsertexercise";
-			this.btninsertexercise.Size = new System.Drawing.Size(200, 73);
-			this.btninsertexercise.TabIndex = 3;
-			this.btninsertexercise.Text = "등록";
-			this.btninsertexercise.UseVisualStyleBackColor = true;
-			this.btninsertexercise.Click += new System.EventHandler(this.btninsertexercise_Click);
+			this.textBox13.Location = new System.Drawing.Point(78, 165);
+			this.textBox13.Name = "textBox13";
+			this.textBox13.Size = new System.Drawing.Size(433, 25);
+			this.textBox13.TabIndex = 1;
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(65, 46);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(97, 15);
+			this.label16.TabIndex = 2;
+			this.label16.Text = "자야할시간 : ";
+			// 
+			// btn11
+			// 
+			this.btn11.Location = new System.Drawing.Point(78, 104);
+			this.btn11.Name = "btn11";
+			this.btn11.Size = new System.Drawing.Size(98, 38);
+			this.btn11.TabIndex = 3;
+			this.btn11.Text = "11시";
+			this.btn11.UseVisualStyleBackColor = true;
+			this.btn11.Click += new System.EventHandler(this.btn11_Click);
+			// 
+			// btn1110
+			// 
+			this.btn1110.Location = new System.Drawing.Point(182, 104);
+			this.btn1110.Name = "btn1110";
+			this.btn1110.Size = new System.Drawing.Size(98, 38);
+			this.btn1110.TabIndex = 4;
+			this.btn1110.Text = "11시10분";
+			this.btn1110.UseVisualStyleBackColor = true;
+			// 
+			// btn1120
+			// 
+			this.btn1120.Location = new System.Drawing.Point(286, 104);
+			this.btn1120.Name = "btn1120";
+			this.btn1120.Size = new System.Drawing.Size(98, 38);
+			this.btn1120.TabIndex = 5;
+			this.btn1120.Text = "11시20분";
+			this.btn1120.UseVisualStyleBackColor = true;
+			// 
+			// btn1130
+			// 
+			this.btn1130.Location = new System.Drawing.Point(390, 104);
+			this.btn1130.Name = "btn1130";
+			this.btn1130.Size = new System.Drawing.Size(98, 38);
+			this.btn1130.TabIndex = 6;
+			this.btn1130.Text = "11시30분";
+			this.btn1130.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -695,6 +782,7 @@
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.timeexercise)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgwexercise)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
@@ -705,7 +793,8 @@
 			this.tabPage5.ResumeLayout(false);
 			this.tabPage5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.timeexercise)).EndInit();
+			this.tabPage6.ResumeLayout(false);
+			this.tabPage6.PerformLayout();
 			this.ResumeLayout(false);
 
         }
@@ -767,6 +856,14 @@
         private System.Windows.Forms.Button btninsertexercise;
         private System.Windows.Forms.NumericUpDown timeexercise;
         private System.Windows.Forms.DateTimePicker Dateexercise;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btn1120;
+        private System.Windows.Forms.Button btn1110;
+        private System.Windows.Forms.Button btn11;
+        private System.Windows.Forms.Button btn1130;
     }
 }
 

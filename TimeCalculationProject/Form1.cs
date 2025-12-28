@@ -17,7 +17,6 @@ namespace TimeCalculationProject
 		private readonly Timer uiTimer;
 		private readonly string connectionString = @"Server=localhost;Database=TimeDB;Integrated Security=True;";
 
-
 		public Form1()
 		{
 			InitializeComponent();
@@ -30,7 +29,10 @@ namespace TimeCalculationProject
 
 			UpdateUi();
 			BindCategoryCombo();
-			
+			UpdateRemainingToPicker(); // ✅ 처음 실행 시에도 표시
+
+			// ✅ 값 바뀌면 바로 갱신
+			dateTimePicker1.ValueChanged += DateTimePicker1_ValueChanged;
 			tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
 
 			// insert
@@ -42,7 +44,38 @@ namespace TimeCalculationProject
 			btndeletemergency.Click += BtnDeleteEmergency_Click;
 			btndeletecontinue.Click += BtnDeleteContinue_Click;
 			btndeletemind.Click += BtnDeleteMind_Click;
+
+			btn11.Tag = 0;
+			btn1110.Tag = 10;
+			btn1120.Tag = 20;
+			btn1130.Tag = 30;
+
+			btn11.Click += TimeButton_Click;
+			btn1110.Click += TimeButton_Click;
+			btn1120.Click += TimeButton_Click;
+			btn1130.Click += TimeButton_Click;
 		}
+		private void TimeButton_Click(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			if (button == null)
+				return;
+
+			int minute = 0;
+			if (button.Tag != null)
+				minute = Convert.ToInt32(button.Tag);
+
+			SetPickerTime(23, minute);
+		}
+
+		private void SetPickerTime(int hour24, int minute)
+		{
+			DateTime baseDate = dateTimePicker1.Value.Date; // 날짜 유지
+			dateTimePicker1.Value = new DateTime(
+				baseDate.Year, baseDate.Month, baseDate.Day,
+				hour24, minute, 0);
+		}
+
 
 		private void BtnInsertEmergency_Click(object sender, EventArgs e)
 		{
@@ -152,10 +185,11 @@ namespace TimeCalculationProject
 			txtemergency.Focus();	
 		}
 		
-
 		private void UiTimer_Tick(object sender, EventArgs e)
 		{
 			UpdateUi();
+			UpdateRemainingToPicker(); // ✅ 매초 textBox13 갱신
+
 		}
 		private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -186,7 +220,6 @@ namespace TimeCalculationProject
 				LoadTaskGrid(3, dgwMind); // TaskType=3
 			}
 		}
-
 
 		private void LoadExerciseGrid()
 		{
@@ -462,8 +495,8 @@ namespace TimeCalculationProject
 					BEGIN
 						UPDATE dbo.Exercise
 						SET ExerciseMinutes = @ExerciseMinutes,
-							UpdateTime = SYSDATETIME()
-						WHERE ExerciseDate = @ExerciseDate;
+								 UpdateTime = SYSDATETIME()
+						 WHERE ExerciseDate = @ExerciseDate;
 					END
 					ELSE
 					BEGIN
@@ -482,8 +515,41 @@ namespace TimeCalculationProject
 				connection.Open();
 				command.ExecuteNonQuery();
 			}
+			LoadExerciseGrid();
 
+			timeexercise.Focus();
 			MessageBox.Show("운동 기록이 저장(또는 수정)되었습니다.");
 		}
-	}
+
+		private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+			UpdateRemainingToPicker(); // ✅ 사용자가 시간 바꾸면 즉시 반영
+		}
+		/// <summary>
+		/// Tab : 자야하는시간설정
+		/// </summary>
+		private void UpdateRemainingToPicker()
+		{
+			DateTime target = dateTimePicker1.Value;
+			DateTime now = DateTime.Now;
+
+			TimeSpan diff = target - now;
+
+			if (diff >= TimeSpan.Zero)
+			{
+				textBox13.Text = $"남음: {FormatSpan(diff)}";
+			}
+			else
+			{
+				textBox13.Text = $"지남: {FormatSpan(diff.Negate())}";
+			}
+		}
+
+        private void btn11_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+
 }
