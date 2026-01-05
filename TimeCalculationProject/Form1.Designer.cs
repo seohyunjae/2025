@@ -79,19 +79,19 @@
 			this.dgw4continue = new System.Windows.Forms.DataGridView();
 			this.lbl4continue = new System.Windows.Forms.Label();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
-			this.btndeletemind = new System.Windows.Forms.Button();
-			this.btninsertmind = new System.Windows.Forms.Button();
-			this.txtMind = new System.Windows.Forms.TextBox();
-			this.label20 = new System.Windows.Forms.Label();
-			this.dgwMind = new System.Windows.Forms.DataGridView();
+			this.btn5deletemind = new System.Windows.Forms.Button();
+			this.btn5insertmind = new System.Windows.Forms.Button();
+			this.txt5Mind = new System.Windows.Forms.TextBox();
+			this.lbl5mind = new System.Windows.Forms.Label();
+			this.dgw5Mind = new System.Windows.Forms.DataGridView();
 			this.tabPage6 = new System.Windows.Forms.TabPage();
-			this.btn1130 = new System.Windows.Forms.Button();
-			this.btn1120 = new System.Windows.Forms.Button();
-			this.btn1110 = new System.Windows.Forms.Button();
-			this.btn11 = new System.Windows.Forms.Button();
-			this.label16 = new System.Windows.Forms.Label();
-			this.textBox13 = new System.Windows.Forms.TextBox();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.btn61130 = new System.Windows.Forms.Button();
+			this.btn61120 = new System.Windows.Forms.Button();
+			this.btn61110 = new System.Windows.Forms.Button();
+			this.lbl6sleep = new System.Windows.Forms.Label();
+			this.btn611 = new System.Windows.Forms.Button();
+			this.txt6time = new System.Windows.Forms.TextBox();
+			this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
 			this.Panellive.SuspendLayout();
 			this.Panelawake.SuspendLayout();
 			this.Panelsleep.SuspendLayout();
@@ -105,7 +105,7 @@
 			this.tabPage4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgw4continue)).BeginInit();
 			this.tabPage5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgw5Mind)).BeginInit();
 			this.tabPage6.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -416,7 +416,7 @@
 			// lbl1awake
 			// 
 			this.lbl1awake.AutoSize = true;
-			this.lbl1awake.Location = new System.Drawing.Point(7, 206);
+			this.lbl1awake.Location = new System.Drawing.Point(13, 206);
 			this.lbl1awake.Name = "lbl1awake";
 			this.lbl1awake.Size = new System.Drawing.Size(57, 15);
 			this.lbl1awake.TabIndex = 13;
@@ -631,11 +631,11 @@
 			// 
 			// tabPage5
 			// 
-			this.tabPage5.Controls.Add(this.btndeletemind);
-			this.tabPage5.Controls.Add(this.btninsertmind);
-			this.tabPage5.Controls.Add(this.txtMind);
-			this.tabPage5.Controls.Add(this.label20);
-			this.tabPage5.Controls.Add(this.dgwMind);
+			this.tabPage5.Controls.Add(this.btn5deletemind);
+			this.tabPage5.Controls.Add(this.btn5insertmind);
+			this.tabPage5.Controls.Add(this.txt5Mind);
+			this.tabPage5.Controls.Add(this.lbl5mind);
+			this.tabPage5.Controls.Add(this.dgw5Mind);
 			this.tabPage5.Location = new System.Drawing.Point(4, 25);
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.Size = new System.Drawing.Size(1186, 795);
@@ -643,60 +643,60 @@
 			this.tabPage5.Text = "마인드";
 			this.tabPage5.UseVisualStyleBackColor = true;
 			// 
-			// btndeletemind
+			// btn5deletemind
 			// 
-			this.btndeletemind.Location = new System.Drawing.Point(945, 308);
-			this.btndeletemind.Name = "btndeletemind";
-			this.btndeletemind.Size = new System.Drawing.Size(201, 59);
-			this.btndeletemind.TabIndex = 15;
-			this.btndeletemind.Text = "삭제";
-			this.btndeletemind.UseVisualStyleBackColor = true;
+			this.btn5deletemind.Location = new System.Drawing.Point(945, 308);
+			this.btn5deletemind.Name = "btn5deletemind";
+			this.btn5deletemind.Size = new System.Drawing.Size(201, 59);
+			this.btn5deletemind.TabIndex = 15;
+			this.btn5deletemind.Text = "삭제";
+			this.btn5deletemind.UseVisualStyleBackColor = true;
 			// 
-			// btninsertmind
+			// btn5insertmind
 			// 
-			this.btninsertmind.Location = new System.Drawing.Point(945, 231);
-			this.btninsertmind.Name = "btninsertmind";
-			this.btninsertmind.Size = new System.Drawing.Size(201, 59);
-			this.btninsertmind.TabIndex = 13;
-			this.btninsertmind.Text = "등록";
-			this.btninsertmind.UseVisualStyleBackColor = true;
+			this.btn5insertmind.Location = new System.Drawing.Point(945, 231);
+			this.btn5insertmind.Name = "btn5insertmind";
+			this.btn5insertmind.Size = new System.Drawing.Size(201, 59);
+			this.btn5insertmind.TabIndex = 13;
+			this.btn5insertmind.Text = "등록";
+			this.btn5insertmind.UseVisualStyleBackColor = true;
 			// 
-			// txtMind
+			// txt5Mind
 			// 
-			this.txtMind.Location = new System.Drawing.Point(945, 61);
-			this.txtMind.Multiline = true;
-			this.txtMind.Name = "txtMind";
-			this.txtMind.Size = new System.Drawing.Size(201, 132);
-			this.txtMind.TabIndex = 12;
+			this.txt5Mind.Location = new System.Drawing.Point(945, 61);
+			this.txt5Mind.Multiline = true;
+			this.txt5Mind.Name = "txt5Mind";
+			this.txt5Mind.Size = new System.Drawing.Size(201, 132);
+			this.txt5Mind.TabIndex = 12;
 			// 
-			// label20
+			// lbl5mind
 			// 
-			this.label20.AutoSize = true;
-			this.label20.Location = new System.Drawing.Point(22, 26);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(52, 15);
-			this.label20.TabIndex = 11;
-			this.label20.Text = "마인드";
+			this.lbl5mind.AutoSize = true;
+			this.lbl5mind.Location = new System.Drawing.Point(22, 26);
+			this.lbl5mind.Name = "lbl5mind";
+			this.lbl5mind.Size = new System.Drawing.Size(52, 15);
+			this.lbl5mind.TabIndex = 11;
+			this.lbl5mind.Text = "마인드";
 			// 
-			// dgwMind
+			// dgw5Mind
 			// 
-			this.dgwMind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgwMind.Location = new System.Drawing.Point(25, 44);
-			this.dgwMind.Name = "dgwMind";
-			this.dgwMind.RowHeadersWidth = 51;
-			this.dgwMind.RowTemplate.Height = 27;
-			this.dgwMind.Size = new System.Drawing.Size(894, 807);
-			this.dgwMind.TabIndex = 10;
+			this.dgw5Mind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgw5Mind.Location = new System.Drawing.Point(25, 44);
+			this.dgw5Mind.Name = "dgw5Mind";
+			this.dgw5Mind.RowHeadersWidth = 51;
+			this.dgw5Mind.RowTemplate.Height = 27;
+			this.dgw5Mind.Size = new System.Drawing.Size(894, 807);
+			this.dgw5Mind.TabIndex = 10;
 			// 
 			// tabPage6
 			// 
-			this.tabPage6.Controls.Add(this.btn1130);
-			this.tabPage6.Controls.Add(this.btn1120);
-			this.tabPage6.Controls.Add(this.btn1110);
-			this.tabPage6.Controls.Add(this.btn11);
-			this.tabPage6.Controls.Add(this.label16);
-			this.tabPage6.Controls.Add(this.textBox13);
-			this.tabPage6.Controls.Add(this.dateTimePicker1);
+			this.tabPage6.Controls.Add(this.btn61130);
+			this.tabPage6.Controls.Add(this.btn61120);
+			this.tabPage6.Controls.Add(this.btn61110);
+			this.tabPage6.Controls.Add(this.lbl6sleep);
+			this.tabPage6.Controls.Add(this.btn611);
+			this.tabPage6.Controls.Add(this.txt6time);
+			this.tabPage6.Controls.Add(this.dateTimePicker6);
 			this.tabPage6.Location = new System.Drawing.Point(4, 25);
 			this.tabPage6.Name = "tabPage6";
 			this.tabPage6.Size = new System.Drawing.Size(1186, 795);
@@ -704,65 +704,65 @@
 			this.tabPage6.Text = "자야하는시간설정";
 			this.tabPage6.UseVisualStyleBackColor = true;
 			// 
-			// btn1130
+			// btn61130
 			// 
-			this.btn1130.Location = new System.Drawing.Point(390, 104);
-			this.btn1130.Name = "btn1130";
-			this.btn1130.Size = new System.Drawing.Size(98, 38);
-			this.btn1130.TabIndex = 6;
-			this.btn1130.Text = "11시30분";
-			this.btn1130.UseVisualStyleBackColor = true;
+			this.btn61130.Location = new System.Drawing.Point(390, 104);
+			this.btn61130.Name = "btn61130";
+			this.btn61130.Size = new System.Drawing.Size(98, 38);
+			this.btn61130.TabIndex = 6;
+			this.btn61130.Text = "11시30분";
+			this.btn61130.UseVisualStyleBackColor = true;
 			// 
-			// btn1120
+			// btn61120
 			// 
-			this.btn1120.Location = new System.Drawing.Point(286, 104);
-			this.btn1120.Name = "btn1120";
-			this.btn1120.Size = new System.Drawing.Size(98, 38);
-			this.btn1120.TabIndex = 5;
-			this.btn1120.Text = "11시20분";
-			this.btn1120.UseVisualStyleBackColor = true;
+			this.btn61120.Location = new System.Drawing.Point(286, 104);
+			this.btn61120.Name = "btn61120";
+			this.btn61120.Size = new System.Drawing.Size(98, 38);
+			this.btn61120.TabIndex = 5;
+			this.btn61120.Text = "11시20분";
+			this.btn61120.UseVisualStyleBackColor = true;
 			// 
-			// btn1110
+			// btn61110
 			// 
-			this.btn1110.Location = new System.Drawing.Point(182, 104);
-			this.btn1110.Name = "btn1110";
-			this.btn1110.Size = new System.Drawing.Size(98, 38);
-			this.btn1110.TabIndex = 4;
-			this.btn1110.Text = "11시10분";
-			this.btn1110.UseVisualStyleBackColor = true;
+			this.btn61110.Location = new System.Drawing.Point(182, 104);
+			this.btn61110.Name = "btn61110";
+			this.btn61110.Size = new System.Drawing.Size(98, 38);
+			this.btn61110.TabIndex = 4;
+			this.btn61110.Text = "11시10분";
+			this.btn61110.UseVisualStyleBackColor = true;
 			// 
-			// btn11
+			// lbl6sleep
 			// 
-			this.btn11.Location = new System.Drawing.Point(78, 104);
-			this.btn11.Name = "btn11";
-			this.btn11.Size = new System.Drawing.Size(98, 38);
-			this.btn11.TabIndex = 3;
-			this.btn11.Text = "11시";
-			this.btn11.UseVisualStyleBackColor = true;
+			this.lbl6sleep.AutoSize = true;
+			this.lbl6sleep.Location = new System.Drawing.Point(75, 53);
+			this.lbl6sleep.Name = "lbl6sleep";
+			this.lbl6sleep.Size = new System.Drawing.Size(97, 15);
+			this.lbl6sleep.TabIndex = 2;
+			this.lbl6sleep.Text = "자야할시간 : ";
 			// 
-			// label16
+			// btn611
 			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(75, 53);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(97, 15);
-			this.label16.TabIndex = 2;
-			this.label16.Text = "자야할시간 : ";
+			this.btn611.Location = new System.Drawing.Point(78, 104);
+			this.btn611.Name = "btn611";
+			this.btn611.Size = new System.Drawing.Size(98, 38);
+			this.btn611.TabIndex = 3;
+			this.btn611.Text = "11시";
+			this.btn611.UseVisualStyleBackColor = true;
 			// 
-			// textBox13
+			// txt6time
 			// 
-			this.textBox13.Location = new System.Drawing.Point(78, 165);
-			this.textBox13.Name = "textBox13";
-			this.textBox13.Size = new System.Drawing.Size(433, 25);
-			this.textBox13.TabIndex = 1;
+			this.txt6time.Location = new System.Drawing.Point(78, 165);
+			this.txt6time.Name = "txt6time";
+			this.txt6time.Size = new System.Drawing.Size(433, 25);
+			this.txt6time.TabIndex = 1;
 			// 
-			// dateTimePicker1
+			// dateTimePicker6
 			// 
-			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-			this.dateTimePicker1.Location = new System.Drawing.Point(182, 46);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(232, 25);
-			this.dateTimePicker1.TabIndex = 0;
+			this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+			this.dateTimePicker6.Location = new System.Drawing.Point(182, 46);
+			this.dateTimePicker6.Name = "dateTimePicker6";
+			this.dateTimePicker6.Size = new System.Drawing.Size(232, 25);
+			this.dateTimePicker6.TabIndex = 0;
 			// 
 			// Form1
 			// 
@@ -792,7 +792,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgw4continue)).EndInit();
 			this.tabPage5.ResumeLayout(false);
 			this.tabPage5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgwMind)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgw5Mind)).EndInit();
 			this.tabPage6.ResumeLayout(false);
 			this.tabPage6.PerformLayout();
 			this.ResumeLayout(false);
@@ -845,25 +845,25 @@
         private System.Windows.Forms.Label lbl4continue;
         private System.Windows.Forms.DataGridView dgw4continue;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button btninsertmind;
-        private System.Windows.Forms.TextBox txtMind;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridView dgwMind;
+        private System.Windows.Forms.Button btn5insertmind;
+        private System.Windows.Forms.TextBox txt5Mind;
+        private System.Windows.Forms.Label lbl5mind;
+        private System.Windows.Forms.DataGridView dgw5Mind;
         private System.Windows.Forms.Button btn3deletemergency;
-        private System.Windows.Forms.Button btndeletemind;
+        private System.Windows.Forms.Button btn5deletemind;
         private System.Windows.Forms.DataGridView dgw2exercise;
         private System.Windows.Forms.Button btn4deletecontinue;
         private System.Windows.Forms.Button btn2insertexercise;
         private System.Windows.Forms.NumericUpDown time2exercise;
         private System.Windows.Forms.DateTimePicker Date2exercise;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btn1120;
-        private System.Windows.Forms.Button btn1110;
-        private System.Windows.Forms.Button btn11;
-        private System.Windows.Forms.Button btn1130;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.TextBox txt6time;
+        private System.Windows.Forms.Label lbl6sleep;
+        private System.Windows.Forms.Button btn61120;
+        private System.Windows.Forms.Button btn61110;
+        private System.Windows.Forms.Button btn611;
+        private System.Windows.Forms.Button btn61130;
     }
 }
 
