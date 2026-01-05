@@ -62,6 +62,10 @@
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.btn2delete = new System.Windows.Forms.Button();
+			this.txttime2 = new System.Windows.Forms.TextBox();
+			this.btn2finish = new System.Windows.Forms.Button();
+			this.btn2start = new System.Windows.Forms.Button();
 			this.btn2insertexercise = new System.Windows.Forms.Button();
 			this.time2exercise = new System.Windows.Forms.NumericUpDown();
 			this.Date2exercise = new System.Windows.Forms.DateTimePicker();
@@ -465,6 +469,10 @@
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.btn2delete);
+			this.tabPage2.Controls.Add(this.txttime2);
+			this.tabPage2.Controls.Add(this.btn2finish);
+			this.tabPage2.Controls.Add(this.btn2start);
 			this.tabPage2.Controls.Add(this.btn2insertexercise);
 			this.tabPage2.Controls.Add(this.time2exercise);
 			this.tabPage2.Controls.Add(this.Date2exercise);
@@ -477,15 +485,50 @@
 			this.tabPage2.Text = "운동";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// btn2delete
+			// 
+			this.btn2delete.Location = new System.Drawing.Point(959, 113);
+			this.btn2delete.Name = "btn2delete";
+			this.btn2delete.Size = new System.Drawing.Size(173, 73);
+			this.btn2delete.TabIndex = 7;
+			this.btn2delete.Text = "행삭제";
+			this.btn2delete.UseVisualStyleBackColor = true;
+			this.btn2delete.Click += new System.EventHandler(this.btn2delete_Click);
+			// 
+			// txttime2
+			// 
+			this.txttime2.Location = new System.Drawing.Point(752, 222);
+			this.txttime2.Name = "txttime2";
+			this.txttime2.Size = new System.Drawing.Size(345, 25);
+			this.txttime2.TabIndex = 6;
+			// 
+			// btn2finish
+			// 
+			this.btn2finish.Location = new System.Drawing.Point(931, 279);
+			this.btn2finish.Name = "btn2finish";
+			this.btn2finish.Size = new System.Drawing.Size(166, 107);
+			this.btn2finish.TabIndex = 5;
+			this.btn2finish.Text = "종료";
+			this.btn2finish.UseVisualStyleBackColor = true;
+			// 
+			// btn2start
+			// 
+			this.btn2start.Location = new System.Drawing.Point(752, 279);
+			this.btn2start.Name = "btn2start";
+			this.btn2start.Size = new System.Drawing.Size(166, 107);
+			this.btn2start.TabIndex = 4;
+			this.btn2start.Text = "시작";
+			this.btn2start.UseVisualStyleBackColor = true;
+			// 
 			// btn2insertexercise
 			// 
 			this.btn2insertexercise.Location = new System.Drawing.Point(752, 113);
 			this.btn2insertexercise.Name = "btn2insertexercise";
 			this.btn2insertexercise.Size = new System.Drawing.Size(200, 73);
 			this.btn2insertexercise.TabIndex = 3;
-			this.btn2insertexercise.Text = "등록";
+			this.btn2insertexercise.Text = "시간등록";
 			this.btn2insertexercise.UseVisualStyleBackColor = true;
-			this.btn2insertexercise.Click += new System.EventHandler(this.btninsertexercise_Click);
+			this.btn2insertexercise.Click += new System.EventHandler(this.btn2insertexercise_Click);
 			// 
 			// time2exercise
 			// 
@@ -782,6 +825,7 @@
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
+			this.tabPage2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.time2exercise)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgw2exercise)).EndInit();
 			this.tabPage3.ResumeLayout(false);
@@ -864,6 +908,10 @@
         private System.Windows.Forms.Button btn61110;
         private System.Windows.Forms.Button btn611;
         private System.Windows.Forms.Button btn61130;
+        private System.Windows.Forms.Button btn2finish;
+        private System.Windows.Forms.Button btn2start;
+        private System.Windows.Forms.TextBox txttime2;
+        private System.Windows.Forms.Button btn2delete;
     }
 }
 

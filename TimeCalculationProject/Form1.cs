@@ -22,6 +22,9 @@ namespace TimeCalculationProject
 		// DB 연결 문자열
 		private readonly string connectionString = @"Server=localhost;Database=TimeDB;Integrated Security=True;";
 		#endregion
+		// 운동 시작 시간(버튼 Start 눌렀을 때 저장)
+		private DateTime? exerciseStartTime;
+
 
 		#region 생성자 및 공통 이벤트 연결
 		public Form1()
@@ -61,15 +64,36 @@ namespace TimeCalculationProject
 			btn61110.Click += TimeButton_Click;
 			btn61120.Click += TimeButton_Click;
 			btn61130.Click += TimeButton_Click;
+
+			btn2start.Click += Btn2Start_Click;
+			btn2finish.Click += Btn2Finish_Click;
 		}
 		#endregion
 
 		#region Tab1 (시간) - UI 업데이트 및 카운트다운 표시
 		private void UiTimer_Tick(object sender, EventArgs e)
 		{
-			UpdateUi();
-			UpdateRemainingToPicker();
+			TabPage selectedTab = tabControl.SelectedTab;
+			if (selectedTab == null)
+				return;
+
+			// ✅ 탭1일 때만 탭1 UI 갱신
+			if (selectedTab == tabPage1)
+			{
+				UpdateUi();
+				return;
+			}
+
+			// ✅ 탭6일 때만 탭6 UI 갱신
+			if (selectedTab == tabPage6)
+			{
+				UpdateRemainingToPicker();
+				return;
+			}
+
+			// 탭2~5는 타이머로 아무것도 갱신 안 함
 		}
+
 
 		private void UpdateUi()
 		{
@@ -124,9 +148,10 @@ namespace TimeCalculationProject
 			const string sql = @"
 									SELECT
 										ExerciseDate,
+										seq,
 										ExerciseMinutes,
 										InsertTime,
-										CASE WHEN ExerciseMinutes > 0 THEN N'Y' ELSE N'N' END AS IsExercised
+										UpdateTime
 									FROM dbo.Exercise
 									ORDER BY ExerciseDate DESC;
 								";
@@ -148,7 +173,7 @@ namespace TimeCalculationProject
 		}
 
 		// 운동 등록/수정 버튼 핸들러
-		private void btninsertexercise_Click(object sender, EventArgs e)
+		private void btn2insertexercise_Click(object sender, EventArgs e)
 		{
 			// 1) 날짜
 			DateTime exerciseDate = Date2exercise.Value.Date;
@@ -167,19 +192,15 @@ namespace TimeCalculationProject
 
 			// 4) 같은 날짜가 있으면 UPDATE, 없으면 INSERT
 			const string sql = @"
-					IF EXISTS (SELECT 1 FROM dbo.Exercise WHERE ExerciseDate = @ExerciseDate)
-					BEGIN
-						UPDATE dbo.Exercise
-						SET ExerciseMinutes = @ExerciseMinutes,
-								 UpdateTime = SYSDATETIME()
-						 WHERE ExerciseDate = @ExerciseDate;
-					END
-					ELSE
-					BEGIN
-						INSERT INTO dbo.Exercise (ExerciseDate, ExerciseMinutes, InsertTime)
-						VALUES (@ExerciseDate, @ExerciseMinutes, @InsertTime);
-					END
-					";
+								DECLARE @NextSeq NUMERIC(18,0);
+
+								SELECT @NextSeq = ISNULL(MAX(seq), 0) + 1
+								FROM dbo.Exercise WITH (UPDLOCK, HOLDLOCK)
+								WHERE ExerciseDate = @ExerciseDate;
+
+								INSERT INTO dbo.Exercise (ExerciseDate, seq, ExerciseMinutes, InsertTime)
+								VALUES (@ExerciseDate, @NextSeq, @ExerciseMinutes, @InsertTime);
+							";
 
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			using (SqlCommand command = new SqlCommand(sql, connection))
@@ -196,6 +217,150 @@ namespace TimeCalculationProject
 			time2exercise.Focus();
 			MessageBox.Show("운동 기록이 저장(또는 수정)되었습니다.");
 		}
+		private void Btn2Start_Click(object sender, EventArgs e)
+		{
+			DateTime now = DateTime.Now;
+
+			// 이미 시작한 상태면 덮어쓸지 물어보기(원치 않으면 제거해도 됨)
+			if (exerciseStartTime.HasValue)
+			{
+				DialogResult result = MessageBox.Show(
+					"이미 시작 시간이 있습니다. 다시 시작하시겠습니까?",
+					"확인",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.Question);
+
+				if (result != DialogResult.Yes)
+					return;
+			}
+
+			exerciseStartTime = now;
+
+			// 화면에 시작시간 표시 (txttime2가 TextBox라고 가정)
+			txttime2.Text = now.ToString("yyyy-MM-dd HH:mm:ss");
+		}
+
+		private void Btn2Finish_Click(object sender, EventArgs e)
+		{
+			if (!exerciseStartTime.HasValue)
+			{
+				MessageBox.Show("먼저 시작(btn2start)을 눌러주세요.");
+				return;
+			}
+
+			DateTime startTime = exerciseStartTime.Value;
+			DateTime finishTime = DateTime.Now;
+
+			TimeSpan diff = finishTime - startTime;
+			if (diff < TimeSpan.Zero)
+			{
+				MessageBox.Show("시간 계산이 이상합니다.");
+				return;
+			}
+
+			// 분으로 변환 (원하면 Math.Floor로 내림 처리도 가능)
+			int exerciseMinutes = (int)Math.Round(diff.TotalMinutes);
+
+			// 0~1440 안전장치
+			if (exerciseMinutes < 0) exerciseMinutes = 0;
+			if (exerciseMinutes > 1440) exerciseMinutes = 1440;
+
+			// 날짜는 시작한 날짜 기준(원하면 Date2exercise.Value.Date로 바꿔도 됨)
+			DateTime exerciseDate = startTime.Date;
+
+			// 업서트 저장
+			InsertExercise(exerciseDate, exerciseMinutes);
+
+			// UI 표시도 같이
+			time2exercise.Text = exerciseMinutes.ToString();
+			txttime2.Text = $"시작: {startTime:HH:mm:ss} / 종료: {finishTime:HH:mm:ss} / {exerciseMinutes}분";
+
+			// 그리드 갱신
+			LoadExerciseGrid();
+
+			// 다음 세션 대비 초기화
+			exerciseStartTime = null;
+
+			MessageBox.Show("운동 기록이 저장(또는 수정)되었습니다.");
+		}
+		private void InsertExercise(DateTime exerciseDate, int exerciseMinutes)
+		{
+			DateTime insertTime = DateTime.Now;
+
+			const string sql = @"
+									INSERT INTO dbo.Exercise (ExerciseDate, ExerciseMinutes, InsertTime)
+									VALUES (@ExerciseDate, @ExerciseMinutes, @InsertTime);
+								";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.Add("@ExerciseDate", SqlDbType.Date).Value = exerciseDate;
+				command.Parameters.Add("@ExerciseMinutes", SqlDbType.Int).Value = exerciseMinutes;
+				command.Parameters.Add("@InsertTime", SqlDbType.DateTime2).Value = insertTime;
+
+				connection.Open();
+				command.ExecuteNonQuery();
+			}
+		}
+
+		private void btn2delete_Click(object sender, EventArgs e)
+		{
+			// 1) 포커스(현재) 행 찾기
+			DataGridViewRow row = dgw2exercise.SelectedRows.Count > 0
+				? dgw2exercise.SelectedRows[0]
+				: dgw2exercise.CurrentRow;
+
+			if (row == null)
+			{
+				MessageBox.Show("삭제할 행을 먼저 선택해 주세요.");
+				return;
+			}
+
+			// 2) 고유키(ExerciseId) 가져오기
+			object idValue = row.Cells["ExerciseDate"]?.Value;
+			if (idValue == null || idValue == DBNull.Value)
+			{
+				MessageBox.Show("선택한 행에서 ExerciseId를 찾을 수 없습니다.");
+				return;
+			}
+
+			int exerciseId = Convert.ToInt32(idValue);
+
+			// 3) 삭제 확인
+			DialogResult result = MessageBox.Show(
+				"선택한 운동 기록을 삭제하시겠습니까?",
+				"삭제 확인",
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Question);
+
+			if (result != DialogResult.Yes)
+				return;
+
+			// 4) DB 삭제
+			const string sql = "DELETE FROM dbo.Exercise WHERE ExerciseId = @ExerciseId;";
+
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			using (SqlCommand command = new SqlCommand(sql, connection))
+			{
+				command.Parameters.Add("@ExerciseId", SqlDbType.Int).Value = exerciseId;
+
+				connection.Open();
+				int rows = command.ExecuteNonQuery();
+
+				if (rows <= 0)
+				{
+					MessageBox.Show("삭제할 데이터가 없습니다.");
+					return;
+				}
+			}
+
+			// 5) 그리드 갱신
+			LoadExerciseGrid();
+			MessageBox.Show("삭제되었습니다.");
+		}
+
+
 		#endregion
 
 		#region Tab3 (급한거) - 탭 진입점 및 컨트롤 연결
@@ -514,6 +679,6 @@ namespace TimeCalculationProject
 				new CategoryItem { CategoryId = 3, CategoryName = "마인드" }
 			};
 		}
-		#endregion
-	}
+        #endregion
+    }
 }
