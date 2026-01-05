@@ -40,7 +40,7 @@ namespace TimeCalculationProject
 
 			// 탭/타이머/타임피커 이벤트 연결
 			tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
-			dateTimePicker1.ValueChanged += DateTimePicker1_ValueChanged;
+			dateTimePicker6.ValueChanged += dateTimePicker6_ValueChanged;
 
 			// Task(Insert/Delete) 버튼들(디자이너에서 변경된 이름 기반)
 			btn3insertemergency.Click += BtnInsertEmergency_Click;
@@ -64,49 +64,55 @@ namespace TimeCalculationProject
 		}
 		#endregion
 
-		#region Tab6 (자야하는시간설정) - 시간 선택 버튼 및 남은시간 표시
-		private void TimeButton_Click(object sender, EventArgs e)
+		#region Tab1 (시간) - UI 업데이트 및 카운트다운 표시
+		private void UiTimer_Tick(object sender, EventArgs e)
 		{
-			Button button = sender as Button;
-			if (button == null)
-				return;
-
-			int minute = 0;
-			if (button.Tag != null)
-				minute = Convert.ToInt32(button.Tag);
-
-			SetPickerTime(23, minute);
-		}
-
-		private void SetPickerTime(int hour24, int minute)
-		{
-			DateTime baseDate = dateTimePicker1.Value.Date; // 날짜 유지
-			dateTimePicker1.Value = new DateTime(
-				baseDate.Year, baseDate.Month, baseDate.Day,
-				hour24, minute, 0);
-		}
-
-		// dateTimePicker 값 변경 또는 타이머에서 호출
-		private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-		{
+			UpdateUi();
 			UpdateRemainingToPicker();
 		}
 
-		// dateTimePicker와 현재시간 차이를 text에 표시 (Tab6)
-		private void UpdateRemainingToPicker()
+		private void UpdateUi()
 		{
-			DateTime target = dateTimePicker1.Value;
 			DateTime now = DateTime.Now;
 
-			TimeSpan diff = target - now;
+			// 태어난 날짜(단일 라벨)
+			lbl1birth.Text = $"{BirthDate:yyyy년 M월 d일}";
 
-			if (diff >= TimeSpan.Zero)
+			// 살아온 시간(전체 / 의식 / 수면)
+			TimeSpan livedTotal = now - BirthDate;
+			TimeSpan livedAwake = GetPartSpan(livedTotal, AwakeHoursPerDay);
+			TimeSpan livedSleep = GetPartSpan(livedTotal, SleepHoursPerDay);
+
+			// 살아온 시간 멀티라인 표시
+			lbl1time.Text =
+					$"살아온 시간(전체): {FormatSpan(livedTotal)}\r\n" +
+					$"의식 시간(16h/일): {FormatSpan(livedAwake)}\r\n" +
+					$"수면 시간(8h/일): {FormatSpan(livedSleep)}";
+
+			// 목표 나이별 카운트다운 (텍스트박스 그룹)
+			SetCountdown(txtbox1live30, txtbox1awake30, txtbox1sleep30, BirthDate.AddYears(30), now);
+			SetCountdown(txtbox1live40, txtbox1awake40, txtbox1sleep40, BirthDate.AddYears(40), now);
+			SetCountdown(txtbox1live60, txtbox1awake60, txtbox1sleep60, BirthDate.AddYears(60), now);
+			SetCountdown(txtbox1live65, txtbox1awake65, txtbox1sleep65, BirthDate.AddYears(65), now);
+		}
+
+		private void SetCountdown(TextBox totalTextBox, TextBox awakeTextBox, TextBox sleepTextBox, DateTime targetDate, DateTime now)
+		{
+			TimeSpan diffTotal = targetDate - now;
+			TimeSpan diffAwake = GetPartSpan(diffTotal, AwakeHoursPerDay);
+			TimeSpan diffSleep = GetPartSpan(diffTotal, SleepHoursPerDay);
+
+			if (diffTotal >= TimeSpan.Zero)
 			{
-				txt6time.Text = $"남음: {FormatSpan(diff)}";
+				totalTextBox.Text = $"남음(전체): {FormatSpan(diffTotal)}";
+				awakeTextBox.Text = $"남음(의식): {FormatSpan(diffAwake)}";
+				sleepTextBox.Text = $"남음(수면): {FormatSpan(diffSleep)}";
 			}
 			else
 			{
-				txt6time.Text = $"지남: {FormatSpan(diff.Negate())}";
+				totalTextBox.Text = $"지남(전체): {FormatSpan(diffTotal.Negate())}";
+				awakeTextBox.Text = $"지남(의식): {FormatSpan(diffAwake.Negate())}";
+				sleepTextBox.Text = $"지남(수면): {FormatSpan(diffSleep.Negate())}";
 			}
 		}
 		#endregion
@@ -192,39 +198,90 @@ namespace TimeCalculationProject
 		}
 		#endregion
 
-		#region Tab3 (급한거) / Tab4 (계속꾸준히) / Tab5 (마인드) - Task 관련 공통 및 탭별 진입점
-		// 각 탭의 Insert 버튼 핸들러(탭별 입력 컨트롤 이름 사용)
+		#region Tab3 (급한거) - 탭 진입점 및 컨트롤 연결
 		private void BtnInsertEmergency_Click(object sender, EventArgs e)
 		{
 			InsertTask(1, txt3emergency, dgw3emergency);
 		}
 
-		private void BtnInsertContinue_Click(object sender, EventArgs e)
-		{
-			InsertTask(2, txt4continune, dgw4continue);
-		}
-
-		private void BtnInsertMind_Click(object sender, EventArgs e)
-		{
-			InsertTask(3, txt5Mind, dgw5Mind);
-		}
-
-		// 각 탭의 Delete 버튼 핸들러
 		private void BtnDeleteEmergency_Click(object sender, EventArgs e)
 		{
 			DeleteTask(1, dgw3emergency);
+		}
+		#endregion
+
+		#region Tab4 (계속꾸준히) - 탭 진입점 및 컨트롤 연결
+		private void BtnInsertContinue_Click(object sender, EventArgs e)
+		{
+			InsertTask(2, txt4continune, dgw4continue);
 		}
 
 		private void BtnDeleteContinue_Click(object sender, EventArgs e)
 		{
 			DeleteTask(2, dgw4continue);
 		}
+		#endregion
+
+		#region Tab5 (마인드) - 탭 진입점 및 컨트롤 연결
+		private void BtnInsertMind_Click(object sender, EventArgs e)
+		{
+			InsertTask(3, txt5Mind, dgw5Mind);
+		}
 
 		private void BtnDeleteMind_Click(object sender, EventArgs e)
 		{
 			DeleteTask(3, dgw5Mind);
 		}
+		#endregion
 
+		#region Tab6 (자야하는시간설정) - 시간 선택 버튼 및 남은시간 표시
+		private void TimeButton_Click(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			if (button == null)
+				return;
+
+			int minute = 0;
+			if (button.Tag != null)
+				minute = Convert.ToInt32(button.Tag);
+
+			SetPickerTime(23, minute);
+		}
+
+		private void SetPickerTime(int hour24, int minute)
+		{
+			DateTime baseDate = dateTimePicker6.Value.Date; // 날짜 유지
+			dateTimePicker6.Value = new DateTime(
+				baseDate.Year, baseDate.Month, baseDate.Day,
+				hour24, minute, 0);
+		}
+
+		// dateTimePicker 값 변경 또는 타이머에서 호출
+		private void dateTimePicker6_ValueChanged(object sender, EventArgs e)
+		{
+			UpdateRemainingToPicker();
+		}
+
+		// dateTimePicker와 현재시간 차이를 text에 표시 (Tab6)
+		private void UpdateRemainingToPicker()
+		{
+			DateTime target = dateTimePicker6.Value;
+			DateTime now = DateTime.Now;
+
+			TimeSpan diff = target - now;
+
+			if (diff >= TimeSpan.Zero)
+			{
+				txt6time.Text = $"남음: {FormatSpan(diff)}";
+			}
+			else
+			{
+				txt6time.Text = $"지남: {FormatSpan(diff.Negate())}";
+			}
+		}
+		#endregion
+
+		#region Task 공통 (Insert/Delete/Load 공통 구현)
 		// 공통 Insert 구현 (DB INSERT 및 그리드 갱신)
 		private void InsertTask(byte taskType, TextBox inputTextBox, DataGridView targetGrid)
 		{
@@ -382,7 +439,7 @@ namespace TimeCalculationProject
 				}
 
 				targetGrid.DataSource = table;
-				targetGrid.AutoResizeColumns();
+				targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
 
 				if (targetGrid.Columns["TaskId"] != null)
 					targetGrid.Columns["TaskId"].Visible = false;
@@ -403,59 +460,6 @@ namespace TimeCalculationProject
 			LoadTaskGrid(1, dgw3emergency);
 			LoadTaskGrid(2, dgw4continue);
 			LoadTaskGrid(3, dgw5Mind);
-		}
-		#endregion
-
-		#region Tab1 (시간) - UI 업데이트 및 카운트다운 표시
-		private void UiTimer_Tick(object sender, EventArgs e)
-		{
-			UpdateUi();
-			UpdateRemainingToPicker();
-		}
-
-		private void UpdateUi()
-		{
-			DateTime now = DateTime.Now;
-
-			// 태어난 날짜(단일 라벨)
-			lbl1birth.Text = $"{BirthDate:yyyy년 M월 d일}";
-
-			// 살아온 시간(전체 / 의식 / 수면)
-			TimeSpan livedTotal = now - BirthDate;
-			TimeSpan livedAwake = GetPartSpan(livedTotal, AwakeHoursPerDay);
-			TimeSpan livedSleep = GetPartSpan(livedTotal, SleepHoursPerDay);
-
-			// 살아온 시간 멀티라인 표시
-			lbl1time.Text =
-					$"살아온 시간(전체): {FormatSpan(livedTotal)}\r\n" +
-					$"의식 시간(16h/일): {FormatSpan(livedAwake)}\r\n" +
-					$"수면 시간(8h/일): {FormatSpan(livedSleep)}";
-
-			// 목표 나이별 카운트다운 (텍스트박스 그룹)
-			SetCountdown(txtbox1live30, txtbox1awake30, txtbox1sleep30, BirthDate.AddYears(30), now);
-			SetCountdown(txtbox1live40, txtbox1awake40, txtbox1sleep40, BirthDate.AddYears(40), now);
-			SetCountdown(txtbox1live60, txtbox1awake60, txtbox1sleep60, BirthDate.AddYears(60), now);
-			SetCountdown(txtbox1live65, txtbox1awake65, txtbox1sleep65, BirthDate.AddYears(65), now);
-		}
-
-		private void SetCountdown(TextBox totalTextBox, TextBox awakeTextBox, TextBox sleepTextBox, DateTime targetDate, DateTime now)
-		{
-			TimeSpan diffTotal = targetDate - now;
-			TimeSpan diffAwake = GetPartSpan(diffTotal, AwakeHoursPerDay);
-			TimeSpan diffSleep = GetPartSpan(diffTotal, SleepHoursPerDay);
-
-			if (diffTotal >= TimeSpan.Zero)
-			{
-				totalTextBox.Text = $"남음(전체): {FormatSpan(diffTotal)}";
-				awakeTextBox.Text = $"남음(의식): {FormatSpan(diffAwake)}";
-				sleepTextBox.Text = $"남음(수면): {FormatSpan(diffSleep)}";
-			}
-			else
-			{
-				totalTextBox.Text = $"지남(전체): {FormatSpan(diffTotal.Negate())}";
-				awakeTextBox.Text = $"지남(의식): {FormatSpan(diffAwake.Negate())}";
-				sleepTextBox.Text = $"지남(수면): {FormatSpan(diffSleep.Negate())}";
-			}
 		}
 		#endregion
 
