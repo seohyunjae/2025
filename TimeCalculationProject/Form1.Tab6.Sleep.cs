@@ -5,14 +5,6 @@ namespace TimeCalculationProject
 {
 	public partial class Form1 : Form
 	{
-		#region Tab6 (자야하는시간설정)
-
-		// 탭6 진입 시 호출(선택)
-		private void EnterTab6()
-		{
-			UpdateRemainingToPicker();
-		}
-
 		private void TimeButton_Click(object sender, EventArgs e)
 		{
 			Button button = sender as Button;
@@ -47,15 +39,9 @@ namespace TimeCalculationProject
 			TimeSpan diff = target - now;
 
 			if (diff >= TimeSpan.Zero)
-			{
 				txt6time.Text = $"남음: {FormatSpan(diff)}";
-			}
 			else
-			{
 				txt6time.Text = $"지남: {FormatSpan(diff.Negate())}";
-			}
 		}
-
-		#endregion
 	}
 }

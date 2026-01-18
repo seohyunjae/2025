@@ -58,6 +58,18 @@
     <Compile Include="Form1.Tab2.Exercise.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form1.Tab3.Emergency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Tab4.Continue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Tab5.Mind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Tab6.Sleep.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
