@@ -15,8 +15,12 @@ namespace TimeCalculationProject
 			TimeSpan livedAwake = GetPartSpan(livedTotal, AwakeHoursPerDay);
 			TimeSpan livedSleep = GetPartSpan(livedTotal, SleepHoursPerDay);
 
+			// ✅ 추가: 살아온 년수(소수점)
+			double livedYears = livedTotal.TotalDays / 365.2425;
+
 			lbl1time.Text =
 				$"살아온 시간(전체): {FormatSpan(livedTotal)}\r\n" +
+				$"살아온 년수: {livedYears:0.0}년\r\n" +
 				$"의식 시간(16h/일): {FormatSpan(livedAwake)}\r\n" +
 				$"수면 시간(8h/일): {FormatSpan(livedSleep)}";
 
