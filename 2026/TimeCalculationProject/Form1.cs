@@ -10,7 +10,7 @@ namespace TimeCalculationProject
 	{
 		#region 필드 (공통)
 		// 기준 생일
-		private static readonly DateTime BirthDate = new DateTime(1997, 8, 30, 0, 0, 0);
+		private static readonly DateTime BirthDate = new DateTime(1997, 8, 30, 4, 0, 0);
 
 		// 하루 기준(가정)
 		private const double SleepHoursPerDay = 8.0;
@@ -30,10 +30,10 @@ namespace TimeCalculationProject
 			InitializeComponent();
 			CenterToParent();
 
-			uiTimer = new Timer();
-			uiTimer.Interval = 1000;
-			uiTimer.Tick += UiTimer_Tick;
-			uiTimer.Start();
+			//uiTimer = new Timer();
+			//uiTimer.Interval = 1000;
+			//uiTimer.Tick += UiTimer_Tick;
+			//uiTimer.Start();
 
 			UpdateUi();
 			BindCategoryCombo();
@@ -306,8 +306,6 @@ namespace TimeCalculationProject
 
 		protected override void OnFormClosing(FormClosingEventArgs e)
 		{
-			uiTimer.Stop();
-			uiTimer.Dispose();
 			base.OnFormClosing(e);
 		}
 		#endregion

@@ -61,6 +61,7 @@
 			this.lbl1sleep = new System.Windows.Forms.Label();
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.btn1update = new System.Windows.Forms.Button();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.btn2delete = new System.Windows.Forms.Button();
 			this.txttime2 = new System.Windows.Forms.TextBox();
@@ -452,6 +453,7 @@
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.btn1update);
 			this.tabPage1.Controls.Add(this.lbl1birth);
 			this.tabPage1.Controls.Add(this.lbl1time);
 			this.tabPage1.Controls.Add(this.lbl1sleep);
@@ -466,6 +468,16 @@
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "시간";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// btn1update
+			// 
+			this.btn1update.Location = new System.Drawing.Point(553, 245);
+			this.btn1update.Name = "btn1update";
+			this.btn1update.Size = new System.Drawing.Size(174, 66);
+			this.btn1update.TabIndex = 15;
+			this.btn1update.Text = "업데이트";
+			this.btn1update.UseVisualStyleBackColor = true;
+			this.btn1update.Click += new System.EventHandler(this.btn1update_Click);
 			// 
 			// tabPage2
 			// 
@@ -912,6 +924,7 @@
         private System.Windows.Forms.Button btn2start;
         private System.Windows.Forms.TextBox txttime2;
         private System.Windows.Forms.Button btn2delete;
+        private System.Windows.Forms.Button btn1update;
     }
 }
 

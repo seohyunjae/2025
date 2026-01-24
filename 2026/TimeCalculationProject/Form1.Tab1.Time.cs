@@ -49,5 +49,10 @@ namespace TimeCalculationProject
 				sleepTextBox.Text = $"지남(수면): {FormatSpan(diffSleep.Negate())}";
 			}
 		}
+
+		private void btn1update_Click(object sender, EventArgs e)
+		{
+			UpdateUi();
+		}
 	}
 }
